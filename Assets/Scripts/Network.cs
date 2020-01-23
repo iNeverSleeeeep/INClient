@@ -43,17 +43,25 @@ public class Network
     private void Init(IPEndPoint p)
     {
         this.point = p;
-        sendThread = new Thread(SendThread);
-        recvThread = new Thread(ReceiveThread);
-        sendThread.Start();
-        recvThread.Start();
     }
 
     public void Abort()
     {
-        sendThread.Abort();
-        recvThread.Abort();
-        socket.Close();
+        if (sendThread != null)
+        {
+            sendThread.Abort();
+            sendThread = null;
+        }
+        if (recvThread != null)
+        {
+            recvThread.Abort();
+            recvThread = null;
+        }
+        if (socket != null)
+        {
+            socket.Close();
+            socket = null;
+        }
     }
 
     /// <summary>
@@ -71,6 +79,10 @@ public class Network
     {
         socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         socket.Connect(point);
+        sendThread = new Thread(SendThread);
+        recvThread = new Thread(ReceiveThread);
+        sendThread.Start();
+        recvThread.Start();
     }
 
     public void ReceiveThread()

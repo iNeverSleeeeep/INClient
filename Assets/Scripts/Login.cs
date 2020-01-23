@@ -18,6 +18,7 @@ public class Login : MonoBehaviour
     private void OnEnable()
     {
         NetworkMgr.Instance.ConnectLogin(LoginIP, LoginPort);
+        NetworkMgr.Instance.OnLoginServerMessage = OnLoginServerMessage;
     }
 
     private void OnDisable()
@@ -45,6 +46,29 @@ public class Login : MonoBehaviour
         NetworkMgr.Instance.Login.Send(msg.ToByteArray());
     }
 
+    private void OnLoginServerMessage(LoginToClient message)
+    {
+        if (message.Success)
+        {
+            if (message.SessionCert != null)
+            {
+                NetworkMgr.Instance.Cert = message.SessionCert;
+                var ip = new IPAddress(message.GateIP.ToByteArray());
+                var point = new IPEndPoint(ip, message.GatePort);
+                Debug.Log("成功:" + NetworkMgr.Instance.Cert.UUID + " Gate:" + point);
+                NetworkMgr.Instance.ConnectGame(point);
+            }
+            else
+            {
+                Debug.Log("成功");
+            }
+        }
+        else
+        {
+            Debug.Log("失败");
+        }
+    }
+
     public static byte[] GetHash(string inputString)
     {
         HashAlgorithm algorithm = MD5.Create();  //or use SHA256.Create();
@@ -58,36 +82,5 @@ public class Login : MonoBehaviour
         foreach (byte b in GetHash(inputString))
             sb.Append(b.ToString("X2"));
         return sb.ToString();
-    }
-
-    private void Update()
-    {
-        var buffer = NetworkMgr.Instance.Login.Recv();
-        if (buffer != null)
-        {
-            Debug.Log("收到了消息");
-            var message = Message.Parser.ParseFrom(buffer);
-
-            var loginResult = LoginToClient.Parser.ParseFrom(message.Buffer);
-            if (loginResult.Success)
-            {
-                if (loginResult.SessionCert != null)
-                {
-                    NetworkMgr.Instance.Cert = loginResult.SessionCert;
-                    var ip = new IPAddress(loginResult.GateIP.ToByteArray());
-                    var point = new IPEndPoint(ip, loginResult.GatePort);
-                    Debug.Log("成功:" + NetworkMgr.Instance.Cert.UUID + " Gate:" + point);
-                    NetworkMgr.Instance.ConnectGame(point);
-                }
-                else
-                {
-                    Debug.Log("成功:");
-                }
-            }
-            else
-            {
-                Debug.Log("失败:");
-            }
-        }
     }
 }
