@@ -24,26 +24,25 @@ public static partial class ClientGateReflection {
         string.Concat(
           "ChFjbGllbnQtZ2F0ZS5wcm90bxoNY29tbWFuZC5wcm90bxoMcGxheWVyLnBy",
           "b3RvIigKC1Nlc3Npb25DZXJ0EgwKBFVVSUQYASABKAkSCwoDS2V5GAIgASgJ",
-          "IjsKDkNHVHJhbnNtaXNzaW9uEhkKB0NvbW1hbmQYASABKA4yCC5Db21tYW5k",
-          "Eg4KBkJ1ZmZlchgCIAEoDCJFCg5Db25uZWN0R2F0ZVJlcRIhCgtTZXNzaW9u",
-          "Q2VydBgBIAEoCzIMLlNlc3Npb25DZXJ0EhAKCFNlcXVlbmNlGAIgASgEIjsK",
-          "D0Nvbm5lY3RHYXRlUmVzcBIPCgdTdWNjZXNzGAEgASgIEhcKBlBsYXllchgC",
-          "IAEoCzIHLlBsYXllciIgCgxSb2xlRW50ZXJSZXESEAoIUm9sZVVVSUQYASAB",
-          "KAkiIAoNUm9sZUVudGVyUmVzcBIPCgdTdWNjZXNzGAEgASgIIpUBCgxDbGll",
-          "bnRUb0dhdGUSIAoHQ29ubmVjdBgBIAEoCzIPLkNvbm5lY3RHYXRlUmVxEiAK",
-          "CVJvbGVFbnRlchgCIAEoCzINLlJvbGVFbnRlclJlcRIgCgdSZXF1ZXN0GAMg",
-          "ASgLMg8uQ0dUcmFuc21pc3Npb24SHwoGTm90aWZ5GAQgASgLMg8uQ0dUcmFu",
-          "c21pc3Npb25CGFoWSU5TZXJ2ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
+          "IjMKDkNvbm5lY3RHYXRlUmVxEiEKC1Nlc3Npb25DZXJ0GAEgASgLMgwuU2Vz",
+          "c2lvbkNlcnQiOwoPQ29ubmVjdEdhdGVSZXNwEg8KB1N1Y2Nlc3MYASABKAgS",
+          "FwoGUGxheWVyGAIgASgLMgcuUGxheWVyIiAKDFJvbGVFbnRlclJlcRIQCghS",
+          "b2xlVVVJRBgBIAEoCSIgCg1Sb2xlRW50ZXJSZXNwEg8KB1N1Y2Nlc3MYASAB",
+          "KAgiXAoMQ2xpZW50VG9HYXRlEhkKB0NvbW1hbmQYASABKA4yCC5Db21tYW5k",
+          "EhAKCFNlcXVlbmNlGAIgASgEEg8KB1JlcXVlc3QYAyABKAwSDgoGTm90aWZ5",
+          "GAQgASgMIksKDEdhdGVUb0NsaWVudBIZCgdDb21tYW5kGAEgASgOMgguQ29t",
+          "bWFuZBIQCghTZXF1ZW5jZRgCIAEoBBIOCgZCdWZmZXIYAyABKAxCGFoWSU5T",
+          "ZXJ2ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::CommandReflection.Descriptor, global::PlayerReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::SessionCert), global::SessionCert.Parser, new[]{ "UUID", "Key" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::CGTransmission), global::CGTransmission.Parser, new[]{ "Command", "Buffer" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ConnectGateReq), global::ConnectGateReq.Parser, new[]{ "SessionCert", "Sequence" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ConnectGateReq), global::ConnectGateReq.Parser, new[]{ "SessionCert" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ConnectGateResp), global::ConnectGateResp.Parser, new[]{ "Success", "Player" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleEnterReq), global::RoleEnterReq.Parser, new[]{ "RoleUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleEnterResp), global::RoleEnterResp.Parser, new[]{ "Success" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ClientToGate), global::ClientToGate.Parser, new[]{ "Connect", "RoleEnter", "Request", "Notify" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::ClientToGate), global::ClientToGate.Parser, new[]{ "Command", "Sequence", "Request", "Notify" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GateToClient), global::GateToClient.Parser, new[]{ "Command", "Sequence", "Buffer" }, null, null, null)
         }));
   }
   #endregion
@@ -207,163 +206,6 @@ public sealed partial class SessionCert : pb::IMessage<SessionCert> {
 
 }
 
-public sealed partial class CGTransmission : pb::IMessage<CGTransmission> {
-  private static readonly pb::MessageParser<CGTransmission> _parser = new pb::MessageParser<CGTransmission>(() => new CGTransmission());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<CGTransmission> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientGateReflection.Descriptor.MessageTypes[1]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public CGTransmission() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public CGTransmission(CGTransmission other) : this() {
-    command_ = other.command_;
-    buffer_ = other.buffer_;
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public CGTransmission Clone() {
-    return new CGTransmission(this);
-  }
-
-  /// <summary>Field number for the "Command" field.</summary>
-  public const int CommandFieldNumber = 1;
-  private global::Command command_ = global::Command.KeepAlive;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::Command Command {
-    get { return command_; }
-    set {
-      command_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Buffer" field.</summary>
-  public const int BufferFieldNumber = 2;
-  private pb::ByteString buffer_ = pb::ByteString.Empty;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pb::ByteString Buffer {
-    get { return buffer_; }
-    set {
-      buffer_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as CGTransmission);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(CGTransmission other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Command != other.Command) return false;
-    if (Buffer != other.Buffer) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Command != global::Command.KeepAlive) hash ^= Command.GetHashCode();
-    if (Buffer.Length != 0) hash ^= Buffer.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-    if (Command != global::Command.KeepAlive) {
-      output.WriteRawTag(8);
-      output.WriteEnum((int) Command);
-    }
-    if (Buffer.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteBytes(Buffer);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    if (Command != global::Command.KeepAlive) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Command);
-    }
-    if (Buffer.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeBytesSize(Buffer);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(CGTransmission other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Command != global::Command.KeepAlive) {
-      Command = other.Command;
-    }
-    if (other.Buffer.Length != 0) {
-      Buffer = other.Buffer;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          Command = (global::Command) input.ReadEnum();
-          break;
-        }
-        case 18: {
-          Buffer = input.ReadBytes();
-          break;
-        }
-      }
-    }
-  }
-
-}
-
 public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
   private static readonly pb::MessageParser<ConnectGateReq> _parser = new pb::MessageParser<ConnectGateReq>(() => new ConnectGateReq());
   private pb::UnknownFieldSet _unknownFields;
@@ -372,7 +214,7 @@ public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientGateReflection.Descriptor.MessageTypes[2]; }
+    get { return global::ClientGateReflection.Descriptor.MessageTypes[1]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -390,7 +232,6 @@ public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public ConnectGateReq(ConnectGateReq other) : this() {
     sessionCert_ = other.sessionCert_ != null ? other.sessionCert_.Clone() : null;
-    sequence_ = other.sequence_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -410,17 +251,6 @@ public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
     }
   }
 
-  /// <summary>Field number for the "Sequence" field.</summary>
-  public const int SequenceFieldNumber = 2;
-  private ulong sequence_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ulong Sequence {
-    get { return sequence_; }
-    set {
-      sequence_ = value;
-    }
-  }
-
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as ConnectGateReq);
@@ -435,7 +265,6 @@ public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
       return true;
     }
     if (!object.Equals(SessionCert, other.SessionCert)) return false;
-    if (Sequence != other.Sequence) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -443,7 +272,6 @@ public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
   public override int GetHashCode() {
     int hash = 1;
     if (sessionCert_ != null) hash ^= SessionCert.GetHashCode();
-    if (Sequence != 0UL) hash ^= Sequence.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -461,10 +289,6 @@ public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
       output.WriteRawTag(10);
       output.WriteMessage(SessionCert);
     }
-    if (Sequence != 0UL) {
-      output.WriteRawTag(16);
-      output.WriteUInt64(Sequence);
-    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -475,9 +299,6 @@ public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
     int size = 0;
     if (sessionCert_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(SessionCert);
-    }
-    if (Sequence != 0UL) {
-      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Sequence);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -495,9 +316,6 @@ public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
         SessionCert = new global::SessionCert();
       }
       SessionCert.MergeFrom(other.SessionCert);
-    }
-    if (other.Sequence != 0UL) {
-      Sequence = other.Sequence;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -517,10 +335,6 @@ public sealed partial class ConnectGateReq : pb::IMessage<ConnectGateReq> {
           input.ReadMessage(SessionCert);
           break;
         }
-        case 16: {
-          Sequence = input.ReadUInt64();
-          break;
-        }
       }
     }
   }
@@ -535,7 +349,7 @@ public sealed partial class ConnectGateResp : pb::IMessage<ConnectGateResp> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientGateReflection.Descriptor.MessageTypes[3]; }
+    get { return global::ClientGateReflection.Descriptor.MessageTypes[2]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -698,7 +512,7 @@ public sealed partial class RoleEnterReq : pb::IMessage<RoleEnterReq> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientGateReflection.Descriptor.MessageTypes[4]; }
+    get { return global::ClientGateReflection.Descriptor.MessageTypes[3]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -827,7 +641,7 @@ public sealed partial class RoleEnterResp : pb::IMessage<RoleEnterResp> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientGateReflection.Descriptor.MessageTypes[5]; }
+    get { return global::ClientGateReflection.Descriptor.MessageTypes[4]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -956,7 +770,7 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientGateReflection.Descriptor.MessageTypes[6]; }
+    get { return global::ClientGateReflection.Descriptor.MessageTypes[5]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -973,10 +787,10 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public ClientToGate(ClientToGate other) : this() {
-    connect_ = other.connect_ != null ? other.connect_.Clone() : null;
-    roleEnter_ = other.roleEnter_ != null ? other.roleEnter_.Clone() : null;
-    request_ = other.request_ != null ? other.request_.Clone() : null;
-    notify_ = other.notify_ != null ? other.notify_.Clone() : null;
+    command_ = other.command_;
+    sequence_ = other.sequence_;
+    request_ = other.request_;
+    notify_ = other.notify_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -985,47 +799,47 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
     return new ClientToGate(this);
   }
 
-  /// <summary>Field number for the "Connect" field.</summary>
-  public const int ConnectFieldNumber = 1;
-  private global::ConnectGateReq connect_;
+  /// <summary>Field number for the "Command" field.</summary>
+  public const int CommandFieldNumber = 1;
+  private global::Command command_ = global::Command.KeepAlive;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::ConnectGateReq Connect {
-    get { return connect_; }
+  public global::Command Command {
+    get { return command_; }
     set {
-      connect_ = value;
+      command_ = value;
     }
   }
 
-  /// <summary>Field number for the "RoleEnter" field.</summary>
-  public const int RoleEnterFieldNumber = 2;
-  private global::RoleEnterReq roleEnter_;
+  /// <summary>Field number for the "Sequence" field.</summary>
+  public const int SequenceFieldNumber = 2;
+  private ulong sequence_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::RoleEnterReq RoleEnter {
-    get { return roleEnter_; }
+  public ulong Sequence {
+    get { return sequence_; }
     set {
-      roleEnter_ = value;
+      sequence_ = value;
     }
   }
 
   /// <summary>Field number for the "Request" field.</summary>
   public const int RequestFieldNumber = 3;
-  private global::CGTransmission request_;
+  private pb::ByteString request_ = pb::ByteString.Empty;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::CGTransmission Request {
+  public pb::ByteString Request {
     get { return request_; }
     set {
-      request_ = value;
+      request_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
   /// <summary>Field number for the "Notify" field.</summary>
   public const int NotifyFieldNumber = 4;
-  private global::CGTransmission notify_;
+  private pb::ByteString notify_ = pb::ByteString.Empty;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::CGTransmission Notify {
+  public pb::ByteString Notify {
     get { return notify_; }
     set {
-      notify_ = value;
+      notify_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
@@ -1042,20 +856,20 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (!object.Equals(Connect, other.Connect)) return false;
-    if (!object.Equals(RoleEnter, other.RoleEnter)) return false;
-    if (!object.Equals(Request, other.Request)) return false;
-    if (!object.Equals(Notify, other.Notify)) return false;
+    if (Command != other.Command) return false;
+    if (Sequence != other.Sequence) return false;
+    if (Request != other.Request) return false;
+    if (Notify != other.Notify) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (connect_ != null) hash ^= Connect.GetHashCode();
-    if (roleEnter_ != null) hash ^= RoleEnter.GetHashCode();
-    if (request_ != null) hash ^= Request.GetHashCode();
-    if (notify_ != null) hash ^= Notify.GetHashCode();
+    if (Command != global::Command.KeepAlive) hash ^= Command.GetHashCode();
+    if (Sequence != 0UL) hash ^= Sequence.GetHashCode();
+    if (Request.Length != 0) hash ^= Request.GetHashCode();
+    if (Notify.Length != 0) hash ^= Notify.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -1069,21 +883,21 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (connect_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(Connect);
+    if (Command != global::Command.KeepAlive) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) Command);
     }
-    if (roleEnter_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(RoleEnter);
+    if (Sequence != 0UL) {
+      output.WriteRawTag(16);
+      output.WriteUInt64(Sequence);
     }
-    if (request_ != null) {
+    if (Request.Length != 0) {
       output.WriteRawTag(26);
-      output.WriteMessage(Request);
+      output.WriteBytes(Request);
     }
-    if (notify_ != null) {
+    if (Notify.Length != 0) {
       output.WriteRawTag(34);
-      output.WriteMessage(Notify);
+      output.WriteBytes(Notify);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -1093,17 +907,17 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (connect_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Connect);
+    if (Command != global::Command.KeepAlive) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Command);
     }
-    if (roleEnter_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(RoleEnter);
+    if (Sequence != 0UL) {
+      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Sequence);
     }
-    if (request_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Request);
+    if (Request.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeBytesSize(Request);
     }
-    if (notify_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Notify);
+    if (Notify.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeBytesSize(Notify);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -1116,29 +930,17 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
     if (other == null) {
       return;
     }
-    if (other.connect_ != null) {
-      if (connect_ == null) {
-        Connect = new global::ConnectGateReq();
-      }
-      Connect.MergeFrom(other.Connect);
+    if (other.Command != global::Command.KeepAlive) {
+      Command = other.Command;
     }
-    if (other.roleEnter_ != null) {
-      if (roleEnter_ == null) {
-        RoleEnter = new global::RoleEnterReq();
-      }
-      RoleEnter.MergeFrom(other.RoleEnter);
+    if (other.Sequence != 0UL) {
+      Sequence = other.Sequence;
     }
-    if (other.request_ != null) {
-      if (request_ == null) {
-        Request = new global::CGTransmission();
-      }
-      Request.MergeFrom(other.Request);
+    if (other.Request.Length != 0) {
+      Request = other.Request;
     }
-    if (other.notify_ != null) {
-      if (notify_ == null) {
-        Notify = new global::CGTransmission();
-      }
-      Notify.MergeFrom(other.Notify);
+    if (other.Notify.Length != 0) {
+      Notify = other.Notify;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -1151,32 +953,205 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
         default:
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
-        case 10: {
-          if (connect_ == null) {
-            Connect = new global::ConnectGateReq();
-          }
-          input.ReadMessage(Connect);
+        case 8: {
+          Command = (global::Command) input.ReadEnum();
           break;
         }
-        case 18: {
-          if (roleEnter_ == null) {
-            RoleEnter = new global::RoleEnterReq();
-          }
-          input.ReadMessage(RoleEnter);
+        case 16: {
+          Sequence = input.ReadUInt64();
           break;
         }
         case 26: {
-          if (request_ == null) {
-            Request = new global::CGTransmission();
-          }
-          input.ReadMessage(Request);
+          Request = input.ReadBytes();
           break;
         }
         case 34: {
-          if (notify_ == null) {
-            Notify = new global::CGTransmission();
-          }
-          input.ReadMessage(Notify);
+          Notify = input.ReadBytes();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class GateToClient : pb::IMessage<GateToClient> {
+  private static readonly pb::MessageParser<GateToClient> _parser = new pb::MessageParser<GateToClient>(() => new GateToClient());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<GateToClient> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ClientGateReflection.Descriptor.MessageTypes[6]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GateToClient() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GateToClient(GateToClient other) : this() {
+    command_ = other.command_;
+    sequence_ = other.sequence_;
+    buffer_ = other.buffer_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GateToClient Clone() {
+    return new GateToClient(this);
+  }
+
+  /// <summary>Field number for the "Command" field.</summary>
+  public const int CommandFieldNumber = 1;
+  private global::Command command_ = global::Command.KeepAlive;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Command Command {
+    get { return command_; }
+    set {
+      command_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "Sequence" field.</summary>
+  public const int SequenceFieldNumber = 2;
+  private ulong sequence_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ulong Sequence {
+    get { return sequence_; }
+    set {
+      sequence_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "Buffer" field.</summary>
+  public const int BufferFieldNumber = 3;
+  private pb::ByteString buffer_ = pb::ByteString.Empty;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pb::ByteString Buffer {
+    get { return buffer_; }
+    set {
+      buffer_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as GateToClient);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(GateToClient other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Command != other.Command) return false;
+    if (Sequence != other.Sequence) return false;
+    if (Buffer != other.Buffer) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Command != global::Command.KeepAlive) hash ^= Command.GetHashCode();
+    if (Sequence != 0UL) hash ^= Sequence.GetHashCode();
+    if (Buffer.Length != 0) hash ^= Buffer.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Command != global::Command.KeepAlive) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) Command);
+    }
+    if (Sequence != 0UL) {
+      output.WriteRawTag(16);
+      output.WriteUInt64(Sequence);
+    }
+    if (Buffer.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteBytes(Buffer);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Command != global::Command.KeepAlive) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Command);
+    }
+    if (Sequence != 0UL) {
+      size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Sequence);
+    }
+    if (Buffer.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeBytesSize(Buffer);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(GateToClient other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Command != global::Command.KeepAlive) {
+      Command = other.Command;
+    }
+    if (other.Sequence != 0UL) {
+      Sequence = other.Sequence;
+    }
+    if (other.Buffer.Length != 0) {
+      Buffer = other.Buffer;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          Command = (global::Command) input.ReadEnum();
+          break;
+        }
+        case 16: {
+          Sequence = input.ReadUInt64();
+          break;
+        }
+        case 26: {
+          Buffer = input.ReadBytes();
           break;
         }
       }

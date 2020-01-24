@@ -5,6 +5,7 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Login : MonoBehaviour
@@ -53,10 +54,9 @@ public class Login : MonoBehaviour
             if (message.SessionCert != null)
             {
                 NetworkMgr.Instance.Cert = message.SessionCert;
-                var ip = new IPAddress(message.GateIP.ToByteArray());
-                var point = new IPEndPoint(ip, message.GatePort);
-                Debug.Log("成功:" + NetworkMgr.Instance.Cert.UUID + " Gate:" + point);
-                NetworkMgr.Instance.ConnectGame(point);
+                Debug.Log("成功:" + NetworkMgr.Instance.Cert.UUID + " Address:" + message.GateIP + " Port:" + message.GatePort);
+                NetworkMgr.Instance.ConnectGame(message.GateIP, message.GatePort);
+                SceneManager.LoadScene("Enter", LoadSceneMode.Single);
             }
             else
             {

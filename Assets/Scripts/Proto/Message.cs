@@ -22,18 +22,18 @@ public static partial class MessageReflection {
   static MessageReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg1tZXNzYWdlLnByb3RvGg1jb21tYW5kLnByb3RvIkoKDU1lc3NhZ2VIZWFk",
+          "Cg1tZXNzYWdlLnByb3RvGg1jb21tYW5kLnByb3RvIl4KDU1lc3NhZ2VIZWFk",
           "ZXISGQoHQ29tbWFuZBgBIAEoDjIILkNvbW1hbmQSEAoIU2VxdWVuY2UYAiAB",
-          "KAQSDAoERnJvbRgDIAEoBSI5CgdNZXNzYWdlEh4KBkhlYWRlchgBIAEoCzIO",
-          "Lk1lc3NhZ2VIZWFkZXISDgoGQnVmZmVyGAIgASgMIlcKB1BhY2thZ2USEAoI",
-          "VW5pcXVlSUQYASABKAQSDAoERnJvbRgCIAEoBRINCgVJbmRleBgDIAEoBRIN",
-          "CgVUb3RhbBgEIAEoBRIOCgZCdWZmZXIYBSABKAwiHQoJS2VlcEFsaXZlEhAK",
-          "CFNlcnZlcklEGAEgASgFQhhaFklOU2VydmVyL3NyYy9wcm90by9tc2diBnBy",
-          "b3RvMw=="));
+          "KAQSDAoERnJvbRgDIAEoBRISCgpQbGF5ZXJVVUlEGAQgASgJIjkKB01lc3Nh",
+          "Z2USHgoGSGVhZGVyGAEgASgLMg4uTWVzc2FnZUhlYWRlchIOCgZCdWZmZXIY",
+          "AiABKAwiVwoHUGFja2FnZRIQCghVbmlxdWVJRBgBIAEoBBIMCgRGcm9tGAIg",
+          "ASgFEg0KBUluZGV4GAMgASgFEg0KBVRvdGFsGAQgASgFEg4KBkJ1ZmZlchgF",
+          "IAEoDCIdCglLZWVwQWxpdmUSEAoIU2VydmVySUQYASABKAVCGFoWSU5TZXJ2",
+          "ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::CommandReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MessageHeader), global::MessageHeader.Parser, new[]{ "Command", "Sequence", "From" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::MessageHeader), global::MessageHeader.Parser, new[]{ "Command", "Sequence", "From", "PlayerUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Message), global::Message.Parser, new[]{ "Header", "Buffer" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Package), global::Package.Parser, new[]{ "UniqueID", "From", "Index", "Total", "Buffer" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::KeepAlive), global::KeepAlive.Parser, new[]{ "ServerID" }, null, null, null)
@@ -71,6 +71,7 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     command_ = other.command_;
     sequence_ = other.sequence_;
     from_ = other.from_;
+    playerUUID_ = other.playerUUID_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -112,6 +113,17 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     }
   }
 
+  /// <summary>Field number for the "PlayerUUID" field.</summary>
+  public const int PlayerUUIDFieldNumber = 4;
+  private string playerUUID_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string PlayerUUID {
+    get { return playerUUID_; }
+    set {
+      playerUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as MessageHeader);
@@ -128,6 +140,7 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     if (Command != other.Command) return false;
     if (Sequence != other.Sequence) return false;
     if (From != other.From) return false;
+    if (PlayerUUID != other.PlayerUUID) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -137,6 +150,7 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     if (Command != global::Command.KeepAlive) hash ^= Command.GetHashCode();
     if (Sequence != 0UL) hash ^= Sequence.GetHashCode();
     if (From != 0) hash ^= From.GetHashCode();
+    if (PlayerUUID.Length != 0) hash ^= PlayerUUID.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -162,6 +176,10 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
       output.WriteRawTag(24);
       output.WriteInt32(From);
     }
+    if (PlayerUUID.Length != 0) {
+      output.WriteRawTag(34);
+      output.WriteString(PlayerUUID);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -178,6 +196,9 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     }
     if (From != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(From);
+    }
+    if (PlayerUUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerUUID);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -198,6 +219,9 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     }
     if (other.From != 0) {
       From = other.From;
+    }
+    if (other.PlayerUUID.Length != 0) {
+      PlayerUUID = other.PlayerUUID;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -220,6 +244,10 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
         }
         case 24: {
           From = input.ReadInt32();
+          break;
+        }
+        case 34: {
+          PlayerUUID = input.ReadString();
           break;
         }
       }

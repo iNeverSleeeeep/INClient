@@ -22,27 +22,27 @@ public static partial class ServersReflection {
   static ServersReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg1zZXJ2ZXJzLnByb3RvGg5kYXRhYmFzZS5wcm90byI0CgpHYXRlQ29uZmln",
-          "EgwKBFBvcnQYASABKAUSGAoQT3V0T2ZEYXRlVGltZW91dBgCIAEoAyI4CgtM",
-          "b2dpbkNvbmZpZxIMCgRQb3J0GAEgASgFEhsKCERhdGFiYXNlGAIgASgLMgku",
-          "RGF0YWJhc2UiDAoKQ2hhdENvbmZpZyItCg5EYXRhYmFzZUNvbmZpZxIbCghE",
-          "YXRhYmFzZRgBIAEoCzIJLkRhdGFiYXNlIhkKCVdlYkNvbmZpZxIMCgRQb3J0",
-          "GAEgASgFIi8KCVpvbmVXb3JsZBIOCgZab25lSUQYASABKAUSEgoKU3RhdGlj",
-          "TWFwcxgCIAMoBSIoCgtXb3JsZENvbmZpZxIZCgVab25lcxgBIAMoCzIKLlpv",
-          "bmVXb3JsZCLeAQoMU2VydmVyQ29uZmlnEh8KCkdhdGVDb25maWcYASABKAsy",
-          "Cy5HYXRlQ29uZmlnEiEKC0xvZ2luQ29uZmlnGAIgASgLMgwuTG9naW5Db25m",
-          "aWcSHwoKQ2hhdENvbmZpZxgDIAEoCzILLkNoYXRDb25maWcSJwoORGF0YWJh",
-          "c2VDb25maWcYBCABKAsyDy5EYXRhYmFzZUNvbmZpZxIdCglXZWJDb25maWcY",
-          "BSABKAsyCi5XZWJDb25maWcSIQoLV29ybGRDb25maWcYBiABKAsyDC5Xb3Js",
-          "ZENvbmZpZyJlCgZTZXJ2ZXISEAoIU2VydmVySUQYASABKAUSEgoKU2VydmVy",
-          "VHlwZRgCIAEoCRIjCgxTZXJ2ZXJDb25maWcYAyABKAsyDS5TZXJ2ZXJDb25m",
-          "aWcSEAoIRGVzY3JpYmUYBCABKAkiJgoKU2VydmVyTGlzdBIYCgdTZXJ2ZXJz",
-          "GAEgAygLMgcuU2VydmVyQhhaFklOU2VydmVyL3NyYy9wcm90by9ldGNiBnBy",
-          "b3RvMw=="));
+          "Cg1zZXJ2ZXJzLnByb3RvGg5kYXRhYmFzZS5wcm90byJFCgpHYXRlQ29uZmln",
+          "EgwKBFBvcnQYASABKAUSGAoQT3V0T2ZEYXRlVGltZW91dBgCIAEoAxIPCgdB",
+          "ZGRyZXNzGAMgASgJIjgKC0xvZ2luQ29uZmlnEgwKBFBvcnQYASABKAUSGwoI",
+          "RGF0YWJhc2UYAiABKAsyCS5EYXRhYmFzZSIMCgpDaGF0Q29uZmlnIi0KDkRh",
+          "dGFiYXNlQ29uZmlnEhsKCERhdGFiYXNlGAEgASgLMgkuRGF0YWJhc2UiGQoJ",
+          "V2ViQ29uZmlnEgwKBFBvcnQYASABKAUiLwoJWm9uZVdvcmxkEg4KBlpvbmVJ",
+          "RBgBIAEoBRISCgpTdGF0aWNNYXBzGAIgAygFIigKC1dvcmxkQ29uZmlnEhkK",
+          "BVpvbmVzGAEgAygLMgouWm9uZVdvcmxkIt4BCgxTZXJ2ZXJDb25maWcSHwoK",
+          "R2F0ZUNvbmZpZxgBIAEoCzILLkdhdGVDb25maWcSIQoLTG9naW5Db25maWcY",
+          "AiABKAsyDC5Mb2dpbkNvbmZpZxIfCgpDaGF0Q29uZmlnGAMgASgLMgsuQ2hh",
+          "dENvbmZpZxInCg5EYXRhYmFzZUNvbmZpZxgEIAEoCzIPLkRhdGFiYXNlQ29u",
+          "ZmlnEh0KCVdlYkNvbmZpZxgFIAEoCzIKLldlYkNvbmZpZxIhCgtXb3JsZENv",
+          "bmZpZxgGIAEoCzIMLldvcmxkQ29uZmlnImUKBlNlcnZlchIQCghTZXJ2ZXJJ",
+          "RBgBIAEoBRISCgpTZXJ2ZXJUeXBlGAIgASgJEiMKDFNlcnZlckNvbmZpZxgD",
+          "IAEoCzINLlNlcnZlckNvbmZpZxIQCghEZXNjcmliZRgEIAEoCSImCgpTZXJ2",
+          "ZXJMaXN0EhgKB1NlcnZlcnMYASADKAsyBy5TZXJ2ZXJCGFoWSU5TZXJ2ZXIv",
+          "c3JjL3Byb3RvL2V0Y2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::DatabaseReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GateConfig), global::GateConfig.Parser, new[]{ "Port", "OutOfDateTimeout" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GateConfig), global::GateConfig.Parser, new[]{ "Port", "OutOfDateTimeout", "Address" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::LoginConfig), global::LoginConfig.Parser, new[]{ "Port", "Database" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ChatConfig), global::ChatConfig.Parser, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::DatabaseConfig), global::DatabaseConfig.Parser, new[]{ "Database" }, null, null, null),
@@ -85,6 +85,7 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
   public GateConfig(GateConfig other) : this() {
     port_ = other.port_;
     outOfDateTimeout_ = other.outOfDateTimeout_;
+    address_ = other.address_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -121,6 +122,20 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     }
   }
 
+  /// <summary>Field number for the "Address" field.</summary>
+  public const int AddressFieldNumber = 3;
+  private string address_ = "";
+  /// <summary>
+  /// IP地址 因为阿里云没有办法取得公网IP所以只能配置
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string Address {
+    get { return address_; }
+    set {
+      address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as GateConfig);
@@ -136,6 +151,7 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     }
     if (Port != other.Port) return false;
     if (OutOfDateTimeout != other.OutOfDateTimeout) return false;
+    if (Address != other.Address) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -144,6 +160,7 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     int hash = 1;
     if (Port != 0) hash ^= Port.GetHashCode();
     if (OutOfDateTimeout != 0L) hash ^= OutOfDateTimeout.GetHashCode();
+    if (Address.Length != 0) hash ^= Address.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -165,6 +182,10 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
       output.WriteRawTag(16);
       output.WriteInt64(OutOfDateTimeout);
     }
+    if (Address.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Address);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -178,6 +199,9 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     }
     if (OutOfDateTimeout != 0L) {
       size += 1 + pb::CodedOutputStream.ComputeInt64Size(OutOfDateTimeout);
+    }
+    if (Address.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -196,6 +220,9 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     if (other.OutOfDateTimeout != 0L) {
       OutOfDateTimeout = other.OutOfDateTimeout;
     }
+    if (other.Address.Length != 0) {
+      Address = other.Address;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -213,6 +240,10 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
         }
         case 16: {
           OutOfDateTimeout = input.ReadInt64();
+          break;
+        }
+        case 26: {
+          Address = input.ReadString();
           break;
         }
       }

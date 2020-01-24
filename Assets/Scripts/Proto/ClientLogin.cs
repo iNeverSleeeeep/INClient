@@ -31,7 +31,7 @@ public static partial class ClientLoginReflection {
           "IAEoCzIILkNMTG9naW4SKQoOQ2hhbmdlUGFzc3dvcmQYAyABKAsyES5DTENo",
           "YW5nZVBhc3N3b3JkImUKDUxvZ2luVG9DbGllbnQSDwoHU3VjY2VzcxgBIAEo",
           "CBIhCgtTZXNzaW9uQ2VydBgCIAEoCzIMLlNlc3Npb25DZXJ0Eg4KBkdhdGVJ",
-          "UBgDIAEoDBIQCghHYXRlUG9ydBgEIAEoBUIYWhZJTlNlcnZlci9zcmMvcHJv",
+          "UBgDIAEoCRIQCghHYXRlUG9ydBgEIAEoBUIYWhZJTlNlcnZlci9zcmMvcHJv",
           "dG8vbXNnYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::ClientGateReflection.Descriptor, },
@@ -810,9 +810,9 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
 
   /// <summary>Field number for the "GateIP" field.</summary>
   public const int GateIPFieldNumber = 3;
-  private pb::ByteString gateIP_ = pb::ByteString.Empty;
+  private string gateIP_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pb::ByteString GateIP {
+  public string GateIP {
     get { return gateIP_; }
     set {
       gateIP_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
@@ -880,7 +880,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     }
     if (GateIP.Length != 0) {
       output.WriteRawTag(26);
-      output.WriteBytes(GateIP);
+      output.WriteString(GateIP);
     }
     if (GatePort != 0) {
       output.WriteRawTag(32);
@@ -901,7 +901,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(SessionCert);
     }
     if (GateIP.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeBytesSize(GateIP);
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(GateIP);
     }
     if (GatePort != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(GatePort);
@@ -955,7 +955,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
           break;
         }
         case 26: {
-          GateIP = input.ReadBytes();
+          GateIP = input.ReadString();
           break;
         }
         case 32: {
