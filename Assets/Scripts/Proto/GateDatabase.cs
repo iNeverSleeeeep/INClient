@@ -22,19 +22,20 @@ public static partial class GateDatabaseReflection {
   static GateDatabaseReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChNnYXRlLWRhdGFiYXNlLnByb3RvGgxwbGF5ZXIucHJvdG8iJQoPQ3JlYXRl",
-          "UGxheWVyUmVxEhIKClBsYXllclVVSUQYASABKAkiIwoQQ3JlYXRlUGxheWVy",
-          "UmVzcBIPCgdTdWNjZXNzGAEgASgIIiMKDUxvYWRQbGF5ZXJSZXESEgoKUGxh",
-          "eWVyVVVJRBgBIAEoCSI6Cg5Mb2FkUGxheWVyUmVzcBIPCgdTdWNjZXNzGAEg",
-          "ASgIEhcKBlBsYXllchgCIAEoCzIHLlBsYXllciImChBSZWxlYXNlUGxheWVy",
-          "TnRmEhIKClBsYXllclVVSUQYASABKAkiQwoNQ3JlYXRlUm9sZVJlcRISCgpQ",
-          "bGF5ZXJVVUlEGAEgASgJEhAKCFJvbGVOYW1lGAIgASgJEgwKBFpvbmUYAyAB",
-          "KAUiMwoOQ3JlYXRlUm9sZVJlc3ASDwoHU3VjY2VzcxgBIAEoCBIQCghSb2xl",
-          "VVVJRBgCIAEoCSIfCgtMb2FkUm9sZVJlcRIQCghSb2xlVVVJRBgBIAEoCSIw",
-          "CgxMb2FkUm9sZVJlc3ASDwoHU3VjY2VzcxgBIAEoCBIPCgdXb3JsZElEGAIg",
-          "ASgFQhhaFklOU2VydmVyL3NyYy9wcm90by9tc2diBnByb3RvMw=="));
+          "ChNnYXRlLWRhdGFiYXNlLnByb3RvGgxwbGF5ZXIucHJvdG8aCnJvbGUucHJv",
+          "dG8iJQoPQ3JlYXRlUGxheWVyUmVxEhIKClBsYXllclVVSUQYASABKAkiIwoQ",
+          "Q3JlYXRlUGxheWVyUmVzcBIPCgdTdWNjZXNzGAEgASgIIiMKDUxvYWRQbGF5",
+          "ZXJSZXESEgoKUGxheWVyVVVJRBgBIAEoCSI6Cg5Mb2FkUGxheWVyUmVzcBIP",
+          "CgdTdWNjZXNzGAEgASgIEhcKBlBsYXllchgCIAEoCzIHLlBsYXllciImChBS",
+          "ZWxlYXNlUGxheWVyTnRmEhIKClBsYXllclVVSUQYASABKAkiQwoNQ3JlYXRl",
+          "Um9sZVJlcRISCgpQbGF5ZXJVVUlEGAEgASgJEhAKCFJvbGVOYW1lGAIgASgJ",
+          "EgwKBFpvbmUYAyABKAUiQQoOQ3JlYXRlUm9sZVJlc3ASDwoHU3VjY2VzcxgB",
+          "IAEoCBIeCgRSb2xlGAIgASgLMhAuUm9sZVN1bW1hcnlEYXRhIh8KC0xvYWRS",
+          "b2xlUmVxEhAKCFJvbGVVVUlEGAEgASgJIjAKDExvYWRSb2xlUmVzcBIPCgdT",
+          "dWNjZXNzGAEgASgIEg8KB1dvcmxkSUQYAiABKAVCGFoWSU5TZXJ2ZXIvc3Jj",
+          "L3Byb3RvL21zZ2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::PlayerReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::PlayerReflection.Descriptor, global::RoleReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::CreatePlayerReq), global::CreatePlayerReq.Parser, new[]{ "PlayerUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::CreatePlayerResp), global::CreatePlayerResp.Parser, new[]{ "Success" }, null, null, null),
@@ -42,7 +43,7 @@ public static partial class GateDatabaseReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::LoadPlayerResp), global::LoadPlayerResp.Parser, new[]{ "Success", "Player" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ReleasePlayerNtf), global::ReleasePlayerNtf.Parser, new[]{ "PlayerUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::CreateRoleReq), global::CreateRoleReq.Parser, new[]{ "PlayerUUID", "RoleName", "Zone" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::CreateRoleResp), global::CreateRoleResp.Parser, new[]{ "Success", "RoleUUID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::CreateRoleResp), global::CreateRoleResp.Parser, new[]{ "Success", "Role" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::LoadRoleReq), global::LoadRoleReq.Parser, new[]{ "RoleUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::LoadRoleResp), global::LoadRoleResp.Parser, new[]{ "Success", "WorldID" }, null, null, null)
         }));
@@ -941,7 +942,7 @@ public sealed partial class CreateRoleResp : pb::IMessage<CreateRoleResp> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public CreateRoleResp(CreateRoleResp other) : this() {
     success_ = other.success_;
-    roleUUID_ = other.roleUUID_;
+    role_ = other.role_ != null ? other.role_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -961,14 +962,14 @@ public sealed partial class CreateRoleResp : pb::IMessage<CreateRoleResp> {
     }
   }
 
-  /// <summary>Field number for the "RoleUUID" field.</summary>
-  public const int RoleUUIDFieldNumber = 2;
-  private string roleUUID_ = "";
+  /// <summary>Field number for the "Role" field.</summary>
+  public const int RoleFieldNumber = 2;
+  private global::RoleSummaryData role_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string RoleUUID {
-    get { return roleUUID_; }
+  public global::RoleSummaryData Role {
+    get { return role_; }
     set {
-      roleUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      role_ = value;
     }
   }
 
@@ -986,7 +987,7 @@ public sealed partial class CreateRoleResp : pb::IMessage<CreateRoleResp> {
       return true;
     }
     if (Success != other.Success) return false;
-    if (RoleUUID != other.RoleUUID) return false;
+    if (!object.Equals(Role, other.Role)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -994,7 +995,7 @@ public sealed partial class CreateRoleResp : pb::IMessage<CreateRoleResp> {
   public override int GetHashCode() {
     int hash = 1;
     if (Success != false) hash ^= Success.GetHashCode();
-    if (RoleUUID.Length != 0) hash ^= RoleUUID.GetHashCode();
+    if (role_ != null) hash ^= Role.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -1012,9 +1013,9 @@ public sealed partial class CreateRoleResp : pb::IMessage<CreateRoleResp> {
       output.WriteRawTag(8);
       output.WriteBool(Success);
     }
-    if (RoleUUID.Length != 0) {
+    if (role_ != null) {
       output.WriteRawTag(18);
-      output.WriteString(RoleUUID);
+      output.WriteMessage(Role);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -1027,8 +1028,8 @@ public sealed partial class CreateRoleResp : pb::IMessage<CreateRoleResp> {
     if (Success != false) {
       size += 1 + 1;
     }
-    if (RoleUUID.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(RoleUUID);
+    if (role_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Role);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -1044,8 +1045,11 @@ public sealed partial class CreateRoleResp : pb::IMessage<CreateRoleResp> {
     if (other.Success != false) {
       Success = other.Success;
     }
-    if (other.RoleUUID.Length != 0) {
-      RoleUUID = other.RoleUUID;
+    if (other.role_ != null) {
+      if (role_ == null) {
+        Role = new global::RoleSummaryData();
+      }
+      Role.MergeFrom(other.Role);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -1063,7 +1067,10 @@ public sealed partial class CreateRoleResp : pb::IMessage<CreateRoleResp> {
           break;
         }
         case 18: {
-          RoleUUID = input.ReadString();
+          if (role_ == null) {
+            Role = new global::RoleSummaryData();
+          }
+          input.ReadMessage(Role);
           break;
         }
       }

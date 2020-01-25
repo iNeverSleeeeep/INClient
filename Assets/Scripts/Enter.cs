@@ -77,13 +77,16 @@ public class Enter : MonoBehaviour
     public void RefreshRolesShow()
     {
         List<Dropdown.OptionData> OptionDataList = new List<Dropdown.OptionData>();
-        foreach (var role in player.RoleList)
+        if (player.RoleList != null)
         {
-            if (role.Zone == Zones.value)
+            foreach (var role in player.RoleList)
             {
-                var optionData = new Dropdown.OptionData();
-                optionData.text = role.Name;
-                OptionDataList.Add(optionData);
+                if (role.Zone == Zones.value)
+                {
+                    var optionData = new Dropdown.OptionData();
+                    optionData.text = role.Name;
+                    OptionDataList.Add(optionData);
+                }
             }
         }
         Roles.ClearOptions();
@@ -125,7 +128,9 @@ public class Enter : MonoBehaviour
         var resp = CreateRoleResp.Parser.ParseFrom(bytes);
         if (resp.Success)
         {
+            player.RoleList.Add(resp.Role);
             Debug.Log("创建角色成功");
+            RefreshRolesShow();
         }
         else
         {
