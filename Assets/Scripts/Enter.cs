@@ -58,25 +58,41 @@ public class Enter : MonoBehaviour
 
     public void RefreshZonesShow()
     {
-        List<Dropdown.OptionData> OpenDataList = new List<Dropdown.OptionData>();
+        List<Dropdown.OptionData> OptionDataList = new List<Dropdown.OptionData>();
         foreach (var zone in ZoneList)
         {
             var optionData = new Dropdown.OptionData();
             optionData.text = (zone as IDictionary<string, object>)["Name"] as string;
-            OpenDataList.Add(optionData);
+            OptionDataList.Add(optionData);
         }
         Zones.ClearOptions();
-        Zones.AddOptions(OpenDataList);
+        Zones.AddOptions(OptionDataList);
+    }
+
+    public void OnZoneChange(int value)
+    {
+        RefreshRolesShow();
     }
 
     public void RefreshRolesShow()
     {
-
+        List<Dropdown.OptionData> OptionDataList = new List<Dropdown.OptionData>();
+        foreach (var role in player.RoleList)
+        {
+            if (role.Zone == Zones.value)
+            {
+                var optionData = new Dropdown.OptionData();
+                optionData.text = role.Name;
+                OptionDataList.Add(optionData);
+            }
+        }
+        Roles.ClearOptions();
+        Roles.AddOptions(OptionDataList);
     }
 
     public void OnCreateRoleClick()
     {
-
+        CreateRoleRoot.SetActive(true);
     }
 
     public void OnEnterGameClick()
@@ -86,11 +102,34 @@ public class Enter : MonoBehaviour
 
     public void OnCancelCreateRoleClick()
     {
-
+        CreateRoleRoot.SetActive(false);
     }
 
     public void OnConfirmCreateRoleClick()
     {
+        CreateRoleRoot.SetActive(false);
+        if (string.IsNullOrWhiteSpace(RoleName.text))
+        {
+            Debug.Log("不能为空");
+            return;
+        }
+        var req = new CreateRoleReq();
+        req.RoleName = RoleName.text;
+        req.PlayerUUID = NetworkMgr.Instance.Cert.UUID;
+        req.Zone = Zones.value;
+        NetworkMgr.Instance.Request(Command.GdCreateRoleReq, req.ToByteString(), OnCreateRoleCallback);
+    }
 
+    private void OnCreateRoleCallback(ByteString bytes)
+    {
+        var resp = CreateRoleResp.Parser.ParseFrom(bytes);
+        if (resp.Success)
+        {
+            Debug.Log("创建角色成功");
+        }
+        else
+        {
+            Debug.Log("创建角色失败");
+        }
     }
 }
