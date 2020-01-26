@@ -26,26 +26,27 @@ public static partial class CenterReflection {
           "DlNlcnZlclN0YXRlUmVxEhkKBEluZm8YASABKAsyCy5TZXJ2ZXJJbmZvIjQK",
           "EVN0YXRpY01hcExvY2F0aW9uEg0KBU1hcElEGAEgASgFEhAKCFNlcnZlcklE",
           "GAIgASgFIk4KDFpvbmVMb2NhdGlvbhIOCgZab25lSUQYASABKAUSLgoSU3Rh",
-          "dGljTWFwTG9jYXRpb25zGAIgAygLMhIuU3RhdGljTWFwTG9jYXRpb24isQEK",
+          "dGljTWFwTG9jYXRpb25zGAIgAygLMhIuU3RhdGljTWFwTG9jYXRpb24i1gEK",
           "D1NlcnZlclN0YXRlUmVzcBISCgpTZXJ2ZXJUeXBlGAEgASgJEg8KB01lc3Nh",
           "Z2UYAiABKAkSIwoMU2VydmVyQ29uZmlnGAMgASgLMg0uU2VydmVyQ29uZmln",
-          "EhgKB1NlcnZlcnMYBCADKAsyBy5TZXJ2ZXISFAoFWm9uZXMYBSADKAsyBS5a",
-          "b25lEiQKDVpvbmVMb2NhdGlvbnMYBiADKAsyDS5ab25lTG9jYXRpb24iTAoK",
-          "U2VydmVySW5mbxIQCghTZXJ2ZXJJRBgBIAEoBRIPCgdBZGRyZXNzGAIgASgM",
-          "EhsKBVN0YXRlGAMgASgOMgwuU2VydmVyU3RhdGUiLgoOU2VydmVySW5mb0xp",
-          "c3QSHAoHU2VydmVycxgBIAMoCzILLlNlcnZlckluZm8ihgEKCVVwZGF0ZUVU",
-          "QxIjCgxTZXJ2ZXJDb25maWcYASABKAsyDS5TZXJ2ZXJDb25maWcSGAoHU2Vy",
-          "dmVycxgCIAMoCzIHLlNlcnZlchIUCgVab25lcxgDIAMoCzIFLlpvbmUSJAoN",
-          "Wm9uZUxvY2F0aW9ucxgEIAMoCzINLlpvbmVMb2NhdGlvbio9CgtTZXJ2ZXJT",
-          "dGF0ZRIJCgVTdGFydBAAEgkKBVJlYWR5EAESCwoHUnVubmluZxACEgsKB09m",
-          "ZmxpbmUQA0IYWhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
+          "EiMKDlNlcnZlckluZm9MaXN0GAQgAygLMgsuU2VydmVySW5mbxIYCgdTZXJ2",
+          "ZXJzGAUgAygLMgcuU2VydmVyEhQKBVpvbmVzGAYgAygLMgUuWm9uZRIkCg1a",
+          "b25lTG9jYXRpb25zGAcgAygLMg0uWm9uZUxvY2F0aW9uIkwKClNlcnZlcklu",
+          "Zm8SEAoIU2VydmVySUQYASABKAUSDwoHQWRkcmVzcxgCIAEoDBIbCgVTdGF0",
+          "ZRgDIAEoDjIMLlNlcnZlclN0YXRlIi4KDlNlcnZlckluZm9MaXN0EhwKB1Nl",
+          "cnZlcnMYASADKAsyCy5TZXJ2ZXJJbmZvIoYBCglVcGRhdGVFVEMSIwoMU2Vy",
+          "dmVyQ29uZmlnGAEgASgLMg0uU2VydmVyQ29uZmlnEhgKB1NlcnZlcnMYAiAD",
+          "KAsyBy5TZXJ2ZXISFAoFWm9uZXMYAyADKAsyBS5ab25lEiQKDVpvbmVMb2Nh",
+          "dGlvbnMYBCADKAsyDS5ab25lTG9jYXRpb24qPQoLU2VydmVyU3RhdGUSCQoF",
+          "U3RhcnQQABIJCgVSZWFkeRABEgsKB1J1bm5pbmcQAhILCgdPZmZsaW5lEANC",
+          "GFoWSU5TZXJ2ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::ServersReflection.Descriptor, global::ZonesReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ServerState), }, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::ServerStateReq), global::ServerStateReq.Parser, new[]{ "Info" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::StaticMapLocation), global::StaticMapLocation.Parser, new[]{ "MapID", "ServerID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ZoneLocation), global::ZoneLocation.Parser, new[]{ "ZoneID", "StaticMapLocations" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ServerStateResp), global::ServerStateResp.Parser, new[]{ "ServerType", "Message", "ServerConfig", "Servers", "Zones", "ZoneLocations" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ServerStateResp), global::ServerStateResp.Parser, new[]{ "ServerType", "Message", "ServerConfig", "ServerInfoList", "Servers", "Zones", "ZoneLocations" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ServerInfo), global::ServerInfo.Parser, new[]{ "ServerID", "Address", "State" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ServerInfoList), global::ServerInfoList.Parser, new[]{ "Servers" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::UpdateETC), global::UpdateETC.Parser, new[]{ "ServerConfig", "Servers", "Zones", "ZoneLocations" }, null, null, null)
@@ -534,6 +535,7 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
     serverType_ = other.serverType_;
     message_ = other.message_;
     serverConfig_ = other.serverConfig_ != null ? other.serverConfig_.Clone() : null;
+    serverInfoList_ = other.serverInfoList_.Clone();
     servers_ = other.servers_.Clone();
     zones_ = other.zones_.Clone();
     zoneLocations_ = other.zoneLocations_.Clone();
@@ -578,10 +580,20 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
     }
   }
 
+  /// <summary>Field number for the "ServerInfoList" field.</summary>
+  public const int ServerInfoListFieldNumber = 4;
+  private static readonly pb::FieldCodec<global::ServerInfo> _repeated_serverInfoList_codec
+      = pb::FieldCodec.ForMessage(34, global::ServerInfo.Parser);
+  private readonly pbc::RepeatedField<global::ServerInfo> serverInfoList_ = new pbc::RepeatedField<global::ServerInfo>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<global::ServerInfo> ServerInfoList {
+    get { return serverInfoList_; }
+  }
+
   /// <summary>Field number for the "Servers" field.</summary>
-  public const int ServersFieldNumber = 4;
+  public const int ServersFieldNumber = 5;
   private static readonly pb::FieldCodec<global::Server> _repeated_servers_codec
-      = pb::FieldCodec.ForMessage(34, global::Server.Parser);
+      = pb::FieldCodec.ForMessage(42, global::Server.Parser);
   private readonly pbc::RepeatedField<global::Server> servers_ = new pbc::RepeatedField<global::Server>();
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public pbc::RepeatedField<global::Server> Servers {
@@ -589,9 +601,9 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
   }
 
   /// <summary>Field number for the "Zones" field.</summary>
-  public const int ZonesFieldNumber = 5;
+  public const int ZonesFieldNumber = 6;
   private static readonly pb::FieldCodec<global::Zone> _repeated_zones_codec
-      = pb::FieldCodec.ForMessage(42, global::Zone.Parser);
+      = pb::FieldCodec.ForMessage(50, global::Zone.Parser);
   private readonly pbc::RepeatedField<global::Zone> zones_ = new pbc::RepeatedField<global::Zone>();
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public pbc::RepeatedField<global::Zone> Zones {
@@ -599,9 +611,9 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
   }
 
   /// <summary>Field number for the "ZoneLocations" field.</summary>
-  public const int ZoneLocationsFieldNumber = 6;
+  public const int ZoneLocationsFieldNumber = 7;
   private static readonly pb::FieldCodec<global::ZoneLocation> _repeated_zoneLocations_codec
-      = pb::FieldCodec.ForMessage(50, global::ZoneLocation.Parser);
+      = pb::FieldCodec.ForMessage(58, global::ZoneLocation.Parser);
   private readonly pbc::RepeatedField<global::ZoneLocation> zoneLocations_ = new pbc::RepeatedField<global::ZoneLocation>();
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public pbc::RepeatedField<global::ZoneLocation> ZoneLocations {
@@ -624,6 +636,7 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
     if (ServerType != other.ServerType) return false;
     if (Message != other.Message) return false;
     if (!object.Equals(ServerConfig, other.ServerConfig)) return false;
+    if(!serverInfoList_.Equals(other.serverInfoList_)) return false;
     if(!servers_.Equals(other.servers_)) return false;
     if(!zones_.Equals(other.zones_)) return false;
     if(!zoneLocations_.Equals(other.zoneLocations_)) return false;
@@ -636,6 +649,7 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
     if (ServerType.Length != 0) hash ^= ServerType.GetHashCode();
     if (Message.Length != 0) hash ^= Message.GetHashCode();
     if (serverConfig_ != null) hash ^= ServerConfig.GetHashCode();
+    hash ^= serverInfoList_.GetHashCode();
     hash ^= servers_.GetHashCode();
     hash ^= zones_.GetHashCode();
     hash ^= zoneLocations_.GetHashCode();
@@ -664,6 +678,7 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
       output.WriteRawTag(26);
       output.WriteMessage(ServerConfig);
     }
+    serverInfoList_.WriteTo(output, _repeated_serverInfoList_codec);
     servers_.WriteTo(output, _repeated_servers_codec);
     zones_.WriteTo(output, _repeated_zones_codec);
     zoneLocations_.WriteTo(output, _repeated_zoneLocations_codec);
@@ -684,6 +699,7 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
     if (serverConfig_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerConfig);
     }
+    size += serverInfoList_.CalculateSize(_repeated_serverInfoList_codec);
     size += servers_.CalculateSize(_repeated_servers_codec);
     size += zones_.CalculateSize(_repeated_zones_codec);
     size += zoneLocations_.CalculateSize(_repeated_zoneLocations_codec);
@@ -710,6 +726,7 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
       }
       ServerConfig.MergeFrom(other.ServerConfig);
     }
+    serverInfoList_.Add(other.serverInfoList_);
     servers_.Add(other.servers_);
     zones_.Add(other.zones_);
     zoneLocations_.Add(other.zoneLocations_);
@@ -740,14 +757,18 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
           break;
         }
         case 34: {
-          servers_.AddEntriesFrom(input, _repeated_servers_codec);
+          serverInfoList_.AddEntriesFrom(input, _repeated_serverInfoList_codec);
           break;
         }
         case 42: {
-          zones_.AddEntriesFrom(input, _repeated_zones_codec);
+          servers_.AddEntriesFrom(input, _repeated_servers_codec);
           break;
         }
         case 50: {
+          zones_.AddEntriesFrom(input, _repeated_zones_codec);
+          break;
+        }
+        case 58: {
           zoneLocations_.AddEntriesFrom(input, _repeated_zoneLocations_codec);
           break;
         }

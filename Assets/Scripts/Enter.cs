@@ -100,7 +100,42 @@ public class Enter : MonoBehaviour
 
     public void OnEnterGameClick()
     {
+        if (string.IsNullOrWhiteSpace(Roles.captionText.text))
+        {
+            Debug.Log("没有角色");
+            return;
+        }
+        var rolename = Roles.captionText.text;
+        var uuid = string.Empty;
+        foreach (var role in player.RoleList)
+        {
+            if (rolename == role.Name)
+            {
+                uuid = role.RoleUUID;
+            }
+        }
+        if (string.IsNullOrEmpty(uuid))
+        {
+            Debug.LogError("没有找到这个角色");
+            return;
+        }
 
+		var req = new RoleEnterReq();
+        req.RoleUUID = uuid;
+        NetworkMgr.Instance.Request(Command.RoleEnter, req.ToByteString(), OnRoleEnterCallback);
+    }
+
+    private void OnRoleEnterCallback(ByteString bytes)
+    {
+        var resp = RoleEnterResp.Parser.ParseFrom(bytes);
+        if (resp.Success)
+        {
+            Debug.Log("进入游戏成功");
+        }
+        else
+        {
+            Debug.Log("进入游戏失败");
+        }
     }
 
     public void OnCancelCreateRoleClick()

@@ -23,18 +23,18 @@ public static partial class ClientWorldReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "ChJjbGllbnQtd29ybGQucHJvdG8aCm1hdGgucHJvdG8aDGVudGl0eS5wcm90",
-          "byIfCgdNb3ZlSU5GEhQKAlRvGAEgASgLMgguVmVjdG9yMyIzCgdNb3ZlTlRG",
-          "EhIKCkVudGl0eVVVSUQYASABKAkSFAoCVG8YAiABKAsyCC5WZWN0b3IzIjwK",
-          "Ck5lYXJFbnRpdHkSEgoKRW50aXR5VVVJRBgBIAEoCRIaCghQb3NpdGlvbhgC",
-          "IAEoCzIILlZlY3RvcjMiMAoPTmVhckVudGl0aWVzTlRGEh0KCEVudGl0aWVz",
-          "GAEgAygLMgsuTmVhckVudGl0eSIkCg1FbnRpdHlEYXRhUmVxEhMKC0VudGl0",
-          "eVVVSURzGAEgAygJIi4KDUVudGl0eURhdGFSZXMSHQoIRW50aXRpZXMYASAD",
-          "KAsyCy5FbnRpdHlEYXRhQhhaFklOU2VydmVyL3NyYy9wcm90by9tc2diBnBy",
-          "b3RvMw=="));
+          "byI7CgdNb3ZlSU5GEhoKCFBvc2l0aW9uGAEgASgLMgguVmVjdG9yMxIUCgJU",
+          "bxgCIAEoCzIILlZlY3RvcjMiMwoHTW92ZU5URhISCgpFbnRpdHlVVUlEGAEg",
+          "ASgJEhQKAlRvGAIgASgLMgguVmVjdG9yMyI8CgpOZWFyRW50aXR5EhIKCkVu",
+          "dGl0eVVVSUQYASABKAkSGgoIUG9zaXRpb24YAiABKAsyCC5WZWN0b3IzIjAK",
+          "D05lYXJFbnRpdGllc05URhIdCghFbnRpdGllcxgBIAMoCzILLk5lYXJFbnRp",
+          "dHkiJAoNRW50aXR5RGF0YVJlcRITCgtFbnRpdHlVVUlEcxgBIAMoCSIuCg1F",
+          "bnRpdHlEYXRhUmVzEh0KCEVudGl0aWVzGAEgAygLMgsuRW50aXR5RGF0YUIY",
+          "WhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::MathReflection.Descriptor, global::EntityReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MoveINF), global::MoveINF.Parser, new[]{ "To" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::MoveINF), global::MoveINF.Parser, new[]{ "Position", "To" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::MoveNTF), global::MoveNTF.Parser, new[]{ "EntityUUID", "To" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::NearEntity), global::NearEntity.Parser, new[]{ "EntityUUID", "Position" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::NearEntitiesNTF), global::NearEntitiesNTF.Parser, new[]{ "Entities" }, null, null, null),
@@ -71,6 +71,7 @@ public sealed partial class MoveINF : pb::IMessage<MoveINF> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public MoveINF(MoveINF other) : this() {
+    position_ = other.position_ != null ? other.position_.Clone() : null;
     to_ = other.to_ != null ? other.to_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
@@ -80,8 +81,19 @@ public sealed partial class MoveINF : pb::IMessage<MoveINF> {
     return new MoveINF(this);
   }
 
+  /// <summary>Field number for the "Position" field.</summary>
+  public const int PositionFieldNumber = 1;
+  private global::Vector3 position_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Vector3 Position {
+    get { return position_; }
+    set {
+      position_ = value;
+    }
+  }
+
   /// <summary>Field number for the "To" field.</summary>
-  public const int ToFieldNumber = 1;
+  public const int ToFieldNumber = 2;
   private global::Vector3 to_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public global::Vector3 To {
@@ -104,6 +116,7 @@ public sealed partial class MoveINF : pb::IMessage<MoveINF> {
     if (ReferenceEquals(other, this)) {
       return true;
     }
+    if (!object.Equals(Position, other.Position)) return false;
     if (!object.Equals(To, other.To)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
@@ -111,6 +124,7 @@ public sealed partial class MoveINF : pb::IMessage<MoveINF> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
+    if (position_ != null) hash ^= Position.GetHashCode();
     if (to_ != null) hash ^= To.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
@@ -125,8 +139,12 @@ public sealed partial class MoveINF : pb::IMessage<MoveINF> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (to_ != null) {
+    if (position_ != null) {
       output.WriteRawTag(10);
+      output.WriteMessage(Position);
+    }
+    if (to_ != null) {
+      output.WriteRawTag(18);
       output.WriteMessage(To);
     }
     if (_unknownFields != null) {
@@ -137,6 +155,9 @@ public sealed partial class MoveINF : pb::IMessage<MoveINF> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
+    if (position_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
+    }
     if (to_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(To);
     }
@@ -150,6 +171,12 @@ public sealed partial class MoveINF : pb::IMessage<MoveINF> {
   public void MergeFrom(MoveINF other) {
     if (other == null) {
       return;
+    }
+    if (other.position_ != null) {
+      if (position_ == null) {
+        Position = new global::Vector3();
+      }
+      Position.MergeFrom(other.Position);
     }
     if (other.to_ != null) {
       if (to_ == null) {
@@ -169,6 +196,13 @@ public sealed partial class MoveINF : pb::IMessage<MoveINF> {
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
+          if (position_ == null) {
+            Position = new global::Vector3();
+          }
+          input.ReadMessage(Position);
+          break;
+        }
+        case 18: {
           if (to_ == null) {
             To = new global::Vector3();
           }

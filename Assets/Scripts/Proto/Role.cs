@@ -22,18 +22,18 @@ public static partial class RoleReflection {
   static RoleReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cgpyb2xlLnByb3RvGgxlbnRpdHkucHJvdG8iUAoPUm9sZVN1bW1hcnlEYXRh",
-          "EgwKBE5hbWUYASABKAkSDAoEWm9uZRgCIAEoBRIPCgdNYXBVVUlEGAMgASgJ",
-          "EhAKCE1haWxVVUlEGAQgASgJIjEKDlJvbGVPbmxpbmVEYXRhEh8KCkVudGl0",
-          "eURhdGEYASABKAsyCy5FbnRpdHlEYXRhIi0KEFJvbGVSZWFsdGltZURhdGES",
-          "GQoRTGFzdFN0YXRpY01hcFVVSUQYASABKAkiUgoEUm9sZRIlCgtTdW1tYXJ5",
-          "RGF0YRgBIAEoCzIQLlJvbGVTdW1tYXJ5RGF0YRIjCgpPbmxpbmVEYXRhGAIg",
-          "ASgLMg8uUm9sZU9ubGluZURhdGFCGVoXSU5TZXJ2ZXIvc3JjL3Byb3RvL2Rh",
-          "dGFiBnByb3RvMw=="));
+          "Cgpyb2xlLnByb3RvGgxlbnRpdHkucHJvdG8iYgoPUm9sZVN1bW1hcnlEYXRh",
+          "EgwKBE5hbWUYASABKAkSDAoEWm9uZRgCIAEoBRIQCghSb2xlVVVJRBgDIAEo",
+          "CRIPCgdNYXBVVUlEGAQgASgJEhAKCE1haWxVVUlEGAUgASgJIjEKDlJvbGVP",
+          "bmxpbmVEYXRhEh8KCkVudGl0eURhdGEYASABKAsyCy5FbnRpdHlEYXRhIi0K",
+          "EFJvbGVSZWFsdGltZURhdGESGQoRTGFzdFN0YXRpY01hcFVVSUQYASABKAki",
+          "UgoEUm9sZRIlCgtTdW1tYXJ5RGF0YRgBIAEoCzIQLlJvbGVTdW1tYXJ5RGF0",
+          "YRIjCgpPbmxpbmVEYXRhGAIgASgLMg8uUm9sZU9ubGluZURhdGFCGVoXSU5T",
+          "ZXJ2ZXIvc3JjL3Byb3RvL2RhdGFiBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::EntityReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::RoleSummaryData), global::RoleSummaryData.Parser, new[]{ "Name", "Zone", "MapUUID", "MailUUID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RoleSummaryData), global::RoleSummaryData.Parser, new[]{ "Name", "Zone", "RoleUUID", "MapUUID", "MailUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleOnlineData), global::RoleOnlineData.Parser, new[]{ "EntityData" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleRealtimeData), global::RoleRealtimeData.Parser, new[]{ "LastStaticMapUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Role), global::Role.Parser, new[]{ "SummaryData", "OnlineData" }, null, null, null)
@@ -73,6 +73,7 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
   public RoleSummaryData(RoleSummaryData other) : this() {
     name_ = other.name_;
     zone_ = other.zone_;
+    roleUUID_ = other.roleUUID_;
     mapUUID_ = other.mapUUID_;
     mailUUID_ = other.mailUUID_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -111,8 +112,22 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
     }
   }
 
+  /// <summary>Field number for the "RoleUUID" field.</summary>
+  public const int RoleUUIDFieldNumber = 3;
+  private string roleUUID_ = "";
+  /// <summary>
+  /// UUID
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string RoleUUID {
+    get { return roleUUID_; }
+    set {
+      roleUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   /// <summary>Field number for the "MapUUID" field.</summary>
-  public const int MapUUIDFieldNumber = 3;
+  public const int MapUUIDFieldNumber = 4;
   private string mapUUID_ = "";
   /// <summary>
   /// 所在地图
@@ -126,7 +141,7 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
   }
 
   /// <summary>Field number for the "MailUUID" field.</summary>
-  public const int MailUUIDFieldNumber = 4;
+  public const int MailUUIDFieldNumber = 5;
   private string mailUUID_ = "";
   /// <summary>
   /// 邮件地址
@@ -154,6 +169,7 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
     }
     if (Name != other.Name) return false;
     if (Zone != other.Zone) return false;
+    if (RoleUUID != other.RoleUUID) return false;
     if (MapUUID != other.MapUUID) return false;
     if (MailUUID != other.MailUUID) return false;
     return Equals(_unknownFields, other._unknownFields);
@@ -164,6 +180,7 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
     int hash = 1;
     if (Name.Length != 0) hash ^= Name.GetHashCode();
     if (Zone != 0) hash ^= Zone.GetHashCode();
+    if (RoleUUID.Length != 0) hash ^= RoleUUID.GetHashCode();
     if (MapUUID.Length != 0) hash ^= MapUUID.GetHashCode();
     if (MailUUID.Length != 0) hash ^= MailUUID.GetHashCode();
     if (_unknownFields != null) {
@@ -187,12 +204,16 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
       output.WriteRawTag(16);
       output.WriteInt32(Zone);
     }
-    if (MapUUID.Length != 0) {
+    if (RoleUUID.Length != 0) {
       output.WriteRawTag(26);
+      output.WriteString(RoleUUID);
+    }
+    if (MapUUID.Length != 0) {
+      output.WriteRawTag(34);
       output.WriteString(MapUUID);
     }
     if (MailUUID.Length != 0) {
-      output.WriteRawTag(34);
+      output.WriteRawTag(42);
       output.WriteString(MailUUID);
     }
     if (_unknownFields != null) {
@@ -208,6 +229,9 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
     }
     if (Zone != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(Zone);
+    }
+    if (RoleUUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RoleUUID);
     }
     if (MapUUID.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(MapUUID);
@@ -231,6 +255,9 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
     }
     if (other.Zone != 0) {
       Zone = other.Zone;
+    }
+    if (other.RoleUUID.Length != 0) {
+      RoleUUID = other.RoleUUID;
     }
     if (other.MapUUID.Length != 0) {
       MapUUID = other.MapUUID;
@@ -258,10 +285,14 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
           break;
         }
         case 26: {
-          MapUUID = input.ReadString();
+          RoleUUID = input.ReadString();
           break;
         }
         case 34: {
+          MapUUID = input.ReadString();
+          break;
+        }
+        case 42: {
           MailUUID = input.ReadString();
           break;
         }
