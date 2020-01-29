@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class Enter : MonoBehaviour
 {
@@ -131,6 +132,8 @@ public class Enter : MonoBehaviour
         if (resp.Success)
         {
             Debug.Log("进入游戏成功");
+            var map = string.Format("Map{0}", resp.MapID);
+            SceneManager.LoadScene(map, LoadSceneMode.Single);
         }
         else
         {

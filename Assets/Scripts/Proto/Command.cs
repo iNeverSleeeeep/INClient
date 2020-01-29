@@ -22,7 +22,7 @@ public static partial class CommandReflection {
   static CommandReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg1jb21tYW5kLnByb3RvKuMECgdDb21tYW5kEg4KCktFRVBfQUxJVkUQABII",
+          "Cg1jb21tYW5kLnByb3RvKvIFCgdDb21tYW5kEg4KCktFRVBfQUxJVkUQABII",
           "CgRSRVNQEAESCAoER0FURRACEhAKDFNFUlZFUl9TVEFURRADEhcKE1NFUlZF",
           "Ul9MSVNUX0NIQU5HRUQQBBIQCgxTRVJWRVJfUkVTRVQQBRIUChBDT05ORUNU",
           "X0dBVEVfUkVREAYSFAoQU0VTU0lPTl9DRVJUX05URhAHEg4KCkNDSEFUX0NI",
@@ -35,8 +35,11 @@ public static partial class CommandReflection {
           "RVJfQUREUkVTU19OVEYQFRIdChlSRU1PVkVfUExBWUVSX0FERFJFU1NfTlRG",
           "EBYSGgoWVVBEQVRFX01BUF9BRERSRVNTX05URhAXEhoKFlJFTU9WRV9NQVBf",
           "QUREUkVTU19OVEYQGBIXChNHRVRfTUFQX0FERFJFU1NfUkVREBkSFwoTTE9B",
-          "RF9TVEFUSUNfTUFQX1JFURAaEhgKFExPQURfRFlOQU1JQ19NQVBfUkVREBtC",
-          "GFoWSU5TZXJ2ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
+          "RF9TVEFUSUNfTUFQX1JFURAaEhgKFExPQURfRFlOQU1JQ19NQVBfUkVREBsS",
+          "HgoaVVBEQVRFX1NUQVRJQ19NQVBfVVVJRF9OVEYQHBIbChdHRVRfU1RBVElD",
+          "X01BUF9VVUlEX1JFURAdEhcKE1NBVkVfU1RBVElDX01BUF9SRVEQHhIYChRT",
+          "QVZFX0RZTkFNSUNfTUFQX1JFURAfEg0KCVNBVkVfUk9MRRAgEg4KCkdFVF9N",
+          "QVBfSUQQIUIYWhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Command), }, null));
@@ -155,6 +158,30 @@ public enum Command {
   /// world -> database
   /// </summary>
   [pbr::OriginalName("LOAD_DYNAMIC_MAP_REQ")] LoadDynamicMapReq = 27,
+  /// <summary>
+  /// world -> gps
+  /// </summary>
+  [pbr::OriginalName("UPDATE_STATIC_MAP_UUID_NTF")] UpdateStaticMapUuidNtf = 28,
+  /// <summary>
+  /// any -> gps
+  /// </summary>
+  [pbr::OriginalName("GET_STATIC_MAP_UUID_REQ")] GetStaticMapUuidReq = 29,
+  /// <summary>
+  /// any -> database
+  /// </summary>
+  [pbr::OriginalName("SAVE_STATIC_MAP_REQ")] SaveStaticMapReq = 30,
+  /// <summary>
+  /// any -> database
+  /// </summary>
+  [pbr::OriginalName("SAVE_DYNAMIC_MAP_REQ")] SaveDynamicMapReq = 31,
+  /// <summary>
+  /// any -> database
+  /// </summary>
+  [pbr::OriginalName("SAVE_ROLE")] SaveRole = 32,
+  /// <summary>
+  /// gate -> world
+  /// </summary>
+  [pbr::OriginalName("GET_MAP_ID")] GetMapId = 33,
 }
 
 #endregion

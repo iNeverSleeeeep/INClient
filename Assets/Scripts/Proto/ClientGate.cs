@@ -22,25 +22,26 @@ public static partial class ClientGateReflection {
   static ClientGateReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFjbGllbnQtZ2F0ZS5wcm90bxoNY29tbWFuZC5wcm90bxoMcGxheWVyLnBy",
-          "b3RvIigKC1Nlc3Npb25DZXJ0EgwKBFVVSUQYASABKAkSCwoDS2V5GAIgASgJ",
-          "IjMKDkNvbm5lY3RHYXRlUmVxEiEKC1Nlc3Npb25DZXJ0GAEgASgLMgwuU2Vz",
-          "c2lvbkNlcnQiOwoPQ29ubmVjdEdhdGVSZXNwEg8KB1N1Y2Nlc3MYASABKAgS",
-          "FwoGUGxheWVyGAIgASgLMgcuUGxheWVyIiAKDFJvbGVFbnRlclJlcRIQCghS",
-          "b2xlVVVJRBgBIAEoCSIgCg1Sb2xlRW50ZXJSZXNwEg8KB1N1Y2Nlc3MYASAB",
-          "KAgiXAoMQ2xpZW50VG9HYXRlEhkKB0NvbW1hbmQYASABKA4yCC5Db21tYW5k",
-          "EhAKCFNlcXVlbmNlGAIgASgEEg8KB1JlcXVlc3QYAyABKAwSDgoGTm90aWZ5",
-          "GAQgASgMIksKDEdhdGVUb0NsaWVudBIZCgdDb21tYW5kGAEgASgOMgguQ29t",
-          "bWFuZBIQCghTZXF1ZW5jZRgCIAEoBBIOCgZCdWZmZXIYAyABKAxCGFoWSU5T",
-          "ZXJ2ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
+          "ChFjbGllbnQtZ2F0ZS5wcm90bxoNY29tbWFuZC5wcm90bxoRZGF0YS5wbGF5",
+          "ZXIucHJvdG8iKAoLU2Vzc2lvbkNlcnQSDAoEVVVJRBgBIAEoCRILCgNLZXkY",
+          "AiABKAkiMwoOQ29ubmVjdEdhdGVSZXESIQoLU2Vzc2lvbkNlcnQYASABKAsy",
+          "DC5TZXNzaW9uQ2VydCI7Cg9Db25uZWN0R2F0ZVJlc3ASDwoHU3VjY2VzcxgB",
+          "IAEoCBIXCgZQbGF5ZXIYAiABKAsyBy5QbGF5ZXIiIAoMUm9sZUVudGVyUmVx",
+          "EhAKCFJvbGVVVUlEGAEgASgJIi8KDVJvbGVFbnRlclJlc3ASDwoHU3VjY2Vz",
+          "cxgBIAEoCBINCgVNYXBJRBgCIAEoBSJcCgxDbGllbnRUb0dhdGUSGQoHQ29t",
+          "bWFuZBgBIAEoDjIILkNvbW1hbmQSEAoIU2VxdWVuY2UYAiABKAQSDwoHUmVx",
+          "dWVzdBgDIAEoDBIOCgZOb3RpZnkYBCABKAwiSwoMR2F0ZVRvQ2xpZW50EhkK",
+          "B0NvbW1hbmQYASABKA4yCC5Db21tYW5kEhAKCFNlcXVlbmNlGAIgASgEEg4K",
+          "BkJ1ZmZlchgDIAEoDEIYWhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90",
+          "bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CommandReflection.Descriptor, global::PlayerReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::CommandReflection.Descriptor, global::DataPlayerReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::SessionCert), global::SessionCert.Parser, new[]{ "UUID", "Key" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ConnectGateReq), global::ConnectGateReq.Parser, new[]{ "SessionCert" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ConnectGateResp), global::ConnectGateResp.Parser, new[]{ "Success", "Player" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleEnterReq), global::RoleEnterReq.Parser, new[]{ "RoleUUID" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::RoleEnterResp), global::RoleEnterResp.Parser, new[]{ "Success" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RoleEnterResp), global::RoleEnterResp.Parser, new[]{ "Success", "MapID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ClientToGate), global::ClientToGate.Parser, new[]{ "Command", "Sequence", "Request", "Notify" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::GateToClient), global::GateToClient.Parser, new[]{ "Command", "Sequence", "Buffer" }, null, null, null)
         }));
@@ -659,6 +660,7 @@ public sealed partial class RoleEnterResp : pb::IMessage<RoleEnterResp> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public RoleEnterResp(RoleEnterResp other) : this() {
     success_ = other.success_;
+    mapID_ = other.mapID_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -678,6 +680,17 @@ public sealed partial class RoleEnterResp : pb::IMessage<RoleEnterResp> {
     }
   }
 
+  /// <summary>Field number for the "MapID" field.</summary>
+  public const int MapIDFieldNumber = 2;
+  private int mapID_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int MapID {
+    get { return mapID_; }
+    set {
+      mapID_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as RoleEnterResp);
@@ -692,6 +705,7 @@ public sealed partial class RoleEnterResp : pb::IMessage<RoleEnterResp> {
       return true;
     }
     if (Success != other.Success) return false;
+    if (MapID != other.MapID) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -699,6 +713,7 @@ public sealed partial class RoleEnterResp : pb::IMessage<RoleEnterResp> {
   public override int GetHashCode() {
     int hash = 1;
     if (Success != false) hash ^= Success.GetHashCode();
+    if (MapID != 0) hash ^= MapID.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -716,6 +731,10 @@ public sealed partial class RoleEnterResp : pb::IMessage<RoleEnterResp> {
       output.WriteRawTag(8);
       output.WriteBool(Success);
     }
+    if (MapID != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(MapID);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -726,6 +745,9 @@ public sealed partial class RoleEnterResp : pb::IMessage<RoleEnterResp> {
     int size = 0;
     if (Success != false) {
       size += 1 + 1;
+    }
+    if (MapID != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(MapID);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -741,6 +763,9 @@ public sealed partial class RoleEnterResp : pb::IMessage<RoleEnterResp> {
     if (other.Success != false) {
       Success = other.Success;
     }
+    if (other.MapID != 0) {
+      MapID = other.MapID;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -754,6 +779,10 @@ public sealed partial class RoleEnterResp : pb::IMessage<RoleEnterResp> {
           break;
         case 8: {
           Success = input.ReadBool();
+          break;
+        }
+        case 16: {
+          MapID = input.ReadInt32();
           break;
         }
       }

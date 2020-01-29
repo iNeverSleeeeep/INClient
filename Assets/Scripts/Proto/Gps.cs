@@ -22,19 +22,24 @@ public static partial class GpsReflection {
   static GpsReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CglncHMucHJvdG8aDHBsYXllci5wcm90byJtCgVUaGluZxIOCgZCdWZmZXIY",
-          "ASABKAwSFAoMVG9QbGF5ZXJVVUlEGAIgASgJEhEKCVRvV29ybGRJRBgDIAEo",
-          "BRIRCglUb01hcFVVSUQYBCABKAUSGAoQVG9QbGF5ZXJVVUlETGlzdBgFIAMo",
-          "CSJfChZVcGRhdGVQbGF5ZXJBZGRyZXNzTlRGEhIKClBsYXllclVVSUQYASAB",
-          "KAkSEAoIUm9sZVVVSUQYAiABKAkSHwoHQWRkcmVzcxgDIAEoCzIOLlBsYXll",
-          "ckFkZHJlc3MiLAoWUmVtb3ZlUGxheWVyQWRkcmVzc05URhISCgpQbGF5ZXJV",
-          "VUlEGAEgASgJIjgKE1VwZGF0ZU1hcEFkZHJlc3NOVEYSDwoHTWFwVVVJRBgB",
-          "IAEoCRIQCghTZXJ2ZXJJRBgCIAEoBSImChNSZW1vdmVNYXBBZGRyZXNzTlRG",
-          "Eg8KB01hcFVVSUQYASABKAkiIwoQR2V0TWFwQWRkcmVzc1JlcRIPCgdNYXBV",
-          "VUlEGAEgASgJIiUKEUdldE1hcEFkZHJlc3NSZXNwEhAKCFNlcnZlcklEGAEg",
-          "ASgFQhhaFklOU2VydmVyL3NyYy9wcm90by9tc2diBnByb3RvMw=="));
+          "CglncHMucHJvdG8aEWRhdGEucGxheWVyLnByb3RvIm0KBVRoaW5nEg4KBkJ1",
+          "ZmZlchgBIAEoDBIUCgxUb1BsYXllclVVSUQYAiABKAkSEQoJVG9Xb3JsZElE",
+          "GAMgASgFEhEKCVRvTWFwVVVJRBgEIAEoBRIYChBUb1BsYXllclVVSURMaXN0",
+          "GAUgAygJIl8KFlVwZGF0ZVBsYXllckFkZHJlc3NOVEYSEgoKUGxheWVyVVVJ",
+          "RBgBIAEoCRIQCghSb2xlVVVJRBgCIAEoCRIfCgdBZGRyZXNzGAMgASgLMg4u",
+          "UGxheWVyQWRkcmVzcyIsChZSZW1vdmVQbGF5ZXJBZGRyZXNzTlRGEhIKClBs",
+          "YXllclVVSUQYASABKAkiOAoTVXBkYXRlTWFwQWRkcmVzc05URhIPCgdNYXBV",
+          "VUlEGAEgASgJEhAKCFNlcnZlcklEGAIgASgFIiYKE1JlbW92ZU1hcEFkZHJl",
+          "c3NOVEYSDwoHTWFwVVVJRBgBIAEoCSIjChBHZXRNYXBBZGRyZXNzUmVxEg8K",
+          "B01hcFVVSUQYASABKAkiJQoRR2V0TWFwQWRkcmVzc1Jlc3ASEAoIU2VydmVy",
+          "SUQYASABKAUiVAoWVXBkYXRlU3RhdGljTWFwVVVJRE5URhIOCgZab25lSUQY",
+          "ASABKAUSEwoLU3RhdGljTWFwSUQYAiABKAUSFQoNU3RhdGljTWFwVVVJRBgD",
+          "IAEoCSI6ChNHZXRTdGF0aWNNYXBVVUlEUmVxEg4KBlpvbmVJRBgBIAEoBRIT",
+          "CgtTdGF0aWNNYXBJRBgCIAEoBSItChRHZXRTdGF0aWNNYXBVVUlEUmVzcBIV",
+          "Cg1TdGF0aWNNYXBVVUlEGAEgASgJQhhaFklOU2VydmVyL3NyYy9wcm90by9t",
+          "c2diBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::PlayerReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::DataPlayerReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::Thing), global::Thing.Parser, new[]{ "Buffer", "ToPlayerUUID", "ToWorldID", "ToMapUUID", "ToPlayerUUIDList" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::UpdatePlayerAddressNTF), global::UpdatePlayerAddressNTF.Parser, new[]{ "PlayerUUID", "RoleUUID", "Address" }, null, null, null),
@@ -42,7 +47,10 @@ public static partial class GpsReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::UpdateMapAddressNTF), global::UpdateMapAddressNTF.Parser, new[]{ "MapUUID", "ServerID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RemoveMapAddressNTF), global::RemoveMapAddressNTF.Parser, new[]{ "MapUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::GetMapAddressReq), global::GetMapAddressReq.Parser, new[]{ "MapUUID" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::GetMapAddressResp), global::GetMapAddressResp.Parser, new[]{ "ServerID" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::GetMapAddressResp), global::GetMapAddressResp.Parser, new[]{ "ServerID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::UpdateStaticMapUUIDNTF), global::UpdateStaticMapUUIDNTF.Parser, new[]{ "ZoneID", "StaticMapID", "StaticMapUUID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GetStaticMapUUIDReq), global::GetStaticMapUUIDReq.Parser, new[]{ "ZoneID", "StaticMapID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GetStaticMapUUIDResp), global::GetStaticMapUUIDResp.Parser, new[]{ "StaticMapUUID" }, null, null, null)
         }));
   }
   #endregion
@@ -1138,6 +1146,477 @@ public sealed partial class GetMapAddressResp : pb::IMessage<GetMapAddressResp> 
           break;
         case 8: {
           ServerID = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class UpdateStaticMapUUIDNTF : pb::IMessage<UpdateStaticMapUUIDNTF> {
+  private static readonly pb::MessageParser<UpdateStaticMapUUIDNTF> _parser = new pb::MessageParser<UpdateStaticMapUUIDNTF>(() => new UpdateStaticMapUUIDNTF());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<UpdateStaticMapUUIDNTF> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::GpsReflection.Descriptor.MessageTypes[7]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public UpdateStaticMapUUIDNTF() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public UpdateStaticMapUUIDNTF(UpdateStaticMapUUIDNTF other) : this() {
+    zoneID_ = other.zoneID_;
+    staticMapID_ = other.staticMapID_;
+    staticMapUUID_ = other.staticMapUUID_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public UpdateStaticMapUUIDNTF Clone() {
+    return new UpdateStaticMapUUIDNTF(this);
+  }
+
+  /// <summary>Field number for the "ZoneID" field.</summary>
+  public const int ZoneIDFieldNumber = 1;
+  private int zoneID_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int ZoneID {
+    get { return zoneID_; }
+    set {
+      zoneID_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "StaticMapID" field.</summary>
+  public const int StaticMapIDFieldNumber = 2;
+  private int staticMapID_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int StaticMapID {
+    get { return staticMapID_; }
+    set {
+      staticMapID_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "StaticMapUUID" field.</summary>
+  public const int StaticMapUUIDFieldNumber = 3;
+  private string staticMapUUID_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string StaticMapUUID {
+    get { return staticMapUUID_; }
+    set {
+      staticMapUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as UpdateStaticMapUUIDNTF);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(UpdateStaticMapUUIDNTF other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (ZoneID != other.ZoneID) return false;
+    if (StaticMapID != other.StaticMapID) return false;
+    if (StaticMapUUID != other.StaticMapUUID) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (ZoneID != 0) hash ^= ZoneID.GetHashCode();
+    if (StaticMapID != 0) hash ^= StaticMapID.GetHashCode();
+    if (StaticMapUUID.Length != 0) hash ^= StaticMapUUID.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (ZoneID != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(ZoneID);
+    }
+    if (StaticMapID != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(StaticMapID);
+    }
+    if (StaticMapUUID.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(StaticMapUUID);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (ZoneID != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ZoneID);
+    }
+    if (StaticMapID != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(StaticMapID);
+    }
+    if (StaticMapUUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(StaticMapUUID);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(UpdateStaticMapUUIDNTF other) {
+    if (other == null) {
+      return;
+    }
+    if (other.ZoneID != 0) {
+      ZoneID = other.ZoneID;
+    }
+    if (other.StaticMapID != 0) {
+      StaticMapID = other.StaticMapID;
+    }
+    if (other.StaticMapUUID.Length != 0) {
+      StaticMapUUID = other.StaticMapUUID;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          ZoneID = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          StaticMapID = input.ReadInt32();
+          break;
+        }
+        case 26: {
+          StaticMapUUID = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class GetStaticMapUUIDReq : pb::IMessage<GetStaticMapUUIDReq> {
+  private static readonly pb::MessageParser<GetStaticMapUUIDReq> _parser = new pb::MessageParser<GetStaticMapUUIDReq>(() => new GetStaticMapUUIDReq());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<GetStaticMapUUIDReq> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::GpsReflection.Descriptor.MessageTypes[8]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GetStaticMapUUIDReq() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GetStaticMapUUIDReq(GetStaticMapUUIDReq other) : this() {
+    zoneID_ = other.zoneID_;
+    staticMapID_ = other.staticMapID_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GetStaticMapUUIDReq Clone() {
+    return new GetStaticMapUUIDReq(this);
+  }
+
+  /// <summary>Field number for the "ZoneID" field.</summary>
+  public const int ZoneIDFieldNumber = 1;
+  private int zoneID_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int ZoneID {
+    get { return zoneID_; }
+    set {
+      zoneID_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "StaticMapID" field.</summary>
+  public const int StaticMapIDFieldNumber = 2;
+  private int staticMapID_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int StaticMapID {
+    get { return staticMapID_; }
+    set {
+      staticMapID_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as GetStaticMapUUIDReq);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(GetStaticMapUUIDReq other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (ZoneID != other.ZoneID) return false;
+    if (StaticMapID != other.StaticMapID) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (ZoneID != 0) hash ^= ZoneID.GetHashCode();
+    if (StaticMapID != 0) hash ^= StaticMapID.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (ZoneID != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(ZoneID);
+    }
+    if (StaticMapID != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(StaticMapID);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (ZoneID != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ZoneID);
+    }
+    if (StaticMapID != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(StaticMapID);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(GetStaticMapUUIDReq other) {
+    if (other == null) {
+      return;
+    }
+    if (other.ZoneID != 0) {
+      ZoneID = other.ZoneID;
+    }
+    if (other.StaticMapID != 0) {
+      StaticMapID = other.StaticMapID;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          ZoneID = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          StaticMapID = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class GetStaticMapUUIDResp : pb::IMessage<GetStaticMapUUIDResp> {
+  private static readonly pb::MessageParser<GetStaticMapUUIDResp> _parser = new pb::MessageParser<GetStaticMapUUIDResp>(() => new GetStaticMapUUIDResp());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<GetStaticMapUUIDResp> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::GpsReflection.Descriptor.MessageTypes[9]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GetStaticMapUUIDResp() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GetStaticMapUUIDResp(GetStaticMapUUIDResp other) : this() {
+    staticMapUUID_ = other.staticMapUUID_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public GetStaticMapUUIDResp Clone() {
+    return new GetStaticMapUUIDResp(this);
+  }
+
+  /// <summary>Field number for the "StaticMapUUID" field.</summary>
+  public const int StaticMapUUIDFieldNumber = 1;
+  private string staticMapUUID_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string StaticMapUUID {
+    get { return staticMapUUID_; }
+    set {
+      staticMapUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as GetStaticMapUUIDResp);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(GetStaticMapUUIDResp other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (StaticMapUUID != other.StaticMapUUID) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (StaticMapUUID.Length != 0) hash ^= StaticMapUUID.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (StaticMapUUID.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(StaticMapUUID);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (StaticMapUUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(StaticMapUUID);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(GetStaticMapUUIDResp other) {
+    if (other == null) {
+      return;
+    }
+    if (other.StaticMapUUID.Length != 0) {
+      StaticMapUUID = other.StaticMapUUID;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          StaticMapUUID = input.ReadString();
           break;
         }
       }

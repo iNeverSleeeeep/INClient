@@ -22,25 +22,34 @@ public static partial class DatabaseReflection {
   static DatabaseReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg5kYXRhYmFzZS5wcm90byJ/CghEYXRhYmFzZRIKCgJJUBgBIAEoCRIQCghV",
-          "c2VyTmFtZRgCIAEoCRIQCghQYXNzd29yZBgDIAEoCRIXCg9Db25uTWF4TGlm",
-          "ZXRpbWUYBCABKAMSFAoMTWF4T3BlbkNvbm5zGAUgASgFEhQKDE1heElkbGVD",
-          "b25ucxgGIAEoBUIYWhZJTlNlcnZlci9zcmMvcHJvdG8vZXRjYgZwcm90bzM="));
+          "Cg5kYXRhYmFzZS5wcm90bxoOZGF0YS5tYXAucHJvdG8aD2RhdGEucm9sZS5w",
+          "cm90byIwChBTYXZlU3RhdGljTWFwUmVxEhwKClN0YXRpY01hcHMYASADKAsy",
+          "CC5NYXBEYXRhIiQKEVNhdmVTdGF0aWNNYXBSZXNwEg8KB1N1Y2Nlc3MYASAB",
+          "KAgiIwoLU2F2ZVJvbGVSZXESFAoFUm9sZXMYASADKAsyBS5Sb2xlIh8KDFNh",
+          "dmVSb2xlUmVzcBIPCgdTdWNjZXNzGAEgASgIIjIKEVNhdmVEeW5hbWljTWFw",
+          "UmVxEh0KC0R5bmFtaWNNYXBzGAEgAygLMgguTWFwRGF0YSIlChJTYXZlRHlu",
+          "YW1pY01hcFJlc3ASDwoHU3VjY2VzcxgBIAEoCEIYWhZJTlNlcnZlci9zcmMv",
+          "cHJvdG8vbXNnYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { },
+        new pbr::FileDescriptor[] { global::DataMapReflection.Descriptor, global::DataRoleReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::Database), global::Database.Parser, new[]{ "IP", "UserName", "Password", "ConnMaxLifetime", "MaxOpenConns", "MaxIdleConns" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::SaveStaticMapReq), global::SaveStaticMapReq.Parser, new[]{ "StaticMaps" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::SaveStaticMapResp), global::SaveStaticMapResp.Parser, new[]{ "Success" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::SaveRoleReq), global::SaveRoleReq.Parser, new[]{ "Roles" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::SaveRoleResp), global::SaveRoleResp.Parser, new[]{ "Success" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::SaveDynamicMapReq), global::SaveDynamicMapReq.Parser, new[]{ "DynamicMaps" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::SaveDynamicMapResp), global::SaveDynamicMapResp.Parser, new[]{ "Success" }, null, null, null)
         }));
   }
   #endregion
 
 }
 #region Messages
-public sealed partial class Database : pb::IMessage<Database> {
-  private static readonly pb::MessageParser<Database> _parser = new pb::MessageParser<Database>(() => new Database());
+public sealed partial class SaveStaticMapReq : pb::IMessage<SaveStaticMapReq> {
+  private static readonly pb::MessageParser<SaveStaticMapReq> _parser = new pb::MessageParser<SaveStaticMapReq>(() => new SaveStaticMapReq());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<Database> Parser { get { return _parser; } }
+  public static pb::MessageParser<SaveStaticMapReq> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -53,143 +62,54 @@ public sealed partial class Database : pb::IMessage<Database> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public Database() {
+  public SaveStaticMapReq() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public Database(Database other) : this() {
-    iP_ = other.iP_;
-    userName_ = other.userName_;
-    password_ = other.password_;
-    connMaxLifetime_ = other.connMaxLifetime_;
-    maxOpenConns_ = other.maxOpenConns_;
-    maxIdleConns_ = other.maxIdleConns_;
+  public SaveStaticMapReq(SaveStaticMapReq other) : this() {
+    staticMaps_ = other.staticMaps_.Clone();
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public Database Clone() {
-    return new Database(this);
+  public SaveStaticMapReq Clone() {
+    return new SaveStaticMapReq(this);
   }
 
-  /// <summary>Field number for the "IP" field.</summary>
-  public const int IPFieldNumber = 1;
-  private string iP_ = "";
-  /// <summary>
-  /// 数据库IP地址
-  /// </summary>
+  /// <summary>Field number for the "StaticMaps" field.</summary>
+  public const int StaticMapsFieldNumber = 1;
+  private static readonly pb::FieldCodec<global::MapData> _repeated_staticMaps_codec
+      = pb::FieldCodec.ForMessage(10, global::MapData.Parser);
+  private readonly pbc::RepeatedField<global::MapData> staticMaps_ = new pbc::RepeatedField<global::MapData>();
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string IP {
-    get { return iP_; }
-    set {
-      iP_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "UserName" field.</summary>
-  public const int UserNameFieldNumber = 2;
-  private string userName_ = "";
-  /// <summary>
-  /// 用户名
-  /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string UserName {
-    get { return userName_; }
-    set {
-      userName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "Password" field.</summary>
-  public const int PasswordFieldNumber = 3;
-  private string password_ = "";
-  /// <summary>
-  /// 密码
-  /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string Password {
-    get { return password_; }
-    set {
-      password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "ConnMaxLifetime" field.</summary>
-  public const int ConnMaxLifetimeFieldNumber = 4;
-  private long connMaxLifetime_;
-  /// <summary>
-  /// 最大连接周期，超过时间的连接就close 单位秒
-  /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public long ConnMaxLifetime {
-    get { return connMaxLifetime_; }
-    set {
-      connMaxLifetime_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "MaxOpenConns" field.</summary>
-  public const int MaxOpenConnsFieldNumber = 5;
-  private int maxOpenConns_;
-  /// <summary>
-  /// 最大连接数
-  /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int MaxOpenConns {
-    get { return maxOpenConns_; }
-    set {
-      maxOpenConns_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "MaxIdleConns" field.</summary>
-  public const int MaxIdleConnsFieldNumber = 6;
-  private int maxIdleConns_;
-  /// <summary>
-  /// 闲置连接数
-  /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int MaxIdleConns {
-    get { return maxIdleConns_; }
-    set {
-      maxIdleConns_ = value;
-    }
+  public pbc::RepeatedField<global::MapData> StaticMaps {
+    get { return staticMaps_; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as Database);
+    return Equals(other as SaveStaticMapReq);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(Database other) {
+  public bool Equals(SaveStaticMapReq other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (IP != other.IP) return false;
-    if (UserName != other.UserName) return false;
-    if (Password != other.Password) return false;
-    if (ConnMaxLifetime != other.ConnMaxLifetime) return false;
-    if (MaxOpenConns != other.MaxOpenConns) return false;
-    if (MaxIdleConns != other.MaxIdleConns) return false;
+    if(!staticMaps_.Equals(other.staticMaps_)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (IP.Length != 0) hash ^= IP.GetHashCode();
-    if (UserName.Length != 0) hash ^= UserName.GetHashCode();
-    if (Password.Length != 0) hash ^= Password.GetHashCode();
-    if (ConnMaxLifetime != 0L) hash ^= ConnMaxLifetime.GetHashCode();
-    if (MaxOpenConns != 0) hash ^= MaxOpenConns.GetHashCode();
-    if (MaxIdleConns != 0) hash ^= MaxIdleConns.GetHashCode();
+    hash ^= staticMaps_.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -203,30 +123,7 @@ public sealed partial class Database : pb::IMessage<Database> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (IP.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(IP);
-    }
-    if (UserName.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(UserName);
-    }
-    if (Password.Length != 0) {
-      output.WriteRawTag(26);
-      output.WriteString(Password);
-    }
-    if (ConnMaxLifetime != 0L) {
-      output.WriteRawTag(32);
-      output.WriteInt64(ConnMaxLifetime);
-    }
-    if (MaxOpenConns != 0) {
-      output.WriteRawTag(40);
-      output.WriteInt32(MaxOpenConns);
-    }
-    if (MaxIdleConns != 0) {
-      output.WriteRawTag(48);
-      output.WriteInt32(MaxIdleConns);
-    }
+    staticMaps_.WriteTo(output, _repeated_staticMaps_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -235,24 +132,7 @@ public sealed partial class Database : pb::IMessage<Database> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (IP.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(IP);
-    }
-    if (UserName.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(UserName);
-    }
-    if (Password.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
-    }
-    if (ConnMaxLifetime != 0L) {
-      size += 1 + pb::CodedOutputStream.ComputeInt64Size(ConnMaxLifetime);
-    }
-    if (MaxOpenConns != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxOpenConns);
-    }
-    if (MaxIdleConns != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaxIdleConns);
-    }
+    size += staticMaps_.CalculateSize(_repeated_staticMaps_codec);
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -260,28 +140,11 @@ public sealed partial class Database : pb::IMessage<Database> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(Database other) {
+  public void MergeFrom(SaveStaticMapReq other) {
     if (other == null) {
       return;
     }
-    if (other.IP.Length != 0) {
-      IP = other.IP;
-    }
-    if (other.UserName.Length != 0) {
-      UserName = other.UserName;
-    }
-    if (other.Password.Length != 0) {
-      Password = other.Password;
-    }
-    if (other.ConnMaxLifetime != 0L) {
-      ConnMaxLifetime = other.ConnMaxLifetime;
-    }
-    if (other.MaxOpenConns != 0) {
-      MaxOpenConns = other.MaxOpenConns;
-    }
-    if (other.MaxIdleConns != 0) {
-      MaxIdleConns = other.MaxIdleConns;
-    }
+    staticMaps_.Add(other.staticMaps_);
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -294,27 +157,636 @@ public sealed partial class Database : pb::IMessage<Database> {
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          IP = input.ReadString();
+          staticMaps_.AddEntriesFrom(input, _repeated_staticMaps_codec);
           break;
         }
-        case 18: {
-          UserName = input.ReadString();
+      }
+    }
+  }
+
+}
+
+public sealed partial class SaveStaticMapResp : pb::IMessage<SaveStaticMapResp> {
+  private static readonly pb::MessageParser<SaveStaticMapResp> _parser = new pb::MessageParser<SaveStaticMapResp>(() => new SaveStaticMapResp());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<SaveStaticMapResp> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DatabaseReflection.Descriptor.MessageTypes[1]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveStaticMapResp() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveStaticMapResp(SaveStaticMapResp other) : this() {
+    success_ = other.success_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveStaticMapResp Clone() {
+    return new SaveStaticMapResp(this);
+  }
+
+  /// <summary>Field number for the "Success" field.</summary>
+  public const int SuccessFieldNumber = 1;
+  private bool success_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Success {
+    get { return success_; }
+    set {
+      success_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as SaveStaticMapResp);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(SaveStaticMapResp other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Success != other.Success) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Success != false) hash ^= Success.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Success != false) {
+      output.WriteRawTag(8);
+      output.WriteBool(Success);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Success != false) {
+      size += 1 + 1;
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(SaveStaticMapResp other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Success != false) {
+      Success = other.Success;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          Success = input.ReadBool();
           break;
         }
-        case 26: {
-          Password = input.ReadString();
+      }
+    }
+  }
+
+}
+
+public sealed partial class SaveRoleReq : pb::IMessage<SaveRoleReq> {
+  private static readonly pb::MessageParser<SaveRoleReq> _parser = new pb::MessageParser<SaveRoleReq>(() => new SaveRoleReq());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<SaveRoleReq> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DatabaseReflection.Descriptor.MessageTypes[2]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveRoleReq() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveRoleReq(SaveRoleReq other) : this() {
+    roles_ = other.roles_.Clone();
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveRoleReq Clone() {
+    return new SaveRoleReq(this);
+  }
+
+  /// <summary>Field number for the "Roles" field.</summary>
+  public const int RolesFieldNumber = 1;
+  private static readonly pb::FieldCodec<global::Role> _repeated_roles_codec
+      = pb::FieldCodec.ForMessage(10, global::Role.Parser);
+  private readonly pbc::RepeatedField<global::Role> roles_ = new pbc::RepeatedField<global::Role>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<global::Role> Roles {
+    get { return roles_; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as SaveRoleReq);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(SaveRoleReq other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if(!roles_.Equals(other.roles_)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    hash ^= roles_.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    roles_.WriteTo(output, _repeated_roles_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    size += roles_.CalculateSize(_repeated_roles_codec);
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(SaveRoleReq other) {
+    if (other == null) {
+      return;
+    }
+    roles_.Add(other.roles_);
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          roles_.AddEntriesFrom(input, _repeated_roles_codec);
           break;
         }
-        case 32: {
-          ConnMaxLifetime = input.ReadInt64();
+      }
+    }
+  }
+
+}
+
+public sealed partial class SaveRoleResp : pb::IMessage<SaveRoleResp> {
+  private static readonly pb::MessageParser<SaveRoleResp> _parser = new pb::MessageParser<SaveRoleResp>(() => new SaveRoleResp());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<SaveRoleResp> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DatabaseReflection.Descriptor.MessageTypes[3]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveRoleResp() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveRoleResp(SaveRoleResp other) : this() {
+    success_ = other.success_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveRoleResp Clone() {
+    return new SaveRoleResp(this);
+  }
+
+  /// <summary>Field number for the "Success" field.</summary>
+  public const int SuccessFieldNumber = 1;
+  private bool success_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Success {
+    get { return success_; }
+    set {
+      success_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as SaveRoleResp);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(SaveRoleResp other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Success != other.Success) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Success != false) hash ^= Success.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Success != false) {
+      output.WriteRawTag(8);
+      output.WriteBool(Success);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Success != false) {
+      size += 1 + 1;
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(SaveRoleResp other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Success != false) {
+      Success = other.Success;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          Success = input.ReadBool();
           break;
         }
-        case 40: {
-          MaxOpenConns = input.ReadInt32();
+      }
+    }
+  }
+
+}
+
+public sealed partial class SaveDynamicMapReq : pb::IMessage<SaveDynamicMapReq> {
+  private static readonly pb::MessageParser<SaveDynamicMapReq> _parser = new pb::MessageParser<SaveDynamicMapReq>(() => new SaveDynamicMapReq());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<SaveDynamicMapReq> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DatabaseReflection.Descriptor.MessageTypes[4]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveDynamicMapReq() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveDynamicMapReq(SaveDynamicMapReq other) : this() {
+    dynamicMaps_ = other.dynamicMaps_.Clone();
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveDynamicMapReq Clone() {
+    return new SaveDynamicMapReq(this);
+  }
+
+  /// <summary>Field number for the "DynamicMaps" field.</summary>
+  public const int DynamicMapsFieldNumber = 1;
+  private static readonly pb::FieldCodec<global::MapData> _repeated_dynamicMaps_codec
+      = pb::FieldCodec.ForMessage(10, global::MapData.Parser);
+  private readonly pbc::RepeatedField<global::MapData> dynamicMaps_ = new pbc::RepeatedField<global::MapData>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<global::MapData> DynamicMaps {
+    get { return dynamicMaps_; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as SaveDynamicMapReq);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(SaveDynamicMapReq other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if(!dynamicMaps_.Equals(other.dynamicMaps_)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    hash ^= dynamicMaps_.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    dynamicMaps_.WriteTo(output, _repeated_dynamicMaps_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    size += dynamicMaps_.CalculateSize(_repeated_dynamicMaps_codec);
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(SaveDynamicMapReq other) {
+    if (other == null) {
+      return;
+    }
+    dynamicMaps_.Add(other.dynamicMaps_);
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          dynamicMaps_.AddEntriesFrom(input, _repeated_dynamicMaps_codec);
           break;
         }
-        case 48: {
-          MaxIdleConns = input.ReadInt32();
+      }
+    }
+  }
+
+}
+
+public sealed partial class SaveDynamicMapResp : pb::IMessage<SaveDynamicMapResp> {
+  private static readonly pb::MessageParser<SaveDynamicMapResp> _parser = new pb::MessageParser<SaveDynamicMapResp>(() => new SaveDynamicMapResp());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<SaveDynamicMapResp> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DatabaseReflection.Descriptor.MessageTypes[5]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveDynamicMapResp() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveDynamicMapResp(SaveDynamicMapResp other) : this() {
+    success_ = other.success_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public SaveDynamicMapResp Clone() {
+    return new SaveDynamicMapResp(this);
+  }
+
+  /// <summary>Field number for the "Success" field.</summary>
+  public const int SuccessFieldNumber = 1;
+  private bool success_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Success {
+    get { return success_; }
+    set {
+      success_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as SaveDynamicMapResp);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(SaveDynamicMapResp other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Success != other.Success) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Success != false) hash ^= Success.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Success != false) {
+      output.WriteRawTag(8);
+      output.WriteBool(Success);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Success != false) {
+      size += 1 + 1;
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(SaveDynamicMapResp other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Success != false) {
+      Success = other.Success;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          Success = input.ReadBool();
           break;
         }
       }

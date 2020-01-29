@@ -22,17 +22,17 @@ public static partial class ClientWorldReflection {
   static ClientWorldReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChJjbGllbnQtd29ybGQucHJvdG8aCm1hdGgucHJvdG8aDGVudGl0eS5wcm90",
-          "byI7CgdNb3ZlSU5GEhoKCFBvc2l0aW9uGAEgASgLMgguVmVjdG9yMxIUCgJU",
-          "bxgCIAEoCzIILlZlY3RvcjMiMwoHTW92ZU5URhISCgpFbnRpdHlVVUlEGAEg",
-          "ASgJEhQKAlRvGAIgASgLMgguVmVjdG9yMyI8CgpOZWFyRW50aXR5EhIKCkVu",
-          "dGl0eVVVSUQYASABKAkSGgoIUG9zaXRpb24YAiABKAsyCC5WZWN0b3IzIjAK",
-          "D05lYXJFbnRpdGllc05URhIdCghFbnRpdGllcxgBIAMoCzILLk5lYXJFbnRp",
-          "dHkiJAoNRW50aXR5RGF0YVJlcRITCgtFbnRpdHlVVUlEcxgBIAMoCSIuCg1F",
-          "bnRpdHlEYXRhUmVzEh0KCEVudGl0aWVzGAEgAygLMgsuRW50aXR5RGF0YUIY",
-          "WhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
+          "ChJjbGllbnQtd29ybGQucHJvdG8aCm1hdGgucHJvdG8aEWRhdGEuZW50aXR5",
+          "LnByb3RvIjsKB01vdmVJTkYSGgoIUG9zaXRpb24YASABKAsyCC5WZWN0b3Iz",
+          "EhQKAlRvGAIgASgLMgguVmVjdG9yMyIzCgdNb3ZlTlRGEhIKCkVudGl0eVVV",
+          "SUQYASABKAkSFAoCVG8YAiABKAsyCC5WZWN0b3IzIjwKCk5lYXJFbnRpdHkS",
+          "EgoKRW50aXR5VVVJRBgBIAEoCRIaCghQb3NpdGlvbhgCIAEoCzIILlZlY3Rv",
+          "cjMiMAoPTmVhckVudGl0aWVzTlRGEh0KCEVudGl0aWVzGAEgAygLMgsuTmVh",
+          "ckVudGl0eSIkCg1FbnRpdHlEYXRhUmVxEhMKC0VudGl0eVVVSURzGAEgAygJ",
+          "Ii4KDUVudGl0eURhdGFSZXMSHQoIRW50aXRpZXMYASADKAsyCy5FbnRpdHlE",
+          "YXRhQhhaFklOU2VydmVyL3NyYy9wcm90by9tc2diBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::MathReflection.Descriptor, global::EntityReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::MathReflection.Descriptor, global::DataEntityReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::MoveINF), global::MoveINF.Parser, new[]{ "Position", "To" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::MoveNTF), global::MoveNTF.Parser, new[]{ "EntityUUID", "To" }, null, null, null),
