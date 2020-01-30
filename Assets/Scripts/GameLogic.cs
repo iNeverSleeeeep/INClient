@@ -5,13 +5,14 @@ using Cinemachine;
 
 public class GameLogic : MonoBehaviour
 {
+    public static Role Role;
+
     public CinemachineVirtualCamera VirtualCamera;
 
     private GameObject m_RoleObject;
     private bool m_InMove;
     private UnityEngine.Vector3 m_MoveTargetPosition;
     private UnityEngine.Vector3 m_MoveTargetDirection;
-    private Role m_Role;
 
     private void OnEnable()
     {
@@ -37,6 +38,9 @@ public class GameLogic : MonoBehaviour
             dir.z = -1;
         if (Input.GetKey(KeyCode.D))
             dir.x = 1;
+
+        var oldDirection = m_MoveTargetDirection;
+        m_MoveTargetDirection = dir;
         if (m_InMove && dir == UnityEngine.Vector3.zero)
         {
             m_InMove = false;
@@ -50,7 +54,7 @@ public class GameLogic : MonoBehaviour
         }
         else if (m_InMove)
         {
-            if (m_MoveTargetDirection != dir)
+            if (oldDirection != dir)
             {
                 m_MoveTargetPosition = m_RoleObject.transform.position + dir * 10;
                 SendMove();
@@ -71,7 +75,7 @@ public class GameLogic : MonoBehaviour
     {
         if (m_InMove)
         {
-            var physicsComponent = m_Role.OnlineData.EntityData.Components[(int)ComponentType.Transofrm].Physics;
+            var physicsComponent = Role.OnlineData.EntityData.Components[(int)ComponentType.Physics].Physics;
             UnityEngine.Vector3 deltaPosition = (physicsComponent.RawSpeed + physicsComponent.PassiveSpeed) * Time.deltaTime;
             m_RoleObject.transform.position += deltaPosition;
         }
@@ -79,11 +83,14 @@ public class GameLogic : MonoBehaviour
 
     private void SendStopMove()
     {
-
+        var physicsComponent = Role.OnlineData.EntityData.Components[(int)ComponentType.Physics].Physics;
+        physicsComponent.RawSpeed = UnityEngine.Vector3.zero;
     }
 
     private void SendMove()
     {
-
+        var physicsComponent = Role.OnlineData.EntityData.Components[(int)ComponentType.Physics].Physics;
+        var attributeComponent = Role.OnlineData.EntityData.Components[(int)ComponentType.Attribute].Attribute;
+        physicsComponent.RawSpeed = m_MoveTargetDirection.normalized * attributeComponent.Speed;
     }
 }

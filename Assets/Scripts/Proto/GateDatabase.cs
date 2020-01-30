@@ -31,9 +31,10 @@ public static partial class GateDatabaseReflection {
           "IkMKDUNyZWF0ZVJvbGVSZXESEgoKUGxheWVyVVVJRBgBIAEoCRIQCghSb2xl",
           "TmFtZRgCIAEoCRIMCgRab25lGAMgASgFIkEKDkNyZWF0ZVJvbGVSZXNwEg8K",
           "B1N1Y2Nlc3MYASABKAgSHgoEUm9sZRgCIAEoCzIQLlJvbGVTdW1tYXJ5RGF0",
-          "YSIfCgtMb2FkUm9sZVJlcRIQCghSb2xlVVVJRBgBIAEoCSJBCgxMb2FkUm9s",
+          "YSIfCgtMb2FkUm9sZVJlcRIQCghSb2xlVVVJRBgBIAEoCSJWCgxMb2FkUm9s",
           "ZVJlc3ASDwoHU3VjY2VzcxgBIAEoCBIPCgdXb3JsZElEGAIgASgFEg8KB01h",
-          "cFVVSUQYAyABKAlCGFoWSU5TZXJ2ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
+          "cFVVSUQYAyABKAkSEwoEUm9sZRgEIAEoCzIFLlJvbGVCGFoWSU5TZXJ2ZXIv",
+          "c3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::DataPlayerReflection.Descriptor, global::DataRoleReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -45,7 +46,7 @@ public static partial class GateDatabaseReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::CreateRoleReq), global::CreateRoleReq.Parser, new[]{ "PlayerUUID", "RoleName", "Zone" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::CreateRoleResp), global::CreateRoleResp.Parser, new[]{ "Success", "Role" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::LoadRoleReq), global::LoadRoleReq.Parser, new[]{ "RoleUUID" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::LoadRoleResp), global::LoadRoleResp.Parser, new[]{ "Success", "WorldID", "MapUUID" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::LoadRoleResp), global::LoadRoleResp.Parser, new[]{ "Success", "WorldID", "MapUUID", "Role" }, null, null, null)
         }));
   }
   #endregion
@@ -1236,6 +1237,7 @@ public sealed partial class LoadRoleResp : pb::IMessage<LoadRoleResp> {
     success_ = other.success_;
     worldID_ = other.worldID_;
     mapUUID_ = other.mapUUID_;
+    role_ = other.role_ != null ? other.role_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -1277,6 +1279,17 @@ public sealed partial class LoadRoleResp : pb::IMessage<LoadRoleResp> {
     }
   }
 
+  /// <summary>Field number for the "Role" field.</summary>
+  public const int RoleFieldNumber = 4;
+  private global::Role role_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Role Role {
+    get { return role_; }
+    set {
+      role_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as LoadRoleResp);
@@ -1293,6 +1306,7 @@ public sealed partial class LoadRoleResp : pb::IMessage<LoadRoleResp> {
     if (Success != other.Success) return false;
     if (WorldID != other.WorldID) return false;
     if (MapUUID != other.MapUUID) return false;
+    if (!object.Equals(Role, other.Role)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -1302,6 +1316,7 @@ public sealed partial class LoadRoleResp : pb::IMessage<LoadRoleResp> {
     if (Success != false) hash ^= Success.GetHashCode();
     if (WorldID != 0) hash ^= WorldID.GetHashCode();
     if (MapUUID.Length != 0) hash ^= MapUUID.GetHashCode();
+    if (role_ != null) hash ^= Role.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -1327,6 +1342,10 @@ public sealed partial class LoadRoleResp : pb::IMessage<LoadRoleResp> {
       output.WriteRawTag(26);
       output.WriteString(MapUUID);
     }
+    if (role_ != null) {
+      output.WriteRawTag(34);
+      output.WriteMessage(Role);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -1343,6 +1362,9 @@ public sealed partial class LoadRoleResp : pb::IMessage<LoadRoleResp> {
     }
     if (MapUUID.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(MapUUID);
+    }
+    if (role_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Role);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -1363,6 +1385,12 @@ public sealed partial class LoadRoleResp : pb::IMessage<LoadRoleResp> {
     }
     if (other.MapUUID.Length != 0) {
       MapUUID = other.MapUUID;
+    }
+    if (other.role_ != null) {
+      if (role_ == null) {
+        Role = new global::Role();
+      }
+      Role.MergeFrom(other.Role);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -1385,6 +1413,13 @@ public sealed partial class LoadRoleResp : pb::IMessage<LoadRoleResp> {
         }
         case 26: {
           MapUUID = input.ReadString();
+          break;
+        }
+        case 34: {
+          if (role_ == null) {
+            Role = new global::Role();
+          }
+          input.ReadMessage(Role);
           break;
         }
       }

@@ -132,6 +132,7 @@ public class Enter : MonoBehaviour
         if (resp.Success)
         {
             Debug.Log("进入游戏成功");
+            GameLogic.Role = resp.Role;
             var map = string.Format("Map{0}", resp.MapID);
             SceneManager.LoadScene(map, LoadSceneMode.Single);
         }

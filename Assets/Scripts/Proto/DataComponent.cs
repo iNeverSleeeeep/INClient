@@ -26,18 +26,21 @@ public static partial class DataComponentReflection {
           "cm1Db21wb25lbnQSGgoIUG9zaXRpb24YASABKAsyCC5WZWN0b3IzEh0KCHJv",
           "dGF0aW9uGAIgASgLMgsuUXVhdGVybmlvbiJcChBQaHlzaWNzQ29tcG9uZW50",
           "EgwKBE1hc3MYASABKAESGgoIUmF3U3BlZWQYAiABKAsyCC5WZWN0b3IzEh4K",
-          "DFBhc3NpdmVTcGVlZBgDIAEoCzIILlZlY3RvcjMidQoJQ29tcG9uZW50EhwK",
-          "BFR5cGUYASABKA4yDi5Db21wb25lbnRUeXBlEiYKCVRyYW5zZm9ybRgCIAEo",
-          "CzITLlRyYW5zZm9ybUNvbXBvbmVudBIiCgdQaHlzaWNzGAMgASgLMhEuUGh5",
-          "c2ljc0NvbXBvbmVudCo4Cg1Db21wb25lbnRUeXBlEgsKB0ludmFsaWQQABIN",
-          "CglUcmFuc29mcm0QARILCgdQaHlzaWNzEAJCGVoXSU5TZXJ2ZXIvc3JjL3By",
-          "b3RvL2RhdGFiBnByb3RvMw=="));
+          "DFBhc3NpdmVTcGVlZBgDIAEoCzIILlZlY3RvcjMiLwoSQXR0cmlidXRlQ29t",
+          "cG9uZW50Eg0KBVNwZWVkGAEgASgCEgoKAkhQGAIgASgCIp0BCglDb21wb25l",
+          "bnQSHAoEVHlwZRgBIAEoDjIOLkNvbXBvbmVudFR5cGUSJgoJVHJhbnNmb3Jt",
+          "GAIgASgLMhMuVHJhbnNmb3JtQ29tcG9uZW50EiIKB1BoeXNpY3MYAyABKAsy",
+          "ES5QaHlzaWNzQ29tcG9uZW50EiYKCUF0dHJpYnV0ZRgEIAEoCzITLkF0dHJp",
+          "YnV0ZUNvbXBvbmVudCpHCg1Db21wb25lbnRUeXBlEgsKB0ludmFsaWQQABIN",
+          "CglUcmFuc29mcm0QARILCgdQaHlzaWNzEAISDQoJQXR0cmlidXRlEANCGVoX",
+          "SU5TZXJ2ZXIvc3JjL3Byb3RvL2RhdGFiBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::MathReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ComponentType), }, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::TransformComponent), global::TransformComponent.Parser, new[]{ "Position", "Rotation" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::PhysicsComponent), global::PhysicsComponent.Parser, new[]{ "Mass", "RawSpeed", "PassiveSpeed" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::Component), global::Component.Parser, new[]{ "Type", "Transform", "Physics" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::AttributeComponent), global::AttributeComponent.Parser, new[]{ "Speed", "HP" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Component), global::Component.Parser, new[]{ "Type", "Transform", "Physics", "Attribute" }, null, null, null)
         }));
   }
   #endregion
@@ -51,6 +54,7 @@ public enum ComponentType {
   [pbr::OriginalName("Invalid")] Invalid = 0,
   [pbr::OriginalName("Transofrm")] Transofrm = 1,
   [pbr::OriginalName("Physics")] Physics = 2,
+  [pbr::OriginalName("Attribute")] Attribute = 3,
 }
 
 #endregion
@@ -428,6 +432,163 @@ public sealed partial class PhysicsComponent : pb::IMessage<PhysicsComponent> {
 
 }
 
+public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent> {
+  private static readonly pb::MessageParser<AttributeComponent> _parser = new pb::MessageParser<AttributeComponent>(() => new AttributeComponent());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<AttributeComponent> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DataComponentReflection.Descriptor.MessageTypes[2]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public AttributeComponent() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public AttributeComponent(AttributeComponent other) : this() {
+    speed_ = other.speed_;
+    hP_ = other.hP_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public AttributeComponent Clone() {
+    return new AttributeComponent(this);
+  }
+
+  /// <summary>Field number for the "Speed" field.</summary>
+  public const int SpeedFieldNumber = 1;
+  private float speed_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public float Speed {
+    get { return speed_; }
+    set {
+      speed_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "HP" field.</summary>
+  public const int HPFieldNumber = 2;
+  private float hP_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public float HP {
+    get { return hP_; }
+    set {
+      hP_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as AttributeComponent);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(AttributeComponent other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Speed, other.Speed)) return false;
+    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HP, other.HP)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Speed != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Speed);
+    if (HP != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HP);
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Speed != 0F) {
+      output.WriteRawTag(13);
+      output.WriteFloat(Speed);
+    }
+    if (HP != 0F) {
+      output.WriteRawTag(21);
+      output.WriteFloat(HP);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Speed != 0F) {
+      size += 1 + 4;
+    }
+    if (HP != 0F) {
+      size += 1 + 4;
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(AttributeComponent other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Speed != 0F) {
+      Speed = other.Speed;
+    }
+    if (other.HP != 0F) {
+      HP = other.HP;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 13: {
+          Speed = input.ReadFloat();
+          break;
+        }
+        case 21: {
+          HP = input.ReadFloat();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
 public sealed partial class Component : pb::IMessage<Component> {
   private static readonly pb::MessageParser<Component> _parser = new pb::MessageParser<Component>(() => new Component());
   private pb::UnknownFieldSet _unknownFields;
@@ -436,7 +597,7 @@ public sealed partial class Component : pb::IMessage<Component> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::DataComponentReflection.Descriptor.MessageTypes[2]; }
+    get { return global::DataComponentReflection.Descriptor.MessageTypes[3]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -456,6 +617,7 @@ public sealed partial class Component : pb::IMessage<Component> {
     type_ = other.type_;
     transform_ = other.transform_ != null ? other.transform_.Clone() : null;
     physics_ = other.physics_ != null ? other.physics_.Clone() : null;
+    attribute_ = other.attribute_ != null ? other.attribute_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -497,6 +659,17 @@ public sealed partial class Component : pb::IMessage<Component> {
     }
   }
 
+  /// <summary>Field number for the "Attribute" field.</summary>
+  public const int AttributeFieldNumber = 4;
+  private global::AttributeComponent attribute_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::AttributeComponent Attribute {
+    get { return attribute_; }
+    set {
+      attribute_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as Component);
@@ -513,6 +686,7 @@ public sealed partial class Component : pb::IMessage<Component> {
     if (Type != other.Type) return false;
     if (!object.Equals(Transform, other.Transform)) return false;
     if (!object.Equals(Physics, other.Physics)) return false;
+    if (!object.Equals(Attribute, other.Attribute)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -522,6 +696,7 @@ public sealed partial class Component : pb::IMessage<Component> {
     if (Type != global::ComponentType.Invalid) hash ^= Type.GetHashCode();
     if (transform_ != null) hash ^= Transform.GetHashCode();
     if (physics_ != null) hash ^= Physics.GetHashCode();
+    if (attribute_ != null) hash ^= Attribute.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -547,6 +722,10 @@ public sealed partial class Component : pb::IMessage<Component> {
       output.WriteRawTag(26);
       output.WriteMessage(Physics);
     }
+    if (attribute_ != null) {
+      output.WriteRawTag(34);
+      output.WriteMessage(Attribute);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -563,6 +742,9 @@ public sealed partial class Component : pb::IMessage<Component> {
     }
     if (physics_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(Physics);
+    }
+    if (attribute_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Attribute);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -589,6 +771,12 @@ public sealed partial class Component : pb::IMessage<Component> {
         Physics = new global::PhysicsComponent();
       }
       Physics.MergeFrom(other.Physics);
+    }
+    if (other.attribute_ != null) {
+      if (attribute_ == null) {
+        Attribute = new global::AttributeComponent();
+      }
+      Attribute.MergeFrom(other.Attribute);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -617,6 +805,13 @@ public sealed partial class Component : pb::IMessage<Component> {
             Physics = new global::PhysicsComponent();
           }
           input.ReadMessage(Physics);
+          break;
+        }
+        case 34: {
+          if (attribute_ == null) {
+            Attribute = new global::AttributeComponent();
+          }
+          input.ReadMessage(Attribute);
           break;
         }
       }
