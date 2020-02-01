@@ -4,10 +4,18 @@ using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
 
+public interface INetwork
+{
+    void Send(byte[] bytes);
+    byte[] Recv();
+    void Connect();
+    void Abort();
+}
+
 public class NetworkMgr : MonoBehaviour
 {
-    public Network Login;
-    public Network Game;
+    public INetwork Login;
+    public INetwork Game;
     public SessionCert Cert;
 
     public delegate void OnLoginServerMessageDelegate(LoginToClient message);
@@ -89,9 +97,12 @@ public class NetworkMgr : MonoBehaviour
         }
     }
 
-    public void ConnectLogin(string ip, int port)
+    public void ConnectLogin(string ip, int port, int webport)
     {
-        Login = new Network(ip, port);
+        if (webport > 0)
+            Login = new WSNetwork(ip, webport);
+        else
+            Login = new Network(ip, port);
         Login.Connect();
     }
 
@@ -104,15 +115,24 @@ public class NetworkMgr : MonoBehaviour
         }
     }
 
-    public void ConnectGame(string ip, int port)
+    public void ConnectGame(string ip, int port, int webport)
     {
-        Game = new Network(ip, port);
+        if (webport > 0)
+            Game = new WSNetwork(ip, webport);
+        else
+            Game = new Network(ip, port);
         Game.Connect();
     }
 
     public void ConnectGame(IPEndPoint point)
     {
-        Game = new Network(point);
+        if (Application.platform == RuntimePlatform.WebGLPlayer)
+            Game = new WSNetwork(point);
+        else if (Application.isEditor)
+            Game = new WSNetwork(point);
+        else
+            Game = new Network(point);
+        Game.Connect();
     }
 
     public void CloseGame()

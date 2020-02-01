@@ -29,10 +29,10 @@ public static partial class ClientLoginReflection {
           "cmRIYXNoGAIgASgJEhcKD05ld1Bhc3N3b3JkSGFzaBgDIAEoCSJsCg1DbGll",
           "bnRUb0xvZ2luEhcKBUxvZ29uGAEgASgLMgguQ0xMb2dvbhIXCgVMb2dpbhgC",
           "IAEoCzIILkNMTG9naW4SKQoOQ2hhbmdlUGFzc3dvcmQYAyABKAsyES5DTENo",
-          "YW5nZVBhc3N3b3JkImUKDUxvZ2luVG9DbGllbnQSDwoHU3VjY2VzcxgBIAEo",
+          "YW5nZVBhc3N3b3JkInoKDUxvZ2luVG9DbGllbnQSDwoHU3VjY2VzcxgBIAEo",
           "CBIhCgtTZXNzaW9uQ2VydBgCIAEoCzIMLlNlc3Npb25DZXJ0Eg4KBkdhdGVJ",
-          "UBgDIAEoCRIQCghHYXRlUG9ydBgEIAEoBUIYWhZJTlNlcnZlci9zcmMvcHJv",
-          "dG8vbXNnYgZwcm90bzM="));
+          "UBgDIAEoCRIQCghHYXRlUG9ydBgEIAEoBRITCgtHYXRlV2ViUG9ydBgFIAEo",
+          "BUIYWhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::ClientGateReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -40,7 +40,7 @@ public static partial class ClientLoginReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::CLLogin), global::CLLogin.Parser, new[]{ "Name", "PasswordHash" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::CLChangePassword), global::CLChangePassword.Parser, new[]{ "Name", "OldPasswordHash", "NewPasswordHash" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ClientToLogin), global::ClientToLogin.Parser, new[]{ "Logon", "Login", "ChangePassword" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::LoginToClient), global::LoginToClient.Parser, new[]{ "Success", "SessionCert", "GateIP", "GatePort" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::LoginToClient), global::LoginToClient.Parser, new[]{ "Success", "SessionCert", "GateIP", "GatePort", "GateWebPort" }, null, null, null)
         }));
   }
   #endregion
@@ -778,6 +778,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     sessionCert_ = other.sessionCert_ != null ? other.sessionCert_.Clone() : null;
     gateIP_ = other.gateIP_;
     gatePort_ = other.gatePort_;
+    gateWebPort_ = other.gateWebPort_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -830,6 +831,17 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     }
   }
 
+  /// <summary>Field number for the "GateWebPort" field.</summary>
+  public const int GateWebPortFieldNumber = 5;
+  private int gateWebPort_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int GateWebPort {
+    get { return gateWebPort_; }
+    set {
+      gateWebPort_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as LoginToClient);
@@ -847,6 +859,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     if (!object.Equals(SessionCert, other.SessionCert)) return false;
     if (GateIP != other.GateIP) return false;
     if (GatePort != other.GatePort) return false;
+    if (GateWebPort != other.GateWebPort) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -857,6 +870,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     if (sessionCert_ != null) hash ^= SessionCert.GetHashCode();
     if (GateIP.Length != 0) hash ^= GateIP.GetHashCode();
     if (GatePort != 0) hash ^= GatePort.GetHashCode();
+    if (GateWebPort != 0) hash ^= GateWebPort.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -886,6 +900,10 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
       output.WriteRawTag(32);
       output.WriteInt32(GatePort);
     }
+    if (GateWebPort != 0) {
+      output.WriteRawTag(40);
+      output.WriteInt32(GateWebPort);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -905,6 +923,9 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     }
     if (GatePort != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(GatePort);
+    }
+    if (GateWebPort != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(GateWebPort);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -931,6 +952,9 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     }
     if (other.GatePort != 0) {
       GatePort = other.GatePort;
+    }
+    if (other.GateWebPort != 0) {
+      GateWebPort = other.GateWebPort;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -960,6 +984,10 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
         }
         case 32: {
           GatePort = input.ReadInt32();
+          break;
+        }
+        case 40: {
+          GateWebPort = input.ReadInt32();
           break;
         }
       }

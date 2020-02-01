@@ -6,7 +6,7 @@ using System.Net.Sockets;
 using System.Threading;
 using UnityEngine;
 
-public class Network
+public class Network : INetwork
 {
     private Queue<byte[]> SendBuffer = new Queue<byte[]>();
     private Queue<byte[]> ReveBuffer = new Queue<byte[]>();

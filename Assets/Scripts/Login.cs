@@ -12,13 +12,14 @@ public class Login : MonoBehaviour
 {
     public string LoginIP;
     public int LoginPort;
+    public int LoginWebPort;
 
     public InputField Name;
     public InputField Password;
 
     private void OnEnable()
     {
-        NetworkMgr.Instance.ConnectLogin(LoginIP, LoginPort);
+        NetworkMgr.Instance.ConnectLogin(LoginIP, LoginPort, LoginWebPort);
         NetworkMgr.Instance.OnLoginServerMessage = OnLoginServerMessage;
     }
 
@@ -55,7 +56,7 @@ public class Login : MonoBehaviour
             {
                 NetworkMgr.Instance.Cert = message.SessionCert;
                 Debug.Log("成功:" + NetworkMgr.Instance.Cert.UUID + " Address:" + message.GateIP + " Port:" + message.GatePort);
-                NetworkMgr.Instance.ConnectGame(message.GateIP, message.GatePort);
+                NetworkMgr.Instance.ConnectGame(message.GateIP, message.GatePort, message.GateWebPort);
                 SceneManager.LoadScene("Enter", LoadSceneMode.Single);
             }
             else

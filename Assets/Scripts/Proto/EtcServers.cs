@@ -22,28 +22,29 @@ public static partial class EtcServersReflection {
   static EtcServersReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFldGMuc2VydmVycy5wcm90bxoSZXRjLmRhdGFiYXNlLnByb3RvIkUKCkdh",
+          "ChFldGMuc2VydmVycy5wcm90bxoSZXRjLmRhdGFiYXNlLnByb3RvIlYKCkdh",
           "dGVDb25maWcSDAoEUG9ydBgBIAEoBRIYChBPdXRPZkRhdGVUaW1lb3V0GAIg",
-          "ASgDEg8KB0FkZHJlc3MYAyABKAkiOAoLTG9naW5Db25maWcSDAoEUG9ydBgB",
-          "IAEoBRIbCghEYXRhYmFzZRgCIAEoCzIJLkRhdGFiYXNlIgwKCkNoYXRDb25m",
-          "aWciLQoORGF0YWJhc2VDb25maWcSGwoIRGF0YWJhc2UYASABKAsyCS5EYXRh",
-          "YmFzZSIZCglXZWJDb25maWcSDAoEUG9ydBgBIAEoBSIvCglab25lV29ybGQS",
-          "DgoGWm9uZUlEGAEgASgFEhIKClN0YXRpY01hcHMYAiADKAUiKAoLV29ybGRD",
-          "b25maWcSGQoFWm9uZXMYASADKAsyCi5ab25lV29ybGQi3gEKDFNlcnZlckNv",
-          "bmZpZxIfCgpHYXRlQ29uZmlnGAEgASgLMgsuR2F0ZUNvbmZpZxIhCgtMb2dp",
-          "bkNvbmZpZxgCIAEoCzIMLkxvZ2luQ29uZmlnEh8KCkNoYXRDb25maWcYAyAB",
-          "KAsyCy5DaGF0Q29uZmlnEicKDkRhdGFiYXNlQ29uZmlnGAQgASgLMg8uRGF0",
-          "YWJhc2VDb25maWcSHQoJV2ViQ29uZmlnGAUgASgLMgouV2ViQ29uZmlnEiEK",
-          "C1dvcmxkQ29uZmlnGAYgASgLMgwuV29ybGRDb25maWciZQoGU2VydmVyEhAK",
-          "CFNlcnZlcklEGAEgASgFEhIKClNlcnZlclR5cGUYAiABKAkSIwoMU2VydmVy",
-          "Q29uZmlnGAMgASgLMg0uU2VydmVyQ29uZmlnEhAKCERlc2NyaWJlGAQgASgJ",
-          "IiYKClNlcnZlckxpc3QSGAoHU2VydmVycxgBIAMoCzIHLlNlcnZlckIYWhZJ",
-          "TlNlcnZlci9zcmMvcHJvdG8vZXRjYgZwcm90bzM="));
+          "ASgDEg8KB0FkZHJlc3MYAyABKAkSDwoHV2ViUG9ydBgEIAEoBSJJCgtMb2dp",
+          "bkNvbmZpZxIMCgRQb3J0GAEgASgFEhsKCERhdGFiYXNlGAIgASgLMgkuRGF0",
+          "YWJhc2USDwoHV2ViUG9ydBgDIAEoBSIMCgpDaGF0Q29uZmlnIi0KDkRhdGFi",
+          "YXNlQ29uZmlnEhsKCERhdGFiYXNlGAEgASgLMgkuRGF0YWJhc2UiGQoJV2Vi",
+          "Q29uZmlnEgwKBFBvcnQYASABKAUiLwoJWm9uZVdvcmxkEg4KBlpvbmVJRBgB",
+          "IAEoBRISCgpTdGF0aWNNYXBzGAIgAygFIigKC1dvcmxkQ29uZmlnEhkKBVpv",
+          "bmVzGAEgAygLMgouWm9uZVdvcmxkIt4BCgxTZXJ2ZXJDb25maWcSHwoKR2F0",
+          "ZUNvbmZpZxgBIAEoCzILLkdhdGVDb25maWcSIQoLTG9naW5Db25maWcYAiAB",
+          "KAsyDC5Mb2dpbkNvbmZpZxIfCgpDaGF0Q29uZmlnGAMgASgLMgsuQ2hhdENv",
+          "bmZpZxInCg5EYXRhYmFzZUNvbmZpZxgEIAEoCzIPLkRhdGFiYXNlQ29uZmln",
+          "Eh0KCVdlYkNvbmZpZxgFIAEoCzIKLldlYkNvbmZpZxIhCgtXb3JsZENvbmZp",
+          "ZxgGIAEoCzIMLldvcmxkQ29uZmlnImUKBlNlcnZlchIQCghTZXJ2ZXJJRBgB",
+          "IAEoBRISCgpTZXJ2ZXJUeXBlGAIgASgJEiMKDFNlcnZlckNvbmZpZxgDIAEo",
+          "CzINLlNlcnZlckNvbmZpZxIQCghEZXNjcmliZRgEIAEoCSImCgpTZXJ2ZXJM",
+          "aXN0EhgKB1NlcnZlcnMYASADKAsyBy5TZXJ2ZXJCGFoWSU5TZXJ2ZXIvc3Jj",
+          "L3Byb3RvL2V0Y2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::EtcDatabaseReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::GateConfig), global::GateConfig.Parser, new[]{ "Port", "OutOfDateTimeout", "Address" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::LoginConfig), global::LoginConfig.Parser, new[]{ "Port", "Database" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GateConfig), global::GateConfig.Parser, new[]{ "Port", "OutOfDateTimeout", "Address", "WebPort" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::LoginConfig), global::LoginConfig.Parser, new[]{ "Port", "Database", "WebPort" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ChatConfig), global::ChatConfig.Parser, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::DatabaseConfig), global::DatabaseConfig.Parser, new[]{ "Database" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::WebConfig), global::WebConfig.Parser, new[]{ "Port" }, null, null, null),
@@ -86,6 +87,7 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     port_ = other.port_;
     outOfDateTimeout_ = other.outOfDateTimeout_;
     address_ = other.address_;
+    webPort_ = other.webPort_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -136,6 +138,20 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     }
   }
 
+  /// <summary>Field number for the "WebPort" field.</summary>
+  public const int WebPortFieldNumber = 4;
+  private int webPort_;
+  /// <summary>
+  /// 客户端websocket端口
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int WebPort {
+    get { return webPort_; }
+    set {
+      webPort_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as GateConfig);
@@ -152,6 +168,7 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     if (Port != other.Port) return false;
     if (OutOfDateTimeout != other.OutOfDateTimeout) return false;
     if (Address != other.Address) return false;
+    if (WebPort != other.WebPort) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -161,6 +178,7 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     if (Port != 0) hash ^= Port.GetHashCode();
     if (OutOfDateTimeout != 0L) hash ^= OutOfDateTimeout.GetHashCode();
     if (Address.Length != 0) hash ^= Address.GetHashCode();
+    if (WebPort != 0) hash ^= WebPort.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -186,6 +204,10 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
       output.WriteRawTag(26);
       output.WriteString(Address);
     }
+    if (WebPort != 0) {
+      output.WriteRawTag(32);
+      output.WriteInt32(WebPort);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -202,6 +224,9 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     }
     if (Address.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(Address);
+    }
+    if (WebPort != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(WebPort);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -222,6 +247,9 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
     }
     if (other.Address.Length != 0) {
       Address = other.Address;
+    }
+    if (other.WebPort != 0) {
+      WebPort = other.WebPort;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -244,6 +272,10 @@ public sealed partial class GateConfig : pb::IMessage<GateConfig> {
         }
         case 26: {
           Address = input.ReadString();
+          break;
+        }
+        case 32: {
+          WebPort = input.ReadInt32();
           break;
         }
       }
@@ -279,6 +311,7 @@ public sealed partial class LoginConfig : pb::IMessage<LoginConfig> {
   public LoginConfig(LoginConfig other) : this() {
     port_ = other.port_;
     database_ = other.database_ != null ? other.database_.Clone() : null;
+    webPort_ = other.webPort_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -315,6 +348,20 @@ public sealed partial class LoginConfig : pb::IMessage<LoginConfig> {
     }
   }
 
+  /// <summary>Field number for the "WebPort" field.</summary>
+  public const int WebPortFieldNumber = 3;
+  private int webPort_;
+  /// <summary>
+  /// 客户端websocket端口
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int WebPort {
+    get { return webPort_; }
+    set {
+      webPort_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as LoginConfig);
@@ -330,6 +377,7 @@ public sealed partial class LoginConfig : pb::IMessage<LoginConfig> {
     }
     if (Port != other.Port) return false;
     if (!object.Equals(Database, other.Database)) return false;
+    if (WebPort != other.WebPort) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -338,6 +386,7 @@ public sealed partial class LoginConfig : pb::IMessage<LoginConfig> {
     int hash = 1;
     if (Port != 0) hash ^= Port.GetHashCode();
     if (database_ != null) hash ^= Database.GetHashCode();
+    if (WebPort != 0) hash ^= WebPort.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -359,6 +408,10 @@ public sealed partial class LoginConfig : pb::IMessage<LoginConfig> {
       output.WriteRawTag(18);
       output.WriteMessage(Database);
     }
+    if (WebPort != 0) {
+      output.WriteRawTag(24);
+      output.WriteInt32(WebPort);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -372,6 +425,9 @@ public sealed partial class LoginConfig : pb::IMessage<LoginConfig> {
     }
     if (database_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(Database);
+    }
+    if (WebPort != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(WebPort);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -393,6 +449,9 @@ public sealed partial class LoginConfig : pb::IMessage<LoginConfig> {
       }
       Database.MergeFrom(other.Database);
     }
+    if (other.WebPort != 0) {
+      WebPort = other.WebPort;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -413,6 +472,10 @@ public sealed partial class LoginConfig : pb::IMessage<LoginConfig> {
             Database = new global::Database();
           }
           input.ReadMessage(Database);
+          break;
+        }
+        case 24: {
+          WebPort = input.ReadInt32();
           break;
         }
       }
