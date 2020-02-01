@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
-using System.Net.WebSockets;
+using WebSocketSharp;
 using System.Threading;
+using System.Net;
 
 public class WSNetwork : INetwork
 {
     IPEndPoint point;
-    ClientWebSocket ws;
-
+    WebSocket ws;
 
     public WSNetwork(string ip, int port)
 	{
@@ -49,22 +48,83 @@ public class WSNetwork : INetwork
     private Thread recvThread;
     public async void Connect()
 	{
-        ws = new ClientWebSocket();
         CancellationToken ct = new CancellationToken();
 
         var url = "ws://" + point.ToString();
         UnityEngine.Debug.Log(url);
-        Uri uri = new Uri(url);
-        await ws.ConnectAsync(uri, ct);
-        sendThread = new Thread(SendThread);
-        recvThread = new Thread(ReceiveThread);
-        sendThread.Start();
-        recvThread.Start();
+        ws = new WebSocket(url);
+        ws.OnOpen += (sender, args) =>
+        {
+            sendThread = new Thread(SendThread);
+            sendThread.Start();
+            recvThread = new Thread(RecvThread);
+            recvThread.Start();
+        };
+        ws.ConnectAsync();
     }
 
-    public async void SendThread()
+    public void OnMessage(object sender, MessageEventArgs args)
     {
-        CancellationToken ct = new CancellationToken();
+
+    }
+
+    public void RecvThread()
+    {
+        byte[] ser_msg = new byte[1024];
+        int current = 0;
+        ws.OnMessage += (sender, args) =>
+        {
+            lock (ser_msg)
+            {
+                Array.Copy(args.RawData, 0, ser_msg, current, args.RawData.Length);
+                current = current + args.RawData.Length;
+            }
+        };
+        while (true)
+        {
+            int currentTemp = 0;
+            lock (ser_msg)
+            {
+                currentTemp = current;
+            }
+            if (currentTemp < 2)
+            {
+                Thread.Sleep(1);
+                continue;
+            }
+            ushort size = 0;
+            lock (ser_msg)
+            {
+                size = BitConverter.ToUInt16(ser_msg, 0);
+            }
+            if (BitConverter.IsLittleEndian)
+            {
+                var buf = BitConverter.GetBytes(size);
+                Array.Reverse(buf);
+                size = BitConverter.ToUInt16(buf, 0);
+            }
+
+            if (currentTemp - 2 < size)
+            {
+                Thread.Sleep(1);
+                continue;
+            }
+
+            lock (ser_msg)
+            {
+                var buffer = new byte[size];
+                Array.Copy(ser_msg, 2, buffer, 0, size);
+                lock (ReveBuffer)
+                    ReveBuffer.Enqueue(buffer);
+
+                Array.Copy(ser_msg, size + 2, ser_msg, 0, current - size - 2);
+                current = current - size - 2;
+            }
+        }
+    }
+
+    public void SendThread()
+    {
         while (true)
         {
             byte[] bytes = null;
@@ -81,50 +141,12 @@ public class WSNetwork : INetwork
                 var buffer = new byte[bytes.Length + 2];
                 Array.Copy(size, buffer, 2);
                 Array.Copy(bytes, 0, buffer, 2, bytes.Length);
-                await ws.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Binary, true, ct);
-                UnityEngine.Debug.Log("send");
+                ws.Send(buffer);
             }
             else
             {
                 Thread.Sleep(1);
             }
-        }
-    }
-    public async void ReceiveThread()
-    {
-        byte[] ser_msg = new byte[1024];
-        int current = 0;
-        CancellationToken ct = new CancellationToken();
-        while (true)
-        {
-            ArraySegment<byte> recvBuf = new ArraySegment<byte>(ser_msg);
-            while (current < 2)
-            {
-                var result = await ws.ReceiveAsync(recvBuf, ct);
-                current += result.Count;
-            }
-
-            var size = BitConverter.ToUInt16(ser_msg, 0);
-            if (BitConverter.IsLittleEndian)
-            {
-                var buf = BitConverter.GetBytes(size);
-                Array.Reverse(buf);
-                size = BitConverter.ToUInt16(buf, 0);
-            }
-
-            while (current - 2 < size)
-            {
-                var result = await ws.ReceiveAsync(recvBuf, ct);
-                current += result.Count;
-            }
-
-            var buffer = new byte[size];
-            Array.Copy(ser_msg, 2, buffer, 0, size);
-            lock (ReveBuffer)
-                ReveBuffer.Enqueue(buffer);
-
-            Array.Copy(ser_msg, size + 2, ser_msg, 0, current - size - 2);
-            current = current - size - 2;
         }
     }
 
@@ -142,7 +164,7 @@ public class WSNetwork : INetwork
         }
         if (ws != null)
         {
-            ws.Abort();
+            ws.Close();
             ws = null;
         }
 	}

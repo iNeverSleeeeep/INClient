@@ -124,17 +124,6 @@ public class NetworkMgr : MonoBehaviour
         Game.Connect();
     }
 
-    public void ConnectGame(IPEndPoint point)
-    {
-        if (Application.platform == RuntimePlatform.WebGLPlayer)
-            Game = new WSNetwork(point);
-        else if (Application.isEditor)
-            Game = new WSNetwork(point);
-        else
-            Game = new Network(point);
-        Game.Connect();
-    }
-
     public void CloseGame()
     {
         if (Game != null)
