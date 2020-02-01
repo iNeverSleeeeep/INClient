@@ -71,6 +71,11 @@ public class GameLogic : MonoBehaviour
                 }
             }
         }
+        m_RoleObject.GetComponent<Animator>().SetBool("move", m_InMove);
+        if (m_InMove)
+        {
+            m_RoleObject.transform.forward = m_MoveTargetDirection;
+        }
     }
 
     private void UpdateRolePosition()

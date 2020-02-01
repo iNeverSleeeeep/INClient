@@ -56,7 +56,6 @@ public class WSNetwork : INetwork
         UnityEngine.Debug.Log(url);
         Uri uri = new Uri(url);
         await ws.ConnectAsync(uri, ct);
-        UnityEngine.Debug.Log("Connected");
         sendThread = new Thread(SendThread);
         recvThread = new Thread(ReceiveThread);
         sendThread.Start();
@@ -82,9 +81,8 @@ public class WSNetwork : INetwork
                 var buffer = new byte[bytes.Length + 2];
                 Array.Copy(size, buffer, 2);
                 Array.Copy(bytes, 0, buffer, 2, bytes.Length);
-                UnityEngine.Debug.Log("Before Send");
                 await ws.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Binary, true, ct);
-                UnityEngine.Debug.Log("End Send");
+                UnityEngine.Debug.Log("send");
             }
             else
             {
