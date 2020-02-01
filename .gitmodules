@@ -1,0 +1,3 @@
+[submodule "Build/INClient-WebGL"]
+	path = Build/INClient-WebGL
+	url = https://github.com/iNeverSleeeeep/INClient-WebGL.git

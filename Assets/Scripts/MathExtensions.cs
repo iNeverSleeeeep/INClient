@@ -40,3 +40,26 @@ public sealed partial class Vector3
 		return result;
 	}
 }
+
+public sealed partial class Quaternion
+{
+    public static implicit operator UnityEngine.Quaternion(Quaternion a)
+    {
+        var result = new UnityEngine.Quaternion();
+        result.x = (float)a.X;
+        result.y = (float)a.Y;
+        result.z = (float)a.Z;
+        result.w = (float)a.W;
+        return result;
+    }
+
+    public static implicit operator Quaternion(UnityEngine.Quaternion a)
+    {
+        var result = new Quaternion();
+        result.X = a.x;
+        result.Y = a.y;
+        result.Z = a.z;
+        result.W = a.w;
+        return result;
+    }
+}

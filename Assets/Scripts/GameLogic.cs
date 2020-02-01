@@ -16,7 +16,9 @@ public class GameLogic : MonoBehaviour
 
     private void OnEnable()
     {
-        m_RoleObject = new GameObject("Role");
+        var transformComponent = Role.OnlineData.EntityData.Components[(int)ComponentType.Transofrm].Transform;
+        var obj = Instantiate(Resources.Load("Prefabs/Boy"), transformComponent.Position, transformComponent.Rotation);
+        m_RoleObject = obj as GameObject;
         VirtualCamera.Follow = m_RoleObject.transform;
         VirtualCamera.LookAt = m_RoleObject.transform;
     }
