@@ -46,21 +46,21 @@ public class WSNetwork : INetwork
 
     private Thread sendThread;
     private Thread recvThread;
-    public async void Connect()
+    public void Connect()
 	{
-        CancellationToken ct = new CancellationToken();
-
         var url = "ws://" + point.ToString();
         UnityEngine.Debug.Log(url);
         ws = new WebSocket(url);
-        ws.OnOpen += (sender, args) =>
+        ws.OnError += (sender, args) =>
         {
-            sendThread = new Thread(SendThread);
-            sendThread.Start();
-            recvThread = new Thread(RecvThread);
-            recvThread.Start();
+            UnityEngine.Debug.LogError("OnError:"+ args.Message);
         };
-        ws.ConnectAsync();
+        ws.Connect();
+        sendThread = new Thread(SendThread);
+        sendThread.Start();
+        recvThread = new Thread(RecvThread);
+        recvThread.Start();
+        UnityEngine.Debug.Log("Connect End");
     }
 
     public void OnMessage(object sender, MessageEventArgs args)

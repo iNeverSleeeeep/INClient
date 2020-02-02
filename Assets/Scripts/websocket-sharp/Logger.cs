@@ -190,7 +190,7 @@ namespace WebSocketSharp
     private static void defaultOutput (LogData data, string path)
     {
       var log = data.ToString ();
-      Console.WriteLine (log);
+      UnityEngine.Debug.Log(log);
       if (path != null && path.Length > 0)
         writeToFile (log, path);
     }
