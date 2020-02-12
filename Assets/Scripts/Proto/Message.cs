@@ -33,7 +33,7 @@ public static partial class MessageReflection {
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::CommandReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MessageHeader), global::MessageHeader.Parser, new[]{ "CMD", "Sequence", "From", "RoleUUID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::MessageHeader), global::MessageHeader.Parser, new[]{ "Command", "Sequence", "From", "RoleUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Message), global::Message.Parser, new[]{ "Header", "Buffer" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Package), global::Package.Parser, new[]{ "UniqueID", "From", "Index", "Total", "Buffer" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::KeepAlive), global::KeepAlive.Parser, new[]{ "ServerID" }, null, null, null)
@@ -80,11 +80,11 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     return new MessageHeader(this);
   }
 
-  /// <summary>Field number for the "CMD" field.</summary>
+  /// <summary>Field number for the "Command" field.</summary>
   public const int CommandFieldNumber = 1;
   private global::CMD command_ = global::CMD.KeepAlive;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::CMD CMD {
+  public global::CMD Command {
     get { return command_; }
     set {
       command_ = value;
@@ -137,7 +137,7 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (CMD != other.CMD) return false;
+    if (Command != other.Command) return false;
     if (Sequence != other.Sequence) return false;
     if (From != other.From) return false;
     if (RoleUUID != other.RoleUUID) return false;
@@ -147,7 +147,7 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (CMD != global::CMD.KeepAlive) hash ^= CMD.GetHashCode();
+    if (Command != global::CMD.KeepAlive) hash ^= Command.GetHashCode();
     if (Sequence != 0UL) hash ^= Sequence.GetHashCode();
     if (From != 0) hash ^= From.GetHashCode();
     if (RoleUUID.Length != 0) hash ^= RoleUUID.GetHashCode();
@@ -164,9 +164,9 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (CMD != global::CMD.KeepAlive) {
+    if (Command != global::CMD.KeepAlive) {
       output.WriteRawTag(8);
-      output.WriteEnum((int) CMD);
+      output.WriteEnum((int) Command);
     }
     if (Sequence != 0UL) {
       output.WriteRawTag(16);
@@ -188,8 +188,8 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (CMD != global::CMD.KeepAlive) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) CMD);
+    if (Command != global::CMD.KeepAlive) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Command);
     }
     if (Sequence != 0UL) {
       size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Sequence);
@@ -211,8 +211,8 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     if (other == null) {
       return;
     }
-    if (other.CMD != global::CMD.KeepAlive) {
-      CMD = other.CMD;
+    if (other.Command != global::CMD.KeepAlive) {
+      Command = other.Command;
     }
     if (other.Sequence != 0UL) {
       Sequence = other.Sequence;
@@ -235,7 +235,7 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          CMD = (global::CMD) input.ReadEnum();
+          Command = (global::CMD) input.ReadEnum();
           break;
         }
         case 16: {

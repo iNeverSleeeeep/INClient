@@ -72,13 +72,13 @@ public class NetworkMgr : MonoBehaviour
                 var message = GateToClient.Parser.ParseFrom(buffer);
                 if (message.Sequence == 0)
                 {
-                    if (listeners.ContainsKey(message.CMD))
+                    if (listeners.ContainsKey(message.Command))
                     {
-                        listeners[message.CMD](message.Buffer);
+                        listeners[message.Command](message.Buffer);
                     }
                     else
                     {
-                        Debug.LogError("没有注册Command " + message.CMD.ToString());
+                        Debug.LogError("没有注册Command " + message.Command.ToString());
                     }
                 }
                 else
@@ -138,7 +138,7 @@ public class NetworkMgr : MonoBehaviour
         sequence++;
         var togate = new ClientToGate();
         togate.Request = bytes;
-        togate.CMD = cmd;
+        togate.Command = cmd;
         togate.Sequence = sequence;
         callbacks.Add(sequence, callback);
         Game.Send(togate.ToByteArray());
@@ -148,7 +148,7 @@ public class NetworkMgr : MonoBehaviour
     {
         var togate = new ClientToGate();
         togate.Notify = bytes;
-        togate.CMD = cmd;
+        togate.Command = cmd;
         Game.Send(togate.ToByteArray());
     }
 

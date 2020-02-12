@@ -22,13 +22,13 @@ public static partial class DataPlayerReflection {
   static DataPlayerReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFkYXRhLnBsYXllci5wcm90bxoPZGF0YS5yb2xlLnByb3RvIiwKBlBsYXll",
-          "chIiCghSb2xlTGlzdBgBIAMoCzIQLlJvbGVTdW1tYXJ5RGF0YUIZWhdJTlNl",
-          "cnZlci9zcmMvcHJvdG8vZGF0YWIGcHJvdG8z"));
+          "ChFkYXRhLnBsYXllci5wcm90bxoPZGF0YS5yb2xlLnByb3RvIjoKBlBsYXll",
+          "chIiCghSb2xlTGlzdBgBIAMoCzIQLlJvbGVTdW1tYXJ5RGF0YRIMCgRVVUlE",
+          "GAIgASgJQhlaF0lOU2VydmVyL3NyYy9wcm90by9kYXRhYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::DataRoleReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::Player), global::Player.Parser, new[]{ "RoleList" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::Player), global::Player.Parser, new[]{ "RoleList", "UUID" }, null, null, null)
         }));
   }
   #endregion
@@ -61,6 +61,7 @@ public sealed partial class Player : pb::IMessage<Player> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public Player(Player other) : this() {
     roleList_ = other.roleList_.Clone();
+    uUID_ = other.uUID_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -79,6 +80,17 @@ public sealed partial class Player : pb::IMessage<Player> {
     get { return roleList_; }
   }
 
+  /// <summary>Field number for the "UUID" field.</summary>
+  public const int UUIDFieldNumber = 2;
+  private string uUID_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string UUID {
+    get { return uUID_; }
+    set {
+      uUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as Player);
@@ -93,6 +105,7 @@ public sealed partial class Player : pb::IMessage<Player> {
       return true;
     }
     if(!roleList_.Equals(other.roleList_)) return false;
+    if (UUID != other.UUID) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -100,6 +113,7 @@ public sealed partial class Player : pb::IMessage<Player> {
   public override int GetHashCode() {
     int hash = 1;
     hash ^= roleList_.GetHashCode();
+    if (UUID.Length != 0) hash ^= UUID.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -114,6 +128,10 @@ public sealed partial class Player : pb::IMessage<Player> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
     roleList_.WriteTo(output, _repeated_roleList_codec);
+    if (UUID.Length != 0) {
+      output.WriteRawTag(18);
+      output.WriteString(UUID);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -123,6 +141,9 @@ public sealed partial class Player : pb::IMessage<Player> {
   public int CalculateSize() {
     int size = 0;
     size += roleList_.CalculateSize(_repeated_roleList_codec);
+    if (UUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(UUID);
+    }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -135,6 +156,9 @@ public sealed partial class Player : pb::IMessage<Player> {
       return;
     }
     roleList_.Add(other.roleList_);
+    if (other.UUID.Length != 0) {
+      UUID = other.UUID;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -148,6 +172,10 @@ public sealed partial class Player : pb::IMessage<Player> {
           break;
         case 10: {
           roleList_.AddEntriesFrom(input, _repeated_roleList_codec);
+          break;
+        }
+        case 18: {
+          UUID = input.ReadString();
           break;
         }
       }
