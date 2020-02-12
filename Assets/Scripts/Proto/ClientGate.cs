@@ -22,28 +22,27 @@ public static partial class ClientGateReflection {
   static ClientGateReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChFjbGllbnQtZ2F0ZS5wcm90bxoNY29tbWFuZC5wcm90bxoRZGF0YS5wbGF5",
-          "ZXIucHJvdG8aD2RhdGEucm9sZS5wcm90byIoCgtTZXNzaW9uQ2VydBIMCgRV",
-          "VUlEGAEgASgJEgsKA0tleRgCIAEoCSIzCg5Db25uZWN0R2F0ZVJlcRIhCgtT",
-          "ZXNzaW9uQ2VydBgBIAEoCzIMLlNlc3Npb25DZXJ0IjsKD0Nvbm5lY3RHYXRl",
-          "UmVzcBIPCgdTdWNjZXNzGAEgASgIEhcKBlBsYXllchgCIAEoCzIHLlBsYXll",
-          "ciIgCgxSb2xlRW50ZXJSZXESEAoIUm9sZVVVSUQYASABKAkiRAoNUm9sZUVu",
-          "dGVyUmVzcBIPCgdTdWNjZXNzGAEgASgIEg0KBU1hcElEGAIgASgFEhMKBFJv",
-          "bGUYAyABKAsyBS5Sb2xlIlwKDENsaWVudFRvR2F0ZRIZCgdDb21tYW5kGAEg",
-          "ASgOMgguQ29tbWFuZBIQCghTZXF1ZW5jZRgCIAEoBBIPCgdSZXF1ZXN0GAMg",
-          "ASgMEg4KBk5vdGlmeRgEIAEoDCJLCgxHYXRlVG9DbGllbnQSGQoHQ29tbWFu",
-          "ZBgBIAEoDjIILkNvbW1hbmQSEAoIU2VxdWVuY2UYAiABKAQSDgoGQnVmZmVy",
-          "GAMgASgMQhhaFklOU2VydmVyL3NyYy9wcm90by9tc2diBnByb3RvMw=="));
+          "ChFjbGllbnQtZ2F0ZS5wcm90bxoNY29tbWFuZC5wcm90bxoPZGF0YS5yb2xl",
+          "LnByb3RvIigKC1Nlc3Npb25DZXJ0EgwKBFVVSUQYASABKAkSCwoDS2V5GAIg",
+          "ASgJIjMKDkNvbm5lY3RHYXRlUmVxEiEKC1Nlc3Npb25DZXJ0GAEgASgLMgwu",
+          "U2Vzc2lvbkNlcnQiIgoPQ29ubmVjdEdhdGVSZXNwEg8KB1N1Y2Nlc3MYASAB",
+          "KAgiIAoMUm9sZUVudGVyUmVxEhAKCFJvbGVVVUlEGAEgASgJIkQKDVJvbGVF",
+          "bnRlclJlc3ASDwoHU3VjY2VzcxgBIAEoCBINCgVNYXBJRBgCIAEoBRITCgRS",
+          "b2xlGAMgASgLMgUuUm9sZSJYCgxDbGllbnRUb0dhdGUSFQoHQ29tbWFuZBgB",
+          "IAEoDjIELkNNRBIQCghTZXF1ZW5jZRgCIAEoBBIPCgdSZXF1ZXN0GAMgASgM",
+          "Eg4KBk5vdGlmeRgEIAEoDCJHCgxHYXRlVG9DbGllbnQSFQoHQ29tbWFuZBgB",
+          "IAEoDjIELkNNRBIQCghTZXF1ZW5jZRgCIAEoBBIOCgZCdWZmZXIYAyABKAxC",
+          "GFoWSU5TZXJ2ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::CommandReflection.Descriptor, global::DataPlayerReflection.Descriptor, global::DataRoleReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::CommandReflection.Descriptor, global::DataRoleReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::SessionCert), global::SessionCert.Parser, new[]{ "UUID", "Key" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ConnectGateReq), global::ConnectGateReq.Parser, new[]{ "SessionCert" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ConnectGateResp), global::ConnectGateResp.Parser, new[]{ "Success", "Player" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ConnectGateResp), global::ConnectGateResp.Parser, new[]{ "Success" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleEnterReq), global::RoleEnterReq.Parser, new[]{ "RoleUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleEnterResp), global::RoleEnterResp.Parser, new[]{ "Success", "MapID", "Role" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ClientToGate), global::ClientToGate.Parser, new[]{ "Command", "Sequence", "Request", "Notify" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::GateToClient), global::GateToClient.Parser, new[]{ "Command", "Sequence", "Buffer" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::ClientToGate), global::ClientToGate.Parser, new[]{ "CMD", "Sequence", "Request", "Notify" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::GateToClient), global::GateToClient.Parser, new[]{ "CMD", "Sequence", "Buffer" }, null, null, null)
         }));
   }
   #endregion
@@ -368,7 +367,6 @@ public sealed partial class ConnectGateResp : pb::IMessage<ConnectGateResp> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public ConnectGateResp(ConnectGateResp other) : this() {
     success_ = other.success_;
-    player_ = other.player_ != null ? other.player_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -388,17 +386,6 @@ public sealed partial class ConnectGateResp : pb::IMessage<ConnectGateResp> {
     }
   }
 
-  /// <summary>Field number for the "Player" field.</summary>
-  public const int PlayerFieldNumber = 2;
-  private global::Player player_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::Player Player {
-    get { return player_; }
-    set {
-      player_ = value;
-    }
-  }
-
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as ConnectGateResp);
@@ -413,7 +400,6 @@ public sealed partial class ConnectGateResp : pb::IMessage<ConnectGateResp> {
       return true;
     }
     if (Success != other.Success) return false;
-    if (!object.Equals(Player, other.Player)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -421,7 +407,6 @@ public sealed partial class ConnectGateResp : pb::IMessage<ConnectGateResp> {
   public override int GetHashCode() {
     int hash = 1;
     if (Success != false) hash ^= Success.GetHashCode();
-    if (player_ != null) hash ^= Player.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -439,10 +424,6 @@ public sealed partial class ConnectGateResp : pb::IMessage<ConnectGateResp> {
       output.WriteRawTag(8);
       output.WriteBool(Success);
     }
-    if (player_ != null) {
-      output.WriteRawTag(18);
-      output.WriteMessage(Player);
-    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -453,9 +434,6 @@ public sealed partial class ConnectGateResp : pb::IMessage<ConnectGateResp> {
     int size = 0;
     if (Success != false) {
       size += 1 + 1;
-    }
-    if (player_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Player);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -471,12 +449,6 @@ public sealed partial class ConnectGateResp : pb::IMessage<ConnectGateResp> {
     if (other.Success != false) {
       Success = other.Success;
     }
-    if (other.player_ != null) {
-      if (player_ == null) {
-        Player = new global::Player();
-      }
-      Player.MergeFrom(other.Player);
-    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -490,13 +462,6 @@ public sealed partial class ConnectGateResp : pb::IMessage<ConnectGateResp> {
           break;
         case 8: {
           Success = input.ReadBool();
-          break;
-        }
-        case 18: {
-          if (player_ == null) {
-            Player = new global::Player();
-          }
-          input.ReadMessage(Player);
           break;
         }
       }
@@ -862,11 +827,11 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
     return new ClientToGate(this);
   }
 
-  /// <summary>Field number for the "Command" field.</summary>
+  /// <summary>Field number for the "CMD" field.</summary>
   public const int CommandFieldNumber = 1;
-  private global::Command command_ = global::Command.KeepAlive;
+  private global::CMD command_ = global::CMD.KeepAlive;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::Command Command {
+  public global::CMD CMD {
     get { return command_; }
     set {
       command_ = value;
@@ -919,7 +884,7 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (Command != other.Command) return false;
+    if (CMD != other.CMD) return false;
     if (Sequence != other.Sequence) return false;
     if (Request != other.Request) return false;
     if (Notify != other.Notify) return false;
@@ -929,7 +894,7 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (Command != global::Command.KeepAlive) hash ^= Command.GetHashCode();
+    if (CMD != global::CMD.KeepAlive) hash ^= CMD.GetHashCode();
     if (Sequence != 0UL) hash ^= Sequence.GetHashCode();
     if (Request.Length != 0) hash ^= Request.GetHashCode();
     if (Notify.Length != 0) hash ^= Notify.GetHashCode();
@@ -946,9 +911,9 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (Command != global::Command.KeepAlive) {
+    if (CMD != global::CMD.KeepAlive) {
       output.WriteRawTag(8);
-      output.WriteEnum((int) Command);
+      output.WriteEnum((int) CMD);
     }
     if (Sequence != 0UL) {
       output.WriteRawTag(16);
@@ -970,8 +935,8 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (Command != global::Command.KeepAlive) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Command);
+    if (CMD != global::CMD.KeepAlive) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) CMD);
     }
     if (Sequence != 0UL) {
       size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Sequence);
@@ -993,8 +958,8 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
     if (other == null) {
       return;
     }
-    if (other.Command != global::Command.KeepAlive) {
-      Command = other.Command;
+    if (other.CMD != global::CMD.KeepAlive) {
+      CMD = other.CMD;
     }
     if (other.Sequence != 0UL) {
       Sequence = other.Sequence;
@@ -1017,7 +982,7 @@ public sealed partial class ClientToGate : pb::IMessage<ClientToGate> {
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          Command = (global::Command) input.ReadEnum();
+          CMD = (global::CMD) input.ReadEnum();
           break;
         }
         case 16: {
@@ -1074,11 +1039,11 @@ public sealed partial class GateToClient : pb::IMessage<GateToClient> {
     return new GateToClient(this);
   }
 
-  /// <summary>Field number for the "Command" field.</summary>
+  /// <summary>Field number for the "CMD" field.</summary>
   public const int CommandFieldNumber = 1;
-  private global::Command command_ = global::Command.KeepAlive;
+  private global::CMD command_ = global::CMD.KeepAlive;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::Command Command {
+  public global::CMD CMD {
     get { return command_; }
     set {
       command_ = value;
@@ -1120,7 +1085,7 @@ public sealed partial class GateToClient : pb::IMessage<GateToClient> {
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (Command != other.Command) return false;
+    if (CMD != other.CMD) return false;
     if (Sequence != other.Sequence) return false;
     if (Buffer != other.Buffer) return false;
     return Equals(_unknownFields, other._unknownFields);
@@ -1129,7 +1094,7 @@ public sealed partial class GateToClient : pb::IMessage<GateToClient> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (Command != global::Command.KeepAlive) hash ^= Command.GetHashCode();
+    if (CMD != global::CMD.KeepAlive) hash ^= CMD.GetHashCode();
     if (Sequence != 0UL) hash ^= Sequence.GetHashCode();
     if (Buffer.Length != 0) hash ^= Buffer.GetHashCode();
     if (_unknownFields != null) {
@@ -1145,9 +1110,9 @@ public sealed partial class GateToClient : pb::IMessage<GateToClient> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (Command != global::Command.KeepAlive) {
+    if (CMD != global::CMD.KeepAlive) {
       output.WriteRawTag(8);
-      output.WriteEnum((int) Command);
+      output.WriteEnum((int) CMD);
     }
     if (Sequence != 0UL) {
       output.WriteRawTag(16);
@@ -1165,8 +1130,8 @@ public sealed partial class GateToClient : pb::IMessage<GateToClient> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (Command != global::Command.KeepAlive) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Command);
+    if (CMD != global::CMD.KeepAlive) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) CMD);
     }
     if (Sequence != 0UL) {
       size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Sequence);
@@ -1185,8 +1150,8 @@ public sealed partial class GateToClient : pb::IMessage<GateToClient> {
     if (other == null) {
       return;
     }
-    if (other.Command != global::Command.KeepAlive) {
-      Command = other.Command;
+    if (other.CMD != global::CMD.KeepAlive) {
+      CMD = other.CMD;
     }
     if (other.Sequence != 0UL) {
       Sequence = other.Sequence;
@@ -1206,7 +1171,7 @@ public sealed partial class GateToClient : pb::IMessage<GateToClient> {
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          Command = (global::Command) input.ReadEnum();
+          CMD = (global::CMD) input.ReadEnum();
           break;
         }
         case 16: {

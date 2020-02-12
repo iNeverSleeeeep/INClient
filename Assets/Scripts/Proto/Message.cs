@@ -22,18 +22,18 @@ public static partial class MessageReflection {
   static MessageReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg1tZXNzYWdlLnByb3RvGg1jb21tYW5kLnByb3RvIl4KDU1lc3NhZ2VIZWFk",
-          "ZXISGQoHQ29tbWFuZBgBIAEoDjIILkNvbW1hbmQSEAoIU2VxdWVuY2UYAiAB",
-          "KAQSDAoERnJvbRgDIAEoBRISCgpQbGF5ZXJVVUlEGAQgASgJIjkKB01lc3Nh",
-          "Z2USHgoGSGVhZGVyGAEgASgLMg4uTWVzc2FnZUhlYWRlchIOCgZCdWZmZXIY",
-          "AiABKAwiVwoHUGFja2FnZRIQCghVbmlxdWVJRBgBIAEoBBIMCgRGcm9tGAIg",
-          "ASgFEg0KBUluZGV4GAMgASgFEg0KBVRvdGFsGAQgASgFEg4KBkJ1ZmZlchgF",
-          "IAEoDCIdCglLZWVwQWxpdmUSEAoIU2VydmVySUQYASABKAVCGFoWSU5TZXJ2",
-          "ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
+          "Cg1tZXNzYWdlLnByb3RvGg1jb21tYW5kLnByb3RvIlgKDU1lc3NhZ2VIZWFk",
+          "ZXISFQoHQ29tbWFuZBgBIAEoDjIELkNNRBIQCghTZXF1ZW5jZRgCIAEoBBIM",
+          "CgRGcm9tGAMgASgFEhAKCFJvbGVVVUlEGAQgASgJIjkKB01lc3NhZ2USHgoG",
+          "SGVhZGVyGAEgASgLMg4uTWVzc2FnZUhlYWRlchIOCgZCdWZmZXIYAiABKAwi",
+          "VwoHUGFja2FnZRIQCghVbmlxdWVJRBgBIAEoBBIMCgRGcm9tGAIgASgFEg0K",
+          "BUluZGV4GAMgASgFEg0KBVRvdGFsGAQgASgFEg4KBkJ1ZmZlchgFIAEoDCId",
+          "CglLZWVwQWxpdmUSEAoIU2VydmVySUQYASABKAVCGFoWSU5TZXJ2ZXIvc3Jj",
+          "L3Byb3RvL21zZ2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::CommandReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::MessageHeader), global::MessageHeader.Parser, new[]{ "Command", "Sequence", "From", "PlayerUUID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::MessageHeader), global::MessageHeader.Parser, new[]{ "CMD", "Sequence", "From", "RoleUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Message), global::Message.Parser, new[]{ "Header", "Buffer" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Package), global::Package.Parser, new[]{ "UniqueID", "From", "Index", "Total", "Buffer" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::KeepAlive), global::KeepAlive.Parser, new[]{ "ServerID" }, null, null, null)
@@ -71,7 +71,7 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     command_ = other.command_;
     sequence_ = other.sequence_;
     from_ = other.from_;
-    playerUUID_ = other.playerUUID_;
+    roleUUID_ = other.roleUUID_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -80,11 +80,11 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     return new MessageHeader(this);
   }
 
-  /// <summary>Field number for the "Command" field.</summary>
+  /// <summary>Field number for the "CMD" field.</summary>
   public const int CommandFieldNumber = 1;
-  private global::Command command_ = global::Command.KeepAlive;
+  private global::CMD command_ = global::CMD.KeepAlive;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::Command Command {
+  public global::CMD CMD {
     get { return command_; }
     set {
       command_ = value;
@@ -113,14 +113,14 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     }
   }
 
-  /// <summary>Field number for the "PlayerUUID" field.</summary>
-  public const int PlayerUUIDFieldNumber = 4;
-  private string playerUUID_ = "";
+  /// <summary>Field number for the "RoleUUID" field.</summary>
+  public const int RoleUUIDFieldNumber = 4;
+  private string roleUUID_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string PlayerUUID {
-    get { return playerUUID_; }
+  public string RoleUUID {
+    get { return roleUUID_; }
     set {
-      playerUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      roleUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
@@ -137,20 +137,20 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (Command != other.Command) return false;
+    if (CMD != other.CMD) return false;
     if (Sequence != other.Sequence) return false;
     if (From != other.From) return false;
-    if (PlayerUUID != other.PlayerUUID) return false;
+    if (RoleUUID != other.RoleUUID) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (Command != global::Command.KeepAlive) hash ^= Command.GetHashCode();
+    if (CMD != global::CMD.KeepAlive) hash ^= CMD.GetHashCode();
     if (Sequence != 0UL) hash ^= Sequence.GetHashCode();
     if (From != 0) hash ^= From.GetHashCode();
-    if (PlayerUUID.Length != 0) hash ^= PlayerUUID.GetHashCode();
+    if (RoleUUID.Length != 0) hash ^= RoleUUID.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -164,9 +164,9 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (Command != global::Command.KeepAlive) {
+    if (CMD != global::CMD.KeepAlive) {
       output.WriteRawTag(8);
-      output.WriteEnum((int) Command);
+      output.WriteEnum((int) CMD);
     }
     if (Sequence != 0UL) {
       output.WriteRawTag(16);
@@ -176,9 +176,9 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
       output.WriteRawTag(24);
       output.WriteInt32(From);
     }
-    if (PlayerUUID.Length != 0) {
+    if (RoleUUID.Length != 0) {
       output.WriteRawTag(34);
-      output.WriteString(PlayerUUID);
+      output.WriteString(RoleUUID);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -188,8 +188,8 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (Command != global::Command.KeepAlive) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Command);
+    if (CMD != global::CMD.KeepAlive) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) CMD);
     }
     if (Sequence != 0UL) {
       size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Sequence);
@@ -197,8 +197,8 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     if (From != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(From);
     }
-    if (PlayerUUID.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerUUID);
+    if (RoleUUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RoleUUID);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -211,8 +211,8 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     if (other == null) {
       return;
     }
-    if (other.Command != global::Command.KeepAlive) {
-      Command = other.Command;
+    if (other.CMD != global::CMD.KeepAlive) {
+      CMD = other.CMD;
     }
     if (other.Sequence != 0UL) {
       Sequence = other.Sequence;
@@ -220,8 +220,8 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
     if (other.From != 0) {
       From = other.From;
     }
-    if (other.PlayerUUID.Length != 0) {
-      PlayerUUID = other.PlayerUUID;
+    if (other.RoleUUID.Length != 0) {
+      RoleUUID = other.RoleUUID;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -235,7 +235,7 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 8: {
-          Command = (global::Command) input.ReadEnum();
+          CMD = (global::CMD) input.ReadEnum();
           break;
         }
         case 16: {
@@ -247,7 +247,7 @@ public sealed partial class MessageHeader : pb::IMessage<MessageHeader> {
           break;
         }
         case 34: {
-          PlayerUUID = input.ReadString();
+          RoleUUID = input.ReadString();
           break;
         }
       }

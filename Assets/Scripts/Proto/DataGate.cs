@@ -22,17 +22,17 @@ public static partial class DataGateReflection {
   static DataGateReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg9kYXRhLmdhdGUucHJvdG8aEWRhdGEucGxheWVyLnByb3RvImAKEVBsYXll",
-          "clNlc3Npb25JbmZvEgwKBFVVSUQYASABKAkSHwoHQWRkcmVzcxgCIAEoCzIO",
-          "LlBsYXllckFkZHJlc3MSHAoFU3RhdGUYAyABKA4yDS5TZXNzaW9uU3RhdGUi",
-          "NQoPU2Vzc2lvbkNlcnREYXRhEgsKA0tleRgBIAEoCRIVCg1PdXRPZkRhdGVU",
-          "aW1lGAIgASgDKkgKDFNlc3Npb25TdGF0ZRILCgdPZmZsaW5lEAASDQoJQ29u",
-          "bmVjdGVkEAESCgoGT25saW5lEAISEAoMT3V0T2ZDb250YWN0EANCGVoXSU5T",
-          "ZXJ2ZXIvc3JjL3Byb3RvL2RhdGFiBnByb3RvMw=="));
+          "Cg9kYXRhLmdhdGUucHJvdG8aD2RhdGEucm9sZS5wcm90byJgCg9Sb2xlU2Vz",
+          "c2lvbkluZm8SEAoIUm9sZVVVSUQYASABKAkSHQoHQWRkcmVzcxgCIAEoCzIM",
+          "LlJvbGVBZGRyZXNzEhwKBVN0YXRlGAMgASgOMg0uU2Vzc2lvblN0YXRlIjUK",
+          "D1Nlc3Npb25DZXJ0RGF0YRILCgNLZXkYASABKAkSFQoNT3V0T2ZEYXRlVGlt",
+          "ZRgCIAEoAypICgxTZXNzaW9uU3RhdGUSCwoHT2ZmbGluZRAAEg0KCUNvbm5l",
+          "Y3RlZBABEgoKBk9ubGluZRACEhAKDE91dE9mQ29udGFjdBADQhlaF0lOU2Vy",
+          "dmVyL3NyYy9wcm90by9kYXRhYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::DataPlayerReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::DataRoleReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::SessionState), }, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::PlayerSessionInfo), global::PlayerSessionInfo.Parser, new[]{ "UUID", "Address", "State" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RoleSessionInfo), global::RoleSessionInfo.Parser, new[]{ "RoleUUID", "Address", "State" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::SessionCertData), global::SessionCertData.Parser, new[]{ "Key", "OutOfDateTime" }, null, null, null)
         }));
   }
@@ -62,11 +62,11 @@ public enum SessionState {
 #endregion
 
 #region Messages
-public sealed partial class PlayerSessionInfo : pb::IMessage<PlayerSessionInfo> {
-  private static readonly pb::MessageParser<PlayerSessionInfo> _parser = new pb::MessageParser<PlayerSessionInfo>(() => new PlayerSessionInfo());
+public sealed partial class RoleSessionInfo : pb::IMessage<RoleSessionInfo> {
+  private static readonly pb::MessageParser<RoleSessionInfo> _parser = new pb::MessageParser<RoleSessionInfo>(() => new RoleSessionInfo());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<PlayerSessionInfo> Parser { get { return _parser; } }
+  public static pb::MessageParser<RoleSessionInfo> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -79,41 +79,41 @@ public sealed partial class PlayerSessionInfo : pb::IMessage<PlayerSessionInfo> 
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public PlayerSessionInfo() {
+  public RoleSessionInfo() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public PlayerSessionInfo(PlayerSessionInfo other) : this() {
-    uUID_ = other.uUID_;
+  public RoleSessionInfo(RoleSessionInfo other) : this() {
+    roleUUID_ = other.roleUUID_;
     address_ = other.address_ != null ? other.address_.Clone() : null;
     state_ = other.state_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public PlayerSessionInfo Clone() {
-    return new PlayerSessionInfo(this);
+  public RoleSessionInfo Clone() {
+    return new RoleSessionInfo(this);
   }
 
-  /// <summary>Field number for the "UUID" field.</summary>
-  public const int UUIDFieldNumber = 1;
-  private string uUID_ = "";
+  /// <summary>Field number for the "RoleUUID" field.</summary>
+  public const int RoleUUIDFieldNumber = 1;
+  private string roleUUID_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string UUID {
-    get { return uUID_; }
+  public string RoleUUID {
+    get { return roleUUID_; }
     set {
-      uUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      roleUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
   /// <summary>Field number for the "Address" field.</summary>
   public const int AddressFieldNumber = 2;
-  private global::PlayerAddress address_;
+  private global::RoleAddress address_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::PlayerAddress Address {
+  public global::RoleAddress Address {
     get { return address_; }
     set {
       address_ = value;
@@ -133,18 +133,18 @@ public sealed partial class PlayerSessionInfo : pb::IMessage<PlayerSessionInfo> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as PlayerSessionInfo);
+    return Equals(other as RoleSessionInfo);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(PlayerSessionInfo other) {
+  public bool Equals(RoleSessionInfo other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (UUID != other.UUID) return false;
+    if (RoleUUID != other.RoleUUID) return false;
     if (!object.Equals(Address, other.Address)) return false;
     if (State != other.State) return false;
     return Equals(_unknownFields, other._unknownFields);
@@ -153,7 +153,7 @@ public sealed partial class PlayerSessionInfo : pb::IMessage<PlayerSessionInfo> 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (UUID.Length != 0) hash ^= UUID.GetHashCode();
+    if (RoleUUID.Length != 0) hash ^= RoleUUID.GetHashCode();
     if (address_ != null) hash ^= Address.GetHashCode();
     if (State != global::SessionState.Offline) hash ^= State.GetHashCode();
     if (_unknownFields != null) {
@@ -169,9 +169,9 @@ public sealed partial class PlayerSessionInfo : pb::IMessage<PlayerSessionInfo> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (UUID.Length != 0) {
+    if (RoleUUID.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(UUID);
+      output.WriteString(RoleUUID);
     }
     if (address_ != null) {
       output.WriteRawTag(18);
@@ -189,8 +189,8 @@ public sealed partial class PlayerSessionInfo : pb::IMessage<PlayerSessionInfo> 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (UUID.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(UUID);
+    if (RoleUUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RoleUUID);
     }
     if (address_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(Address);
@@ -205,16 +205,16 @@ public sealed partial class PlayerSessionInfo : pb::IMessage<PlayerSessionInfo> 
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(PlayerSessionInfo other) {
+  public void MergeFrom(RoleSessionInfo other) {
     if (other == null) {
       return;
     }
-    if (other.UUID.Length != 0) {
-      UUID = other.UUID;
+    if (other.RoleUUID.Length != 0) {
+      RoleUUID = other.RoleUUID;
     }
     if (other.address_ != null) {
       if (address_ == null) {
-        Address = new global::PlayerAddress();
+        Address = new global::RoleAddress();
       }
       Address.MergeFrom(other.Address);
     }
@@ -233,12 +233,12 @@ public sealed partial class PlayerSessionInfo : pb::IMessage<PlayerSessionInfo> 
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          UUID = input.ReadString();
+          RoleUUID = input.ReadString();
           break;
         }
         case 18: {
           if (address_ == null) {
-            Address = new global::PlayerAddress();
+            Address = new global::RoleAddress();
           }
           input.ReadMessage(Address);
           break;

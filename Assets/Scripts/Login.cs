@@ -25,7 +25,10 @@ public class Login : MonoBehaviour
 
     private void OnDisable()
     {
-        NetworkMgr.Instance.CloseLogin();
+        if (Enter.player == null)
+        {
+            NetworkMgr.Instance.CloseLogin();
+        }
     }
 
     public void OnLogonClick()
@@ -52,11 +55,9 @@ public class Login : MonoBehaviour
     {
         if (message.Success)
         {
-            if (message.SessionCert != null)
+            if (message.Player != null)
             {
-                NetworkMgr.Instance.Cert = message.SessionCert;
-                Debug.Log("成功:" + NetworkMgr.Instance.Cert.UUID + " Address:" + message.GateIP + " Port:" + message.GatePort);
-                NetworkMgr.Instance.ConnectGame(message.GateIP, message.GatePort, message.GateWebPort);
+                Enter.player = message.Player;
                 SceneManager.LoadScene("Enter", LoadSceneMode.Single);
             }
             else

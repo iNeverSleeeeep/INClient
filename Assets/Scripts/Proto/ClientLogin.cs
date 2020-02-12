@@ -22,25 +22,32 @@ public static partial class ClientLoginReflection {
   static ClientLoginReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "ChJjbGllbnQtbG9naW4ucHJvdG8aEWNsaWVudC1nYXRlLnByb3RvIi0KB0NM",
-          "TG9nb24SDAoETmFtZRgBIAEoCRIUCgxQYXNzd29yZEhhc2gYAiABKAkiLQoH",
-          "Q0xMb2dpbhIMCgROYW1lGAEgASgJEhQKDFBhc3N3b3JkSGFzaBgCIAEoCSJS",
-          "ChBDTENoYW5nZVBhc3N3b3JkEgwKBE5hbWUYASABKAkSFwoPT2xkUGFzc3dv",
-          "cmRIYXNoGAIgASgJEhcKD05ld1Bhc3N3b3JkSGFzaBgDIAEoCSJsCg1DbGll",
-          "bnRUb0xvZ2luEhcKBUxvZ29uGAEgASgLMgguQ0xMb2dvbhIXCgVMb2dpbhgC",
-          "IAEoCzIILkNMTG9naW4SKQoOQ2hhbmdlUGFzc3dvcmQYAyABKAsyES5DTENo",
-          "YW5nZVBhc3N3b3JkInoKDUxvZ2luVG9DbGllbnQSDwoHU3VjY2VzcxgBIAEo",
-          "CBIhCgtTZXNzaW9uQ2VydBgCIAEoCzIMLlNlc3Npb25DZXJ0Eg4KBkdhdGVJ",
-          "UBgDIAEoCRIQCghHYXRlUG9ydBgEIAEoBRITCgtHYXRlV2ViUG9ydBgFIAEo",
-          "BUIYWhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
+          "ChJjbGllbnQtbG9naW4ucHJvdG8aEWNsaWVudC1nYXRlLnByb3RvGhFkYXRh",
+          "LnBsYXllci5wcm90byItCgdDTExvZ29uEgwKBE5hbWUYASABKAkSFAoMUGFz",
+          "c3dvcmRIYXNoGAIgASgJIi0KB0NMTG9naW4SDAoETmFtZRgBIAEoCRIUCgxQ",
+          "YXNzd29yZEhhc2gYAiABKAkiUgoQQ0xDaGFuZ2VQYXNzd29yZBIMCgROYW1l",
+          "GAEgASgJEhcKD09sZFBhc3N3b3JkSGFzaBgCIAEoCRIXCg9OZXdQYXNzd29y",
+          "ZEhhc2gYAyABKAkiIwoPQ0xSb2xlRW50ZXJHYW1lEhAKCFJvbGVVVUlEGAEg",
+          "ASgJIi4KDENMQ3JlYXRlUm9sZRIQCghSb2xlTmFtZRgBIAEoCRIMCgRab25l",
+          "GAIgASgFIrQBCg1DbGllbnRUb0xvZ2luEhcKBUxvZ29uGAEgASgLMgguQ0xM",
+          "b2dvbhIXCgVMb2dpbhgCIAEoCzIILkNMTG9naW4SKQoOQ2hhbmdlUGFzc3dv",
+          "cmQYAyABKAsyES5DTENoYW5nZVBhc3N3b3JkEiEKCkNyZWF0ZVJvbGUYBCAB",
+          "KAsyDS5DTENyZWF0ZVJvbGUSIwoJRW50ZXJHYW1lGAUgASgLMhAuQ0xSb2xl",
+          "RW50ZXJHYW1lIpMBCg1Mb2dpblRvQ2xpZW50Eg8KB1N1Y2Nlc3MYASABKAgS",
+          "IQoLU2Vzc2lvbkNlcnQYAiABKAsyDC5TZXNzaW9uQ2VydBIOCgZHYXRlSVAY",
+          "AyABKAkSEAoIR2F0ZVBvcnQYBCABKAUSEwoLR2F0ZVdlYlBvcnQYBSABKAUS",
+          "FwoGUGxheWVyGAYgASgLMgcuUGxheWVyQhhaFklOU2VydmVyL3NyYy9wcm90",
+          "by9tc2diBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::ClientGateReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::ClientGateReflection.Descriptor, global::DataPlayerReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::CLLogon), global::CLLogon.Parser, new[]{ "Name", "PasswordHash" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::CLLogin), global::CLLogin.Parser, new[]{ "Name", "PasswordHash" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::CLChangePassword), global::CLChangePassword.Parser, new[]{ "Name", "OldPasswordHash", "NewPasswordHash" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ClientToLogin), global::ClientToLogin.Parser, new[]{ "Logon", "Login", "ChangePassword" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::LoginToClient), global::LoginToClient.Parser, new[]{ "Success", "SessionCert", "GateIP", "GatePort", "GateWebPort" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::CLRoleEnterGame), global::CLRoleEnterGame.Parser, new[]{ "RoleUUID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::CLCreateRole), global::CLCreateRole.Parser, new[]{ "RoleName", "Zone" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ClientToLogin), global::ClientToLogin.Parser, new[]{ "Logon", "Login", "ChangePassword", "CreateRole", "EnterGame" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::LoginToClient), global::LoginToClient.Parser, new[]{ "Success", "SessionCert", "GateIP", "GatePort", "GateWebPort", "Player" }, null, null, null)
         }));
   }
   #endregion
@@ -546,6 +553,292 @@ public sealed partial class CLChangePassword : pb::IMessage<CLChangePassword> {
 
 }
 
+public sealed partial class CLRoleEnterGame : pb::IMessage<CLRoleEnterGame> {
+  private static readonly pb::MessageParser<CLRoleEnterGame> _parser = new pb::MessageParser<CLRoleEnterGame>(() => new CLRoleEnterGame());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<CLRoleEnterGame> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ClientLoginReflection.Descriptor.MessageTypes[3]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public CLRoleEnterGame() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public CLRoleEnterGame(CLRoleEnterGame other) : this() {
+    roleUUID_ = other.roleUUID_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public CLRoleEnterGame Clone() {
+    return new CLRoleEnterGame(this);
+  }
+
+  /// <summary>Field number for the "RoleUUID" field.</summary>
+  public const int RoleUUIDFieldNumber = 1;
+  private string roleUUID_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string RoleUUID {
+    get { return roleUUID_; }
+    set {
+      roleUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as CLRoleEnterGame);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(CLRoleEnterGame other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (RoleUUID != other.RoleUUID) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (RoleUUID.Length != 0) hash ^= RoleUUID.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (RoleUUID.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RoleUUID);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (RoleUUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RoleUUID);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(CLRoleEnterGame other) {
+    if (other == null) {
+      return;
+    }
+    if (other.RoleUUID.Length != 0) {
+      RoleUUID = other.RoleUUID;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          RoleUUID = input.ReadString();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class CLCreateRole : pb::IMessage<CLCreateRole> {
+  private static readonly pb::MessageParser<CLCreateRole> _parser = new pb::MessageParser<CLCreateRole>(() => new CLCreateRole());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<CLCreateRole> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ClientLoginReflection.Descriptor.MessageTypes[4]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public CLCreateRole() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public CLCreateRole(CLCreateRole other) : this() {
+    roleName_ = other.roleName_;
+    zone_ = other.zone_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public CLCreateRole Clone() {
+    return new CLCreateRole(this);
+  }
+
+  /// <summary>Field number for the "RoleName" field.</summary>
+  public const int RoleNameFieldNumber = 1;
+  private string roleName_ = "";
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string RoleName {
+    get { return roleName_; }
+    set {
+      roleName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "Zone" field.</summary>
+  public const int ZoneFieldNumber = 2;
+  private int zone_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Zone {
+    get { return zone_; }
+    set {
+      zone_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as CLCreateRole);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(CLCreateRole other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (RoleName != other.RoleName) return false;
+    if (Zone != other.Zone) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (RoleName.Length != 0) hash ^= RoleName.GetHashCode();
+    if (Zone != 0) hash ^= Zone.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (RoleName.Length != 0) {
+      output.WriteRawTag(10);
+      output.WriteString(RoleName);
+    }
+    if (Zone != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Zone);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (RoleName.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RoleName);
+    }
+    if (Zone != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Zone);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(CLCreateRole other) {
+    if (other == null) {
+      return;
+    }
+    if (other.RoleName.Length != 0) {
+      RoleName = other.RoleName;
+    }
+    if (other.Zone != 0) {
+      Zone = other.Zone;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          RoleName = input.ReadString();
+          break;
+        }
+        case 16: {
+          Zone = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
 public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
   private static readonly pb::MessageParser<ClientToLogin> _parser = new pb::MessageParser<ClientToLogin>(() => new ClientToLogin());
   private pb::UnknownFieldSet _unknownFields;
@@ -554,7 +847,7 @@ public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientLoginReflection.Descriptor.MessageTypes[3]; }
+    get { return global::ClientLoginReflection.Descriptor.MessageTypes[5]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -574,6 +867,8 @@ public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
     logon_ = other.logon_ != null ? other.logon_.Clone() : null;
     login_ = other.login_ != null ? other.login_.Clone() : null;
     changePassword_ = other.changePassword_ != null ? other.changePassword_.Clone() : null;
+    createRole_ = other.createRole_ != null ? other.createRole_.Clone() : null;
+    enterGame_ = other.enterGame_ != null ? other.enterGame_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -615,6 +910,28 @@ public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
     }
   }
 
+  /// <summary>Field number for the "CreateRole" field.</summary>
+  public const int CreateRoleFieldNumber = 4;
+  private global::CLCreateRole createRole_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::CLCreateRole CreateRole {
+    get { return createRole_; }
+    set {
+      createRole_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "EnterGame" field.</summary>
+  public const int EnterGameFieldNumber = 5;
+  private global::CLRoleEnterGame enterGame_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::CLRoleEnterGame EnterGame {
+    get { return enterGame_; }
+    set {
+      enterGame_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as ClientToLogin);
@@ -631,6 +948,8 @@ public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
     if (!object.Equals(Logon, other.Logon)) return false;
     if (!object.Equals(Login, other.Login)) return false;
     if (!object.Equals(ChangePassword, other.ChangePassword)) return false;
+    if (!object.Equals(CreateRole, other.CreateRole)) return false;
+    if (!object.Equals(EnterGame, other.EnterGame)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -640,6 +959,8 @@ public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
     if (logon_ != null) hash ^= Logon.GetHashCode();
     if (login_ != null) hash ^= Login.GetHashCode();
     if (changePassword_ != null) hash ^= ChangePassword.GetHashCode();
+    if (createRole_ != null) hash ^= CreateRole.GetHashCode();
+    if (enterGame_ != null) hash ^= EnterGame.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -665,6 +986,14 @@ public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
       output.WriteRawTag(26);
       output.WriteMessage(ChangePassword);
     }
+    if (createRole_ != null) {
+      output.WriteRawTag(34);
+      output.WriteMessage(CreateRole);
+    }
+    if (enterGame_ != null) {
+      output.WriteRawTag(42);
+      output.WriteMessage(EnterGame);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -681,6 +1010,12 @@ public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
     }
     if (changePassword_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(ChangePassword);
+    }
+    if (createRole_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreateRole);
+    }
+    if (enterGame_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(EnterGame);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -710,6 +1045,18 @@ public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
         ChangePassword = new global::CLChangePassword();
       }
       ChangePassword.MergeFrom(other.ChangePassword);
+    }
+    if (other.createRole_ != null) {
+      if (createRole_ == null) {
+        CreateRole = new global::CLCreateRole();
+      }
+      CreateRole.MergeFrom(other.CreateRole);
+    }
+    if (other.enterGame_ != null) {
+      if (enterGame_ == null) {
+        EnterGame = new global::CLRoleEnterGame();
+      }
+      EnterGame.MergeFrom(other.EnterGame);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -743,6 +1090,20 @@ public sealed partial class ClientToLogin : pb::IMessage<ClientToLogin> {
           input.ReadMessage(ChangePassword);
           break;
         }
+        case 34: {
+          if (createRole_ == null) {
+            CreateRole = new global::CLCreateRole();
+          }
+          input.ReadMessage(CreateRole);
+          break;
+        }
+        case 42: {
+          if (enterGame_ == null) {
+            EnterGame = new global::CLRoleEnterGame();
+          }
+          input.ReadMessage(EnterGame);
+          break;
+        }
       }
     }
   }
@@ -757,7 +1118,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientLoginReflection.Descriptor.MessageTypes[4]; }
+    get { return global::ClientLoginReflection.Descriptor.MessageTypes[6]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -779,6 +1140,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     gateIP_ = other.gateIP_;
     gatePort_ = other.gatePort_;
     gateWebPort_ = other.gateWebPort_;
+    player_ = other.player_ != null ? other.player_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -842,6 +1204,17 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     }
   }
 
+  /// <summary>Field number for the "Player" field.</summary>
+  public const int PlayerFieldNumber = 6;
+  private global::Player player_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Player Player {
+    get { return player_; }
+    set {
+      player_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as LoginToClient);
@@ -860,6 +1233,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     if (GateIP != other.GateIP) return false;
     if (GatePort != other.GatePort) return false;
     if (GateWebPort != other.GateWebPort) return false;
+    if (!object.Equals(Player, other.Player)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -871,6 +1245,7 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     if (GateIP.Length != 0) hash ^= GateIP.GetHashCode();
     if (GatePort != 0) hash ^= GatePort.GetHashCode();
     if (GateWebPort != 0) hash ^= GateWebPort.GetHashCode();
+    if (player_ != null) hash ^= Player.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -904,6 +1279,10 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
       output.WriteRawTag(40);
       output.WriteInt32(GateWebPort);
     }
+    if (player_ != null) {
+      output.WriteRawTag(50);
+      output.WriteMessage(Player);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -926,6 +1305,9 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     }
     if (GateWebPort != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(GateWebPort);
+    }
+    if (player_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Player);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -955,6 +1337,12 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
     }
     if (other.GateWebPort != 0) {
       GateWebPort = other.GateWebPort;
+    }
+    if (other.player_ != null) {
+      if (player_ == null) {
+        Player = new global::Player();
+      }
+      Player.MergeFrom(other.Player);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -988,6 +1376,13 @@ public sealed partial class LoginToClient : pb::IMessage<LoginToClient> {
         }
         case 40: {
           GateWebPort = input.ReadInt32();
+          break;
+        }
+        case 50: {
+          if (player_ == null) {
+            Player = new global::Player();
+          }
+          input.ReadMessage(Player);
           break;
         }
       }

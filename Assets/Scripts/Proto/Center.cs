@@ -23,41 +23,32 @@ public static partial class CenterReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "CgxjZW50ZXIucHJvdG8aEWV0Yy5zZXJ2ZXJzLnByb3RvGg9ldGMuem9uZXMu",
-          "cHJvdG8iKwoOU2VydmVyU3RhdGVSZXESGQoESW5mbxgBIAEoCzILLlNlcnZl",
-          "ckluZm8iNAoRU3RhdGljTWFwTG9jYXRpb24SDQoFTWFwSUQYASABKAUSEAoI",
-          "U2VydmVySUQYAiABKAUiTgoMWm9uZUxvY2F0aW9uEg4KBlpvbmVJRBgBIAEo",
-          "BRIuChJTdGF0aWNNYXBMb2NhdGlvbnMYAiADKAsyEi5TdGF0aWNNYXBMb2Nh",
-          "dGlvbiLWAQoPU2VydmVyU3RhdGVSZXNwEhIKClNlcnZlclR5cGUYASABKAkS",
-          "DwoHTWVzc2FnZRgCIAEoCRIjCgxTZXJ2ZXJDb25maWcYAyABKAsyDS5TZXJ2",
-          "ZXJDb25maWcSIwoOU2VydmVySW5mb0xpc3QYBCADKAsyCy5TZXJ2ZXJJbmZv",
-          "EhgKB1NlcnZlcnMYBSADKAsyBy5TZXJ2ZXISFAoFWm9uZXMYBiADKAsyBS5a",
-          "b25lEiQKDVpvbmVMb2NhdGlvbnMYByADKAsyDS5ab25lTG9jYXRpb24iTAoK",
-          "U2VydmVySW5mbxIQCghTZXJ2ZXJJRBgBIAEoBRIPCgdBZGRyZXNzGAIgASgM",
-          "EhsKBVN0YXRlGAMgASgOMgwuU2VydmVyU3RhdGUiLgoOU2VydmVySW5mb0xp",
-          "c3QSHAoHU2VydmVycxgBIAMoCzILLlNlcnZlckluZm8ihgEKCVVwZGF0ZUVU",
-          "QxIjCgxTZXJ2ZXJDb25maWcYASABKAsyDS5TZXJ2ZXJDb25maWcSGAoHU2Vy",
-          "dmVycxgCIAMoCzIHLlNlcnZlchIUCgVab25lcxgDIAMoCzIFLlpvbmUSJAoN",
-          "Wm9uZUxvY2F0aW9ucxgEIAMoCzINLlpvbmVMb2NhdGlvbio9CgtTZXJ2ZXJT",
-          "dGF0ZRIJCgVTdGFydBAAEgkKBVJlYWR5EAESCwoHUnVubmluZxACEgsKB09m",
-          "ZmxpbmUQA0IYWhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
+          "cHJvdG8aD2V0Yy5iYXNpYy5wcm90bxoSZXRjLmRhdGFiYXNlLnByb3RvIooB",
+          "CgpFVENTeW5jTlRGEiEKC0Jhc2ljQ29uZmlnGAEgASgLMgwuQmFzaWNDb25m",
+          "aWcSGwoIRGF0YWJhc2UYAiABKAsyCS5EYXRhYmFzZRIfCgpTZXJ2ZXJMaXN0",
+          "GAMgASgLMgsuU2VydmVyTGlzdBIbCghab25lTGlzdBgEIAEoCzIJLlpvbmVM",
+          "aXN0Ih8KDE5vZGVTdGFydE5URhIPCgdBZGRyZXNzGAEgASgMIjoKBE5vZGUS",
+          "HQoJTm9kZVN0YXRlGAEgASgOMgouTm9kZVN0YXRlEhMKC05vZGVBZGRyZXNz",
+          "GAIgASgMIiQKDE5vZGVzSW5mb05URhIUCgVOb2RlcxgBIAMoCzIFLk5vZGUi",
+          "JgoSUmVzZXRDb25uZWN0aW9uTlRGEhAKCFNlcnZlcklEGAEgASgFKjsKCU5v",
+          "ZGVTdGF0ZRIJCgVVbnNldBAAEgkKBVJlYWR5EAESCwoHUnVubmluZxACEgsK",
+          "B09mZmxpbmUQA0IYWhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::EtcServersReflection.Descriptor, global::EtcZonesReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ServerState), }, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ServerStateReq), global::ServerStateReq.Parser, new[]{ "Info" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::StaticMapLocation), global::StaticMapLocation.Parser, new[]{ "MapID", "ServerID" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ZoneLocation), global::ZoneLocation.Parser, new[]{ "ZoneID", "StaticMapLocations" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ServerStateResp), global::ServerStateResp.Parser, new[]{ "ServerType", "Message", "ServerConfig", "ServerInfoList", "Servers", "Zones", "ZoneLocations" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ServerInfo), global::ServerInfo.Parser, new[]{ "ServerID", "Address", "State" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ServerInfoList), global::ServerInfoList.Parser, new[]{ "Servers" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::UpdateETC), global::UpdateETC.Parser, new[]{ "ServerConfig", "Servers", "Zones", "ZoneLocations" }, null, null, null)
+        new pbr::FileDescriptor[] { global::EtcServersReflection.Descriptor, global::EtcZonesReflection.Descriptor, global::EtcBasicReflection.Descriptor, global::EtcDatabaseReflection.Descriptor, },
+        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::NodeState), }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(typeof(global::ETCSyncNTF), global::ETCSyncNTF.Parser, new[]{ "BasicConfig", "Database", "ServerList", "ZoneList" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::NodeStartNTF), global::NodeStartNTF.Parser, new[]{ "Address" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Node), global::Node.Parser, new[]{ "NodeState", "NodeAddress" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::NodesInfoNTF), global::NodesInfoNTF.Parser, new[]{ "Nodes" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ResetConnectionNTF), global::ResetConnectionNTF.Parser, new[]{ "ServerID" }, null, null, null)
         }));
   }
   #endregion
 
 }
 #region Enums
-public enum ServerState {
-  [pbr::OriginalName("Start")] Start = 0,
+public enum NodeState {
+  [pbr::OriginalName("Unset")] Unset = 0,
   [pbr::OriginalName("Ready")] Ready = 1,
   [pbr::OriginalName("Running")] Running = 2,
   [pbr::OriginalName("Offline")] Offline = 3,
@@ -66,11 +57,11 @@ public enum ServerState {
 #endregion
 
 #region Messages
-public sealed partial class ServerStateReq : pb::IMessage<ServerStateReq> {
-  private static readonly pb::MessageParser<ServerStateReq> _parser = new pb::MessageParser<ServerStateReq>(() => new ServerStateReq());
+public sealed partial class ETCSyncNTF : pb::IMessage<ETCSyncNTF> {
+  private static readonly pb::MessageParser<ETCSyncNTF> _parser = new pb::MessageParser<ETCSyncNTF>(() => new ETCSyncNTF());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<ServerStateReq> Parser { get { return _parser; } }
+  public static pb::MessageParser<ETCSyncNTF> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -83,55 +74,97 @@ public sealed partial class ServerStateReq : pb::IMessage<ServerStateReq> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerStateReq() {
+  public ETCSyncNTF() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerStateReq(ServerStateReq other) : this() {
-    info_ = other.info_ != null ? other.info_.Clone() : null;
+  public ETCSyncNTF(ETCSyncNTF other) : this() {
+    basicConfig_ = other.basicConfig_ != null ? other.basicConfig_.Clone() : null;
+    database_ = other.database_ != null ? other.database_.Clone() : null;
+    serverList_ = other.serverList_ != null ? other.serverList_.Clone() : null;
+    zoneList_ = other.zoneList_ != null ? other.zoneList_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerStateReq Clone() {
-    return new ServerStateReq(this);
+  public ETCSyncNTF Clone() {
+    return new ETCSyncNTF(this);
   }
 
-  /// <summary>Field number for the "Info" field.</summary>
-  public const int InfoFieldNumber = 1;
-  private global::ServerInfo info_;
+  /// <summary>Field number for the "BasicConfig" field.</summary>
+  public const int BasicConfigFieldNumber = 1;
+  private global::BasicConfig basicConfig_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::ServerInfo Info {
-    get { return info_; }
+  public global::BasicConfig BasicConfig {
+    get { return basicConfig_; }
     set {
-      info_ = value;
+      basicConfig_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "Database" field.</summary>
+  public const int DatabaseFieldNumber = 2;
+  private global::Database database_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Database Database {
+    get { return database_; }
+    set {
+      database_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "ServerList" field.</summary>
+  public const int ServerListFieldNumber = 3;
+  private global::ServerList serverList_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::ServerList ServerList {
+    get { return serverList_; }
+    set {
+      serverList_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "ZoneList" field.</summary>
+  public const int ZoneListFieldNumber = 4;
+  private global::ZoneList zoneList_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::ZoneList ZoneList {
+    get { return zoneList_; }
+    set {
+      zoneList_ = value;
     }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as ServerStateReq);
+    return Equals(other as ETCSyncNTF);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(ServerStateReq other) {
+  public bool Equals(ETCSyncNTF other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (!object.Equals(Info, other.Info)) return false;
+    if (!object.Equals(BasicConfig, other.BasicConfig)) return false;
+    if (!object.Equals(Database, other.Database)) return false;
+    if (!object.Equals(ServerList, other.ServerList)) return false;
+    if (!object.Equals(ZoneList, other.ZoneList)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (info_ != null) hash ^= Info.GetHashCode();
+    if (basicConfig_ != null) hash ^= BasicConfig.GetHashCode();
+    if (database_ != null) hash ^= Database.GetHashCode();
+    if (serverList_ != null) hash ^= ServerList.GetHashCode();
+    if (zoneList_ != null) hash ^= ZoneList.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -145,9 +178,21 @@ public sealed partial class ServerStateReq : pb::IMessage<ServerStateReq> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (info_ != null) {
+    if (basicConfig_ != null) {
       output.WriteRawTag(10);
-      output.WriteMessage(Info);
+      output.WriteMessage(BasicConfig);
+    }
+    if (database_ != null) {
+      output.WriteRawTag(18);
+      output.WriteMessage(Database);
+    }
+    if (serverList_ != null) {
+      output.WriteRawTag(26);
+      output.WriteMessage(ServerList);
+    }
+    if (zoneList_ != null) {
+      output.WriteRawTag(34);
+      output.WriteMessage(ZoneList);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -157,8 +202,17 @@ public sealed partial class ServerStateReq : pb::IMessage<ServerStateReq> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (info_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Info);
+    if (basicConfig_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(BasicConfig);
+    }
+    if (database_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Database);
+    }
+    if (serverList_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerList);
+    }
+    if (zoneList_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ZoneList);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -167,15 +221,33 @@ public sealed partial class ServerStateReq : pb::IMessage<ServerStateReq> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(ServerStateReq other) {
+  public void MergeFrom(ETCSyncNTF other) {
     if (other == null) {
       return;
     }
-    if (other.info_ != null) {
-      if (info_ == null) {
-        Info = new global::ServerInfo();
+    if (other.basicConfig_ != null) {
+      if (basicConfig_ == null) {
+        BasicConfig = new global::BasicConfig();
       }
-      Info.MergeFrom(other.Info);
+      BasicConfig.MergeFrom(other.BasicConfig);
+    }
+    if (other.database_ != null) {
+      if (database_ == null) {
+        Database = new global::Database();
+      }
+      Database.MergeFrom(other.Database);
+    }
+    if (other.serverList_ != null) {
+      if (serverList_ == null) {
+        ServerList = new global::ServerList();
+      }
+      ServerList.MergeFrom(other.ServerList);
+    }
+    if (other.zoneList_ != null) {
+      if (zoneList_ == null) {
+        ZoneList = new global::ZoneList();
+      }
+      ZoneList.MergeFrom(other.ZoneList);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -189,10 +261,31 @@ public sealed partial class ServerStateReq : pb::IMessage<ServerStateReq> {
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          if (info_ == null) {
-            Info = new global::ServerInfo();
+          if (basicConfig_ == null) {
+            BasicConfig = new global::BasicConfig();
           }
-          input.ReadMessage(Info);
+          input.ReadMessage(BasicConfig);
+          break;
+        }
+        case 18: {
+          if (database_ == null) {
+            Database = new global::Database();
+          }
+          input.ReadMessage(Database);
+          break;
+        }
+        case 26: {
+          if (serverList_ == null) {
+            ServerList = new global::ServerList();
+          }
+          input.ReadMessage(ServerList);
+          break;
+        }
+        case 34: {
+          if (zoneList_ == null) {
+            ZoneList = new global::ZoneList();
+          }
+          input.ReadMessage(ZoneList);
           break;
         }
       }
@@ -201,11 +294,11 @@ public sealed partial class ServerStateReq : pb::IMessage<ServerStateReq> {
 
 }
 
-public sealed partial class StaticMapLocation : pb::IMessage<StaticMapLocation> {
-  private static readonly pb::MessageParser<StaticMapLocation> _parser = new pb::MessageParser<StaticMapLocation>(() => new StaticMapLocation());
+public sealed partial class NodeStartNTF : pb::IMessage<NodeStartNTF> {
+  private static readonly pb::MessageParser<NodeStartNTF> _parser = new pb::MessageParser<NodeStartNTF>(() => new NodeStartNTF());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<StaticMapLocation> Parser { get { return _parser; } }
+  public static pb::MessageParser<NodeStartNTF> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -218,69 +311,55 @@ public sealed partial class StaticMapLocation : pb::IMessage<StaticMapLocation> 
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public StaticMapLocation() {
+  public NodeStartNTF() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public StaticMapLocation(StaticMapLocation other) : this() {
-    mapID_ = other.mapID_;
-    serverID_ = other.serverID_;
+  public NodeStartNTF(NodeStartNTF other) : this() {
+    address_ = other.address_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public StaticMapLocation Clone() {
-    return new StaticMapLocation(this);
+  public NodeStartNTF Clone() {
+    return new NodeStartNTF(this);
   }
 
-  /// <summary>Field number for the "MapID" field.</summary>
-  public const int MapIDFieldNumber = 1;
-  private int mapID_;
+  /// <summary>Field number for the "Address" field.</summary>
+  public const int AddressFieldNumber = 1;
+  private pb::ByteString address_ = pb::ByteString.Empty;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int MapID {
-    get { return mapID_; }
+  public pb::ByteString Address {
+    get { return address_; }
     set {
-      mapID_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ServerID" field.</summary>
-  public const int ServerIDFieldNumber = 2;
-  private int serverID_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int ServerID {
-    get { return serverID_; }
-    set {
-      serverID_ = value;
+      address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as StaticMapLocation);
+    return Equals(other as NodeStartNTF);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(StaticMapLocation other) {
+  public bool Equals(NodeStartNTF other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (MapID != other.MapID) return false;
-    if (ServerID != other.ServerID) return false;
+    if (Address != other.Address) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (MapID != 0) hash ^= MapID.GetHashCode();
-    if (ServerID != 0) hash ^= ServerID.GetHashCode();
+    if (Address.Length != 0) hash ^= Address.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -294,394 +373,10 @@ public sealed partial class StaticMapLocation : pb::IMessage<StaticMapLocation> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (MapID != 0) {
-      output.WriteRawTag(8);
-      output.WriteInt32(MapID);
-    }
-    if (ServerID != 0) {
-      output.WriteRawTag(16);
-      output.WriteInt32(ServerID);
-    }
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    if (MapID != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(MapID);
-    }
-    if (ServerID != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ServerID);
-    }
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(StaticMapLocation other) {
-    if (other == null) {
-      return;
-    }
-    if (other.MapID != 0) {
-      MapID = other.MapID;
-    }
-    if (other.ServerID != 0) {
-      ServerID = other.ServerID;
-    }
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          MapID = input.ReadInt32();
-          break;
-        }
-        case 16: {
-          ServerID = input.ReadInt32();
-          break;
-        }
-      }
-    }
-  }
-
-}
-
-public sealed partial class ZoneLocation : pb::IMessage<ZoneLocation> {
-  private static readonly pb::MessageParser<ZoneLocation> _parser = new pb::MessageParser<ZoneLocation>(() => new ZoneLocation());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<ZoneLocation> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CenterReflection.Descriptor.MessageTypes[2]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ZoneLocation() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ZoneLocation(ZoneLocation other) : this() {
-    zoneID_ = other.zoneID_;
-    staticMapLocations_ = other.staticMapLocations_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ZoneLocation Clone() {
-    return new ZoneLocation(this);
-  }
-
-  /// <summary>Field number for the "ZoneID" field.</summary>
-  public const int ZoneIDFieldNumber = 1;
-  private int zoneID_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int ZoneID {
-    get { return zoneID_; }
-    set {
-      zoneID_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "StaticMapLocations" field.</summary>
-  public const int StaticMapLocationsFieldNumber = 2;
-  private static readonly pb::FieldCodec<global::StaticMapLocation> _repeated_staticMapLocations_codec
-      = pb::FieldCodec.ForMessage(18, global::StaticMapLocation.Parser);
-  private readonly pbc::RepeatedField<global::StaticMapLocation> staticMapLocations_ = new pbc::RepeatedField<global::StaticMapLocation>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::StaticMapLocation> StaticMapLocations {
-    get { return staticMapLocations_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as ZoneLocation);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(ZoneLocation other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ZoneID != other.ZoneID) return false;
-    if(!staticMapLocations_.Equals(other.staticMapLocations_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ZoneID != 0) hash ^= ZoneID.GetHashCode();
-    hash ^= staticMapLocations_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-    if (ZoneID != 0) {
-      output.WriteRawTag(8);
-      output.WriteInt32(ZoneID);
-    }
-    staticMapLocations_.WriteTo(output, _repeated_staticMapLocations_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    if (ZoneID != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ZoneID);
-    }
-    size += staticMapLocations_.CalculateSize(_repeated_staticMapLocations_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(ZoneLocation other) {
-    if (other == null) {
-      return;
-    }
-    if (other.ZoneID != 0) {
-      ZoneID = other.ZoneID;
-    }
-    staticMapLocations_.Add(other.staticMapLocations_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 8: {
-          ZoneID = input.ReadInt32();
-          break;
-        }
-        case 18: {
-          staticMapLocations_.AddEntriesFrom(input, _repeated_staticMapLocations_codec);
-          break;
-        }
-      }
-    }
-  }
-
-}
-
-public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
-  private static readonly pb::MessageParser<ServerStateResp> _parser = new pb::MessageParser<ServerStateResp>(() => new ServerStateResp());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<ServerStateResp> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CenterReflection.Descriptor.MessageTypes[3]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerStateResp() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerStateResp(ServerStateResp other) : this() {
-    serverType_ = other.serverType_;
-    message_ = other.message_;
-    serverConfig_ = other.serverConfig_ != null ? other.serverConfig_.Clone() : null;
-    serverInfoList_ = other.serverInfoList_.Clone();
-    servers_ = other.servers_.Clone();
-    zones_ = other.zones_.Clone();
-    zoneLocations_ = other.zoneLocations_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerStateResp Clone() {
-    return new ServerStateResp(this);
-  }
-
-  /// <summary>Field number for the "ServerType" field.</summary>
-  public const int ServerTypeFieldNumber = 1;
-  private string serverType_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string ServerType {
-    get { return serverType_; }
-    set {
-      serverType_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "Message" field.</summary>
-  public const int MessageFieldNumber = 2;
-  private string message_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string Message {
-    get { return message_; }
-    set {
-      message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "ServerConfig" field.</summary>
-  public const int ServerConfigFieldNumber = 3;
-  private global::ServerConfig serverConfig_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::ServerConfig ServerConfig {
-    get { return serverConfig_; }
-    set {
-      serverConfig_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ServerInfoList" field.</summary>
-  public const int ServerInfoListFieldNumber = 4;
-  private static readonly pb::FieldCodec<global::ServerInfo> _repeated_serverInfoList_codec
-      = pb::FieldCodec.ForMessage(34, global::ServerInfo.Parser);
-  private readonly pbc::RepeatedField<global::ServerInfo> serverInfoList_ = new pbc::RepeatedField<global::ServerInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::ServerInfo> ServerInfoList {
-    get { return serverInfoList_; }
-  }
-
-  /// <summary>Field number for the "Servers" field.</summary>
-  public const int ServersFieldNumber = 5;
-  private static readonly pb::FieldCodec<global::Server> _repeated_servers_codec
-      = pb::FieldCodec.ForMessage(42, global::Server.Parser);
-  private readonly pbc::RepeatedField<global::Server> servers_ = new pbc::RepeatedField<global::Server>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::Server> Servers {
-    get { return servers_; }
-  }
-
-  /// <summary>Field number for the "Zones" field.</summary>
-  public const int ZonesFieldNumber = 6;
-  private static readonly pb::FieldCodec<global::Zone> _repeated_zones_codec
-      = pb::FieldCodec.ForMessage(50, global::Zone.Parser);
-  private readonly pbc::RepeatedField<global::Zone> zones_ = new pbc::RepeatedField<global::Zone>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::Zone> Zones {
-    get { return zones_; }
-  }
-
-  /// <summary>Field number for the "ZoneLocations" field.</summary>
-  public const int ZoneLocationsFieldNumber = 7;
-  private static readonly pb::FieldCodec<global::ZoneLocation> _repeated_zoneLocations_codec
-      = pb::FieldCodec.ForMessage(58, global::ZoneLocation.Parser);
-  private readonly pbc::RepeatedField<global::ZoneLocation> zoneLocations_ = new pbc::RepeatedField<global::ZoneLocation>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::ZoneLocation> ZoneLocations {
-    get { return zoneLocations_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as ServerStateResp);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(ServerStateResp other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (ServerType != other.ServerType) return false;
-    if (Message != other.Message) return false;
-    if (!object.Equals(ServerConfig, other.ServerConfig)) return false;
-    if(!serverInfoList_.Equals(other.serverInfoList_)) return false;
-    if(!servers_.Equals(other.servers_)) return false;
-    if(!zones_.Equals(other.zones_)) return false;
-    if(!zoneLocations_.Equals(other.zoneLocations_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (ServerType.Length != 0) hash ^= ServerType.GetHashCode();
-    if (Message.Length != 0) hash ^= Message.GetHashCode();
-    if (serverConfig_ != null) hash ^= ServerConfig.GetHashCode();
-    hash ^= serverInfoList_.GetHashCode();
-    hash ^= servers_.GetHashCode();
-    hash ^= zones_.GetHashCode();
-    hash ^= zoneLocations_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-    if (ServerType.Length != 0) {
+    if (Address.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(ServerType);
+      output.WriteBytes(Address);
     }
-    if (Message.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(Message);
-    }
-    if (serverConfig_ != null) {
-      output.WriteRawTag(26);
-      output.WriteMessage(ServerConfig);
-    }
-    serverInfoList_.WriteTo(output, _repeated_serverInfoList_codec);
-    servers_.WriteTo(output, _repeated_servers_codec);
-    zones_.WriteTo(output, _repeated_zones_codec);
-    zoneLocations_.WriteTo(output, _repeated_zoneLocations_codec);
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -690,19 +385,9 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (ServerType.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(ServerType);
+    if (Address.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeBytesSize(Address);
     }
-    if (Message.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
-    }
-    if (serverConfig_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerConfig);
-    }
-    size += serverInfoList_.CalculateSize(_repeated_serverInfoList_codec);
-    size += servers_.CalculateSize(_repeated_servers_codec);
-    size += zones_.CalculateSize(_repeated_zones_codec);
-    size += zoneLocations_.CalculateSize(_repeated_zoneLocations_codec);
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -710,26 +395,13 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(ServerStateResp other) {
+  public void MergeFrom(NodeStartNTF other) {
     if (other == null) {
       return;
     }
-    if (other.ServerType.Length != 0) {
-      ServerType = other.ServerType;
+    if (other.Address.Length != 0) {
+      Address = other.Address;
     }
-    if (other.Message.Length != 0) {
-      Message = other.Message;
-    }
-    if (other.serverConfig_ != null) {
-      if (serverConfig_ == null) {
-        ServerConfig = new global::ServerConfig();
-      }
-      ServerConfig.MergeFrom(other.ServerConfig);
-    }
-    serverInfoList_.Add(other.serverInfoList_);
-    servers_.Add(other.servers_);
-    zones_.Add(other.zones_);
-    zoneLocations_.Add(other.zoneLocations_);
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -742,34 +414,7 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          ServerType = input.ReadString();
-          break;
-        }
-        case 18: {
-          Message = input.ReadString();
-          break;
-        }
-        case 26: {
-          if (serverConfig_ == null) {
-            ServerConfig = new global::ServerConfig();
-          }
-          input.ReadMessage(ServerConfig);
-          break;
-        }
-        case 34: {
-          serverInfoList_.AddEntriesFrom(input, _repeated_serverInfoList_codec);
-          break;
-        }
-        case 42: {
-          servers_.AddEntriesFrom(input, _repeated_servers_codec);
-          break;
-        }
-        case 50: {
-          zones_.AddEntriesFrom(input, _repeated_zones_codec);
-          break;
-        }
-        case 58: {
-          zoneLocations_.AddEntriesFrom(input, _repeated_zoneLocations_codec);
+          Address = input.ReadBytes();
           break;
         }
       }
@@ -778,11 +423,289 @@ public sealed partial class ServerStateResp : pb::IMessage<ServerStateResp> {
 
 }
 
-public sealed partial class ServerInfo : pb::IMessage<ServerInfo> {
-  private static readonly pb::MessageParser<ServerInfo> _parser = new pb::MessageParser<ServerInfo>(() => new ServerInfo());
+public sealed partial class Node : pb::IMessage<Node> {
+  private static readonly pb::MessageParser<Node> _parser = new pb::MessageParser<Node>(() => new Node());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<ServerInfo> Parser { get { return _parser; } }
+  public static pb::MessageParser<Node> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::CenterReflection.Descriptor.MessageTypes[2]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Node() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Node(Node other) : this() {
+    nodeState_ = other.nodeState_;
+    nodeAddress_ = other.nodeAddress_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public Node Clone() {
+    return new Node(this);
+  }
+
+  /// <summary>Field number for the "NodeState" field.</summary>
+  public const int NodeStateFieldNumber = 1;
+  private global::NodeState nodeState_ = global::NodeState.Unset;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::NodeState NodeState {
+    get { return nodeState_; }
+    set {
+      nodeState_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "NodeAddress" field.</summary>
+  public const int NodeAddressFieldNumber = 2;
+  private pb::ByteString nodeAddress_ = pb::ByteString.Empty;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pb::ByteString NodeAddress {
+    get { return nodeAddress_; }
+    set {
+      nodeAddress_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as Node);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(Node other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (NodeState != other.NodeState) return false;
+    if (NodeAddress != other.NodeAddress) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (NodeState != global::NodeState.Unset) hash ^= NodeState.GetHashCode();
+    if (NodeAddress.Length != 0) hash ^= NodeAddress.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (NodeState != global::NodeState.Unset) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) NodeState);
+    }
+    if (NodeAddress.Length != 0) {
+      output.WriteRawTag(18);
+      output.WriteBytes(NodeAddress);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (NodeState != global::NodeState.Unset) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) NodeState);
+    }
+    if (NodeAddress.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeBytesSize(NodeAddress);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(Node other) {
+    if (other == null) {
+      return;
+    }
+    if (other.NodeState != global::NodeState.Unset) {
+      NodeState = other.NodeState;
+    }
+    if (other.NodeAddress.Length != 0) {
+      NodeAddress = other.NodeAddress;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          NodeState = (global::NodeState) input.ReadEnum();
+          break;
+        }
+        case 18: {
+          NodeAddress = input.ReadBytes();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class NodesInfoNTF : pb::IMessage<NodesInfoNTF> {
+  private static readonly pb::MessageParser<NodesInfoNTF> _parser = new pb::MessageParser<NodesInfoNTF>(() => new NodesInfoNTF());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<NodesInfoNTF> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::CenterReflection.Descriptor.MessageTypes[3]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public NodesInfoNTF() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public NodesInfoNTF(NodesInfoNTF other) : this() {
+    nodes_ = other.nodes_.Clone();
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public NodesInfoNTF Clone() {
+    return new NodesInfoNTF(this);
+  }
+
+  /// <summary>Field number for the "Nodes" field.</summary>
+  public const int NodesFieldNumber = 1;
+  private static readonly pb::FieldCodec<global::Node> _repeated_nodes_codec
+      = pb::FieldCodec.ForMessage(10, global::Node.Parser);
+  private readonly pbc::RepeatedField<global::Node> nodes_ = new pbc::RepeatedField<global::Node>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<global::Node> Nodes {
+    get { return nodes_; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as NodesInfoNTF);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(NodesInfoNTF other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if(!nodes_.Equals(other.nodes_)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    hash ^= nodes_.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    nodes_.WriteTo(output, _repeated_nodes_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    size += nodes_.CalculateSize(_repeated_nodes_codec);
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(NodesInfoNTF other) {
+    if (other == null) {
+      return;
+    }
+    nodes_.Add(other.nodes_);
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          nodes_.AddEntriesFrom(input, _repeated_nodes_codec);
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class ResetConnectionNTF : pb::IMessage<ResetConnectionNTF> {
+  private static readonly pb::MessageParser<ResetConnectionNTF> _parser = new pb::MessageParser<ResetConnectionNTF>(() => new ResetConnectionNTF());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<ResetConnectionNTF> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -795,23 +718,21 @@ public sealed partial class ServerInfo : pb::IMessage<ServerInfo> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerInfo() {
+  public ResetConnectionNTF() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerInfo(ServerInfo other) : this() {
+  public ResetConnectionNTF(ResetConnectionNTF other) : this() {
     serverID_ = other.serverID_;
-    address_ = other.address_;
-    state_ = other.state_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerInfo Clone() {
-    return new ServerInfo(this);
+  public ResetConnectionNTF Clone() {
+    return new ResetConnectionNTF(this);
   }
 
   /// <summary>Field number for the "ServerID" field.</summary>
@@ -825,35 +746,13 @@ public sealed partial class ServerInfo : pb::IMessage<ServerInfo> {
     }
   }
 
-  /// <summary>Field number for the "Address" field.</summary>
-  public const int AddressFieldNumber = 2;
-  private pb::ByteString address_ = pb::ByteString.Empty;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pb::ByteString Address {
-    get { return address_; }
-    set {
-      address_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "State" field.</summary>
-  public const int StateFieldNumber = 3;
-  private global::ServerState state_ = global::ServerState.Start;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::ServerState State {
-    get { return state_; }
-    set {
-      state_ = value;
-    }
-  }
-
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as ServerInfo);
+    return Equals(other as ResetConnectionNTF);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(ServerInfo other) {
+  public bool Equals(ResetConnectionNTF other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
@@ -861,8 +760,6 @@ public sealed partial class ServerInfo : pb::IMessage<ServerInfo> {
       return true;
     }
     if (ServerID != other.ServerID) return false;
-    if (Address != other.Address) return false;
-    if (State != other.State) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -870,8 +767,6 @@ public sealed partial class ServerInfo : pb::IMessage<ServerInfo> {
   public override int GetHashCode() {
     int hash = 1;
     if (ServerID != 0) hash ^= ServerID.GetHashCode();
-    if (Address.Length != 0) hash ^= Address.GetHashCode();
-    if (State != global::ServerState.Start) hash ^= State.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -889,14 +784,6 @@ public sealed partial class ServerInfo : pb::IMessage<ServerInfo> {
       output.WriteRawTag(8);
       output.WriteInt32(ServerID);
     }
-    if (Address.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteBytes(Address);
-    }
-    if (State != global::ServerState.Start) {
-      output.WriteRawTag(24);
-      output.WriteEnum((int) State);
-    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -908,12 +795,6 @@ public sealed partial class ServerInfo : pb::IMessage<ServerInfo> {
     if (ServerID != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(ServerID);
     }
-    if (Address.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeBytesSize(Address);
-    }
-    if (State != global::ServerState.Start) {
-      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) State);
-    }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
     }
@@ -921,18 +802,12 @@ public sealed partial class ServerInfo : pb::IMessage<ServerInfo> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(ServerInfo other) {
+  public void MergeFrom(ResetConnectionNTF other) {
     if (other == null) {
       return;
     }
     if (other.ServerID != 0) {
       ServerID = other.ServerID;
-    }
-    if (other.Address.Length != 0) {
-      Address = other.Address;
-    }
-    if (other.State != global::ServerState.Start) {
-      State = other.State;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -947,330 +822,6 @@ public sealed partial class ServerInfo : pb::IMessage<ServerInfo> {
           break;
         case 8: {
           ServerID = input.ReadInt32();
-          break;
-        }
-        case 18: {
-          Address = input.ReadBytes();
-          break;
-        }
-        case 24: {
-          State = (global::ServerState) input.ReadEnum();
-          break;
-        }
-      }
-    }
-  }
-
-}
-
-public sealed partial class ServerInfoList : pb::IMessage<ServerInfoList> {
-  private static readonly pb::MessageParser<ServerInfoList> _parser = new pb::MessageParser<ServerInfoList>(() => new ServerInfoList());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<ServerInfoList> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CenterReflection.Descriptor.MessageTypes[5]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerInfoList() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerInfoList(ServerInfoList other) : this() {
-    servers_ = other.servers_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public ServerInfoList Clone() {
-    return new ServerInfoList(this);
-  }
-
-  /// <summary>Field number for the "Servers" field.</summary>
-  public const int ServersFieldNumber = 1;
-  private static readonly pb::FieldCodec<global::ServerInfo> _repeated_servers_codec
-      = pb::FieldCodec.ForMessage(10, global::ServerInfo.Parser);
-  private readonly pbc::RepeatedField<global::ServerInfo> servers_ = new pbc::RepeatedField<global::ServerInfo>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::ServerInfo> Servers {
-    get { return servers_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as ServerInfoList);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(ServerInfoList other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if(!servers_.Equals(other.servers_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    hash ^= servers_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-    servers_.WriteTo(output, _repeated_servers_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    size += servers_.CalculateSize(_repeated_servers_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(ServerInfoList other) {
-    if (other == null) {
-      return;
-    }
-    servers_.Add(other.servers_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          servers_.AddEntriesFrom(input, _repeated_servers_codec);
-          break;
-        }
-      }
-    }
-  }
-
-}
-
-public sealed partial class UpdateETC : pb::IMessage<UpdateETC> {
-  private static readonly pb::MessageParser<UpdateETC> _parser = new pb::MessageParser<UpdateETC>(() => new UpdateETC());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<UpdateETC> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::CenterReflection.Descriptor.MessageTypes[6]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public UpdateETC() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public UpdateETC(UpdateETC other) : this() {
-    serverConfig_ = other.serverConfig_ != null ? other.serverConfig_.Clone() : null;
-    servers_ = other.servers_.Clone();
-    zones_ = other.zones_.Clone();
-    zoneLocations_ = other.zoneLocations_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public UpdateETC Clone() {
-    return new UpdateETC(this);
-  }
-
-  /// <summary>Field number for the "ServerConfig" field.</summary>
-  public const int ServerConfigFieldNumber = 1;
-  private global::ServerConfig serverConfig_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::ServerConfig ServerConfig {
-    get { return serverConfig_; }
-    set {
-      serverConfig_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "Servers" field.</summary>
-  public const int ServersFieldNumber = 2;
-  private static readonly pb::FieldCodec<global::Server> _repeated_servers_codec
-      = pb::FieldCodec.ForMessage(18, global::Server.Parser);
-  private readonly pbc::RepeatedField<global::Server> servers_ = new pbc::RepeatedField<global::Server>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::Server> Servers {
-    get { return servers_; }
-  }
-
-  /// <summary>Field number for the "Zones" field.</summary>
-  public const int ZonesFieldNumber = 3;
-  private static readonly pb::FieldCodec<global::Zone> _repeated_zones_codec
-      = pb::FieldCodec.ForMessage(26, global::Zone.Parser);
-  private readonly pbc::RepeatedField<global::Zone> zones_ = new pbc::RepeatedField<global::Zone>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::Zone> Zones {
-    get { return zones_; }
-  }
-
-  /// <summary>Field number for the "ZoneLocations" field.</summary>
-  public const int ZoneLocationsFieldNumber = 4;
-  private static readonly pb::FieldCodec<global::ZoneLocation> _repeated_zoneLocations_codec
-      = pb::FieldCodec.ForMessage(34, global::ZoneLocation.Parser);
-  private readonly pbc::RepeatedField<global::ZoneLocation> zoneLocations_ = new pbc::RepeatedField<global::ZoneLocation>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<global::ZoneLocation> ZoneLocations {
-    get { return zoneLocations_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as UpdateETC);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(UpdateETC other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (!object.Equals(ServerConfig, other.ServerConfig)) return false;
-    if(!servers_.Equals(other.servers_)) return false;
-    if(!zones_.Equals(other.zones_)) return false;
-    if(!zoneLocations_.Equals(other.zoneLocations_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (serverConfig_ != null) hash ^= ServerConfig.GetHashCode();
-    hash ^= servers_.GetHashCode();
-    hash ^= zones_.GetHashCode();
-    hash ^= zoneLocations_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-    if (serverConfig_ != null) {
-      output.WriteRawTag(10);
-      output.WriteMessage(ServerConfig);
-    }
-    servers_.WriteTo(output, _repeated_servers_codec);
-    zones_.WriteTo(output, _repeated_zones_codec);
-    zoneLocations_.WriteTo(output, _repeated_zoneLocations_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    if (serverConfig_ != null) {
-      size += 1 + pb::CodedOutputStream.ComputeMessageSize(ServerConfig);
-    }
-    size += servers_.CalculateSize(_repeated_servers_codec);
-    size += zones_.CalculateSize(_repeated_zones_codec);
-    size += zoneLocations_.CalculateSize(_repeated_zoneLocations_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(UpdateETC other) {
-    if (other == null) {
-      return;
-    }
-    if (other.serverConfig_ != null) {
-      if (serverConfig_ == null) {
-        ServerConfig = new global::ServerConfig();
-      }
-      ServerConfig.MergeFrom(other.ServerConfig);
-    }
-    servers_.Add(other.servers_);
-    zones_.Add(other.zones_);
-    zoneLocations_.Add(other.zoneLocations_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          if (serverConfig_ == null) {
-            ServerConfig = new global::ServerConfig();
-          }
-          input.ReadMessage(ServerConfig);
-          break;
-        }
-        case 18: {
-          servers_.AddEntriesFrom(input, _repeated_servers_codec);
-          break;
-        }
-        case 26: {
-          zones_.AddEntriesFrom(input, _repeated_zones_codec);
-          break;
-        }
-        case 34: {
-          zoneLocations_.AddEntriesFrom(input, _repeated_zoneLocations_codec);
           break;
         }
       }

@@ -22,7 +22,7 @@ public class NetworkMgr : MonoBehaviour
     public delegate void MessageDelegate(ByteString bytes);
     public OnLoginServerMessageDelegate OnLoginServerMessage;
 
-    private readonly Dictionary<Command, MessageDelegate> listeners = new Dictionary<Command, MessageDelegate>();
+    private readonly Dictionary<CMD, MessageDelegate> listeners = new Dictionary<CMD, MessageDelegate>();
     private readonly Dictionary<ulong, MessageDelegate> callbacks = new Dictionary<ulong, MessageDelegate>();
 
     private static ulong sequence = 0;
@@ -72,13 +72,13 @@ public class NetworkMgr : MonoBehaviour
                 var message = GateToClient.Parser.ParseFrom(buffer);
                 if (message.Sequence == 0)
                 {
-                    if (listeners.ContainsKey(message.Command))
+                    if (listeners.ContainsKey(message.CMD))
                     {
-                        listeners[message.Command](message.Buffer);
+                        listeners[message.CMD](message.Buffer);
                     }
                     else
                     {
-                        Debug.LogError("没有注册Command " + message.Command.ToString());
+                        Debug.LogError("没有注册Command " + message.CMD.ToString());
                     }
                 }
                 else
@@ -133,26 +133,26 @@ public class NetworkMgr : MonoBehaviour
         }
     }
 
-    public void Request(Command cmd, ByteString bytes, MessageDelegate callback)
+    public void Request(CMD cmd, ByteString bytes, MessageDelegate callback)
     {
         sequence++;
         var togate = new ClientToGate();
         togate.Request = bytes;
-        togate.Command = cmd;
+        togate.CMD = cmd;
         togate.Sequence = sequence;
         callbacks.Add(sequence, callback);
         Game.Send(togate.ToByteArray());
     }
 
-    public void Notify(Command cmd, ByteString bytes)
+    public void Notify(CMD cmd, ByteString bytes)
     {
         var togate = new ClientToGate();
         togate.Notify = bytes;
-        togate.Command = cmd;
+        togate.CMD = cmd;
         Game.Send(togate.ToByteArray());
     }
 
-    public void Listen(Command cmd, MessageDelegate listener)
+    public void Listen(CMD cmd, MessageDelegate listener)
     {
         listeners[cmd] = listener;
     }

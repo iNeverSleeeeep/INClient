@@ -22,33 +22,36 @@ public static partial class CommandReflection {
   static CommandReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg1jb21tYW5kLnByb3RvKvIFCgdDb21tYW5kEg4KCktFRVBfQUxJVkUQABII",
-          "CgRSRVNQEAESCAoER0FURRACEhAKDFNFUlZFUl9TVEFURRADEhcKE1NFUlZF",
-          "Ul9MSVNUX0NIQU5HRUQQBBIQCgxTRVJWRVJfUkVTRVQQBRIUChBDT05ORUNU",
-          "X0dBVEVfUkVREAYSFAoQU0VTU0lPTl9DRVJUX05URhAHEg4KCkNDSEFUX0NI",
-          "QVQQCBIMCghESVNQQVRDSBAJEhgKFExEX0NSRUFURV9QTEFZRVJfUkVREAoS",
-          "FgoSR0RfTE9BRF9QTEFZRVJfUkVREAsSGQoVR0RfUkVMRUFTRV9QTEFZRVJf",
-          "TlRGEAwSFgoSR0RfQ1JFQVRFX1JPTEVfUkVREA0SFAoQR0RfTE9BRF9ST0xF",
-          "X1JFURAOEhIKDlJFTE9BRF9FVENfUkVREA8SEgoOVVBEQVRFX0VUQ19OVEYQ",
-          "EBIMCghNT1ZFX05URhAREhUKEU5FQVJfRU5USVRJRVNfTlRGEBISEwoPRU5U",
-          "SVRZX0RBVEFfUkVREBMSDgoKUk9MRV9FTlRFUhAUEh0KGVVQREFURV9QTEFZ",
-          "RVJfQUREUkVTU19OVEYQFRIdChlSRU1PVkVfUExBWUVSX0FERFJFU1NfTlRG",
-          "EBYSGgoWVVBEQVRFX01BUF9BRERSRVNTX05URhAXEhoKFlJFTU9WRV9NQVBf",
-          "QUREUkVTU19OVEYQGBIXChNHRVRfTUFQX0FERFJFU1NfUkVREBkSFwoTTE9B",
-          "RF9TVEFUSUNfTUFQX1JFURAaEhgKFExPQURfRFlOQU1JQ19NQVBfUkVREBsS",
-          "HgoaVVBEQVRFX1NUQVRJQ19NQVBfVVVJRF9OVEYQHBIbChdHRVRfU1RBVElD",
-          "X01BUF9VVUlEX1JFURAdEhcKE1NBVkVfU1RBVElDX01BUF9SRVEQHhIYChRT",
-          "QVZFX0RZTkFNSUNfTUFQX1JFURAfEg0KCVNBVkVfUk9MRRAgEg4KCkdFVF9N",
-          "QVBfSUQQIUIYWhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
+          "Cg1jb21tYW5kLnByb3RvKuwGCgNDTUQSDgoKS0VFUF9BTElWRRAAEggKBFJF",
+          "U1AQARIICgRHQVRFEAISEAoMU0VSVkVSX1NUQVRFEAMSFwoTU0VSVkVSX0xJ",
+          "U1RfQ0hBTkdFRBAEEhAKDFNFUlZFUl9SRVNFVBAFEhQKEENPTk5FQ1RfR0FU",
+          "RV9SRVEQBhIUChBTRVNTSU9OX0NFUlRfTlRGEAcSDgoKQ0NIQVRfQ0hBVBAI",
+          "EgwKCERJU1BBVENIEAkSGAoUTERfQ1JFQVRFX1BMQVlFUl9SRVEQChIWChJH",
+          "RF9MT0FEX1BMQVlFUl9SRVEQCxIZChVHRF9SRUxFQVNFX1BMQVlFUl9OVEYQ",
+          "DBIWChJHRF9DUkVBVEVfUk9MRV9SRVEQDRIUChBHRF9MT0FEX1JPTEVfUkVR",
+          "EA4SEgoOUkVMT0FEX0VUQ19SRVEQDxISCg5VUERBVEVfRVRDX05URhAQEgwK",
+          "CE1PVkVfTlRGEBESFQoRTkVBUl9FTlRJVElFU19OVEYQEhITCg9FTlRJVFlf",
+          "REFUQV9SRVEQExIOCgpST0xFX0VOVEVSEBQSGwoXVVBEQVRFX1JPTEVfQURE",
+          "UkVTU19OVEYQFRIbChdSRU1PVkVfUk9MRV9BRERSRVNTX05URhAWEhoKFlVQ",
+          "REFURV9NQVBfQUREUkVTU19OVEYQFxIaChZSRU1PVkVfTUFQX0FERFJFU1Nf",
+          "TlRGEBgSFwoTR0VUX01BUF9BRERSRVNTX1JFURAZEhcKE0xPQURfU1RBVElD",
+          "X01BUF9SRVEQGhIYChRMT0FEX0RZTkFNSUNfTUFQX1JFURAbEh4KGlVQREFU",
+          "RV9TVEFUSUNfTUFQX1VVSURfTlRGEBwSGwoXR0VUX1NUQVRJQ19NQVBfVVVJ",
+          "RF9SRVEQHRIXChNTQVZFX1NUQVRJQ19NQVBfUkVREB4SGAoUU0FWRV9EWU5B",
+          "TUlDX01BUF9SRVEQHxINCglTQVZFX1JPTEUQIBIOCgpHRVRfTUFQX0lEECES",
+          "DAoITU9WRV9JTkYQIhIaChZGT1JXQVJEX1BMQVlFUl9NRVNTQUdFECMSEwoO",
+          "Tk9ERV9TVEFSVF9OVEYQ6AcSEQoMRVRDX1NZTkNfTlRGEOkHEhMKDk5PREVT",
+          "X0lORk9fTlRGEOoHEhkKFFJFU0VUX0NPTk5FQ1RJT05fTlRGEOsHQhhaFklO",
+          "U2VydmVyL3NyYy9wcm90by9tc2diBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Command), }, null));
+        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CMD), }, null));
   }
   #endregion
 
 }
 #region Enums
-public enum Command {
+public enum CMD {
   /// <summary>
   /// any -> center
   /// </summary>
@@ -115,7 +118,7 @@ public enum Command {
   /// </summary>
   [pbr::OriginalName("UPDATE_ETC_NTF")] UpdateEtcNtf = 16,
   /// <summary>
-  /// client -> world
+  /// world -> client
   /// </summary>
   [pbr::OriginalName("MOVE_NTF")] MoveNtf = 17,
   /// <summary>
@@ -133,11 +136,11 @@ public enum Command {
   /// <summary>
   /// any -> gps
   /// </summary>
-  [pbr::OriginalName("UPDATE_PLAYER_ADDRESS_NTF")] UpdatePlayerAddressNtf = 21,
+  [pbr::OriginalName("UPDATE_ROLE_ADDRESS_NTF")] UpdateRoleAddressNtf = 21,
   /// <summary>
   /// gate -> gps
   /// </summary>
-  [pbr::OriginalName("REMOVE_PLAYER_ADDRESS_NTF")] RemovePlayerAddressNtf = 22,
+  [pbr::OriginalName("REMOVE_ROLE_ADDRESS_NTF")] RemoveRoleAddressNtf = 22,
   /// <summary>
   /// world -> gps
   /// </summary>
@@ -182,6 +185,30 @@ public enum Command {
   /// gate -> world
   /// </summary>
   [pbr::OriginalName("GET_MAP_ID")] GetMapId = 33,
+  /// <summary>
+  /// client -> world
+  /// </summary>
+  [pbr::OriginalName("MOVE_INF")] MoveInf = 34,
+  /// <summary>
+  /// any -> gate -> client
+  /// </summary>
+  [pbr::OriginalName("FORWARD_PLAYER_MESSAGE")] ForwardPlayerMessage = 35,
+  /// <summary>
+  /// any -> center
+  /// </summary>
+  [pbr::OriginalName("NODE_START_NTF")] NodeStartNtf = 1000,
+  /// <summary>
+  /// center -> any
+  /// </summary>
+  [pbr::OriginalName("ETC_SYNC_NTF")] EtcSyncNtf = 1001,
+  /// <summary>
+  /// any &lt;-> center
+  /// </summary>
+  [pbr::OriginalName("NODES_INFO_NTF")] NodesInfoNtf = 1002,
+  /// <summary>
+  /// center -> any
+  /// </summary>
+  [pbr::OriginalName("RESET_CONNECTION_NTF")] ResetConnectionNtf = 1003,
 }
 
 #endregion

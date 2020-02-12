@@ -14,7 +14,7 @@ public class Enter : MonoBehaviour
     public InputField RoleName;
     public GameObject CreateRoleRoot;
 
-    public Player player;
+    public static Player player;
 
     private IList<object> ZoneList;
 
@@ -31,29 +31,40 @@ public class Enter : MonoBehaviour
             Debug.Log(webRequest.downloadHandler.text);
             ZoneList = SharpJson.JsonDecoder.DecodeText(webRequest.downloadHandler.text) as IList<object>;
             RefreshZonesShow();
+            RefreshRolesShow();
         }
     }
 
     private void OnEnable()
     {
         StartCoroutine(GetZones(weburl));
-        var req = new ConnectGateReq();
-        req.SessionCert = NetworkMgr.Instance.Cert;
-        NetworkMgr.Instance.Request(Command.ConnectGateReq, req.ToByteString(), OnConnectGateCallback);
+        RefreshRolesShow();
+
+        NetworkMgr.Instance.OnLoginServerMessage = OnLoginServerMessage;
     }
 
-    public void OnConnectGateCallback(ByteString bytes)
+    private void OnLoginServerMessage(LoginToClient message)
     {
-        var resp = ConnectGateResp.Parser.ParseFrom(bytes);
-        if (resp.Success)
+        if (message.Success)
         {
-            Debug.Log("连接Gate成功");
-            player = resp.Player;
-            RefreshRolesShow();
+            if (message.Player != null)
+            {
+                player = message.Player;
+                RefreshRolesShow();
+            }
+            if (message.SessionCert != null)
+            {
+                NetworkMgr.Instance.Cert = message.SessionCert;
+                Debug.Log("成功:" + NetworkMgr.Instance.Cert.UUID + " Address:" + message.GateIP + " Port:" + message.GatePort);
+                NetworkMgr.Instance.ConnectGame(message.GateIP, message.GatePort, message.GateWebPort);
+                var req = new ConnectGateReq();
+                req.SessionCert = message.SessionCert;
+                NetworkMgr.Instance.Request(CMD.ConnectGateReq, req.ToByteString(), OnRoleEnterCallback);
+            }
         }
         else
         {
-            Debug.Log("连接Gate失败");
+            Debug.Log("失败");
         }
     }
 
@@ -121,9 +132,11 @@ public class Enter : MonoBehaviour
             return;
         }
 
-		var req = new RoleEnterReq();
-        req.RoleUUID = uuid;
-        NetworkMgr.Instance.Request(Command.RoleEnter, req.ToByteString(), OnRoleEnterCallback);
+
+        var msg = new ClientToLogin();
+        msg.EnterGame = new CLRoleEnterGame();
+        msg.EnterGame.RoleUUID = uuid;
+        NetworkMgr.Instance.Login.Send(msg.ToByteArray());
     }
 
     private void OnRoleEnterCallback(ByteString bytes)
@@ -155,25 +168,16 @@ public class Enter : MonoBehaviour
             Debug.Log("不能为空");
             return;
         }
-        var req = new CreateRoleReq();
-        req.RoleName = RoleName.text;
-        req.PlayerUUID = NetworkMgr.Instance.Cert.UUID;
-        req.Zone = Zones.value;
-        NetworkMgr.Instance.Request(Command.GdCreateRoleReq, req.ToByteString(), OnCreateRoleCallback);
+
+        var msg = new ClientToLogin();
+        msg.CreateRole = new CLCreateRole();
+        msg.CreateRole.RoleName = RoleName.text;
+        msg.CreateRole.Zone = Zones.value;
+        NetworkMgr.Instance.Login.Send(msg.ToByteArray());
     }
 
-    private void OnCreateRoleCallback(ByteString bytes)
+    private void OnDisable()
     {
-        var resp = CreateRoleResp.Parser.ParseFrom(bytes);
-        if (resp.Success)
-        {
-            player.RoleList.Add(resp.Role);
-            Debug.Log("创建角色成功");
-            RefreshRolesShow();
-        }
-        else
-        {
-            Debug.Log("创建角色失败");
-        }
+        NetworkMgr.Instance.CloseLogin();
     }
 }

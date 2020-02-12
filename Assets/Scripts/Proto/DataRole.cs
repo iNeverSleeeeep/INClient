@@ -25,7 +25,8 @@ public static partial class DataRoleReflection {
           "Cg9kYXRhLnJvbGUucHJvdG8aEWRhdGEuZW50aXR5LnByb3RvInYKD1JvbGVT",
           "dW1tYXJ5RGF0YRIMCgROYW1lGAEgASgJEgwKBFpvbmUYAiABKAUSEAoIUm9s",
           "ZVVVSUQYAyABKAkSEgoKUGxheWVyVVVJRBgEIAEoCRIPCgdNYXBVVUlEGAUg",
-          "ASgJEhAKCE1haWxVVUlEGAYgASgJIjEKDlJvbGVPbmxpbmVEYXRhEh8KCkVu",
+          "ASgJEhAKCE1haWxVVUlEGAYgASgJIisKC1JvbGVBZGRyZXNzEgwKBEdhdGUY",
+          "ASABKAUSDgoGRW50aXR5GAIgASgFIjEKDlJvbGVPbmxpbmVEYXRhEh8KCkVu",
           "dGl0eURhdGEYASABKAsyCy5FbnRpdHlEYXRhIi0KEFJvbGVSZWFsdGltZURh",
           "dGESGQoRTGFzdFN0YXRpY01hcFVVSUQYASABKAkiUgoEUm9sZRIlCgtTdW1t",
           "YXJ5RGF0YRgBIAEoCzIQLlJvbGVTdW1tYXJ5RGF0YRIjCgpPbmxpbmVEYXRh",
@@ -35,6 +36,7 @@ public static partial class DataRoleReflection {
         new pbr::FileDescriptor[] { global::DataEntityReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleSummaryData), global::RoleSummaryData.Parser, new[]{ "Name", "Zone", "RoleUUID", "PlayerUUID", "MapUUID", "MailUUID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RoleAddress), global::RoleAddress.Parser, new[]{ "Gate", "Entity" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleOnlineData), global::RoleOnlineData.Parser, new[]{ "EntityData" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleRealtimeData), global::RoleRealtimeData.Parser, new[]{ "LastStaticMapUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Role), global::Role.Parser, new[]{ "SummaryData", "OnlineData" }, null, null, null)
@@ -334,6 +336,163 @@ public sealed partial class RoleSummaryData : pb::IMessage<RoleSummaryData> {
 
 }
 
+public sealed partial class RoleAddress : pb::IMessage<RoleAddress> {
+  private static readonly pb::MessageParser<RoleAddress> _parser = new pb::MessageParser<RoleAddress>(() => new RoleAddress());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<RoleAddress> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DataRoleReflection.Descriptor.MessageTypes[1]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RoleAddress() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RoleAddress(RoleAddress other) : this() {
+    gate_ = other.gate_;
+    entity_ = other.entity_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RoleAddress Clone() {
+    return new RoleAddress(this);
+  }
+
+  /// <summary>Field number for the "Gate" field.</summary>
+  public const int GateFieldNumber = 1;
+  private int gate_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Gate {
+    get { return gate_; }
+    set {
+      gate_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "Entity" field.</summary>
+  public const int EntityFieldNumber = 2;
+  private int entity_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int Entity {
+    get { return entity_; }
+    set {
+      entity_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as RoleAddress);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(RoleAddress other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (Gate != other.Gate) return false;
+    if (Entity != other.Entity) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (Gate != 0) hash ^= Gate.GetHashCode();
+    if (Entity != 0) hash ^= Entity.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (Gate != 0) {
+      output.WriteRawTag(8);
+      output.WriteInt32(Gate);
+    }
+    if (Entity != 0) {
+      output.WriteRawTag(16);
+      output.WriteInt32(Entity);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (Gate != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Gate);
+    }
+    if (Entity != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeInt32Size(Entity);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(RoleAddress other) {
+    if (other == null) {
+      return;
+    }
+    if (other.Gate != 0) {
+      Gate = other.Gate;
+    }
+    if (other.Entity != 0) {
+      Entity = other.Entity;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          Gate = input.ReadInt32();
+          break;
+        }
+        case 16: {
+          Entity = input.ReadInt32();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
 /// <summary>
 /// 在线数据
 /// </summary>
@@ -345,7 +504,7 @@ public sealed partial class RoleOnlineData : pb::IMessage<RoleOnlineData> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::DataRoleReflection.Descriptor.MessageTypes[1]; }
+    get { return global::DataRoleReflection.Descriptor.MessageTypes[2]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -483,7 +642,7 @@ public sealed partial class RoleRealtimeData : pb::IMessage<RoleRealtimeData> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::DataRoleReflection.Descriptor.MessageTypes[2]; }
+    get { return global::DataRoleReflection.Descriptor.MessageTypes[3]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -612,7 +771,7 @@ public sealed partial class Role : pb::IMessage<Role> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::DataRoleReflection.Descriptor.MessageTypes[3]; }
+    get { return global::DataRoleReflection.Descriptor.MessageTypes[4]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

@@ -27,34 +27,46 @@ public static partial class DataComponentReflection {
           "dGF0aW9uGAIgASgLMgsuUXVhdGVybmlvbiJcChBQaHlzaWNzQ29tcG9uZW50",
           "EgwKBE1hc3MYASABKAESGgoIUmF3U3BlZWQYAiABKAsyCC5WZWN0b3IzEh4K",
           "DFBhc3NpdmVTcGVlZBgDIAEoCzIILlZlY3RvcjMiLwoSQXR0cmlidXRlQ29t",
-          "cG9uZW50Eg0KBVNwZWVkGAEgASgCEgoKAkhQGAIgASgCIp0BCglDb21wb25l",
-          "bnQSHAoEVHlwZRgBIAEoDjIOLkNvbXBvbmVudFR5cGUSJgoJVHJhbnNmb3Jt",
-          "GAIgASgLMhMuVHJhbnNmb3JtQ29tcG9uZW50EiIKB1BoeXNpY3MYAyABKAsy",
-          "ES5QaHlzaWNzQ29tcG9uZW50EiYKCUF0dHJpYnV0ZRgEIAEoCzITLkF0dHJp",
-          "YnV0ZUNvbXBvbmVudCpHCg1Db21wb25lbnRUeXBlEgsKB0ludmFsaWQQABIN",
-          "CglUcmFuc29mcm0QARILCgdQaHlzaWNzEAISDQoJQXR0cmlidXRlEANCGVoX",
-          "SU5TZXJ2ZXIvc3JjL3Byb3RvL2RhdGFiBnByb3RvMw=="));
+          "cG9uZW50Eg0KBVNwZWVkGAEgASgCEgoKAkhQGAIgASgCIi4KDU1vdmVDb21w",
+          "b25lbnQSHQoLRGVzdGluYXRpb24YASABKAsyCC5WZWN0b3IzIj4KE0NvbnRy",
+          "b2xsZXJDb21wb25lbnQSJwoOQ29udHJvbGxlclR5cGUYASABKA4yDy5Db250",
+          "cm9sbGVyVHlwZSLlAQoJQ29tcG9uZW50EhwKBFR5cGUYASABKA4yDi5Db21w",
+          "b25lbnRUeXBlEiYKCVRyYW5zZm9ybRgCIAEoCzITLlRyYW5zZm9ybUNvbXBv",
+          "bmVudBIiCgdQaHlzaWNzGAMgASgLMhEuUGh5c2ljc0NvbXBvbmVudBImCglB",
+          "dHRyaWJ1dGUYBCABKAsyEy5BdHRyaWJ1dGVDb21wb25lbnQSHAoETW92ZRgF",
+          "IAEoCzIOLk1vdmVDb21wb25lbnQSKAoKQ29udHJvbGxlchgGIAEoCzIULkNv",
+          "bnRyb2xsZXJDb21wb25lbnQqYQoNQ29tcG9uZW50VHlwZRILCgdJbnZhbGlk",
+          "EAASDQoJVHJhbnNvZnJtEAESCwoHUGh5c2ljcxACEg0KCUF0dHJpYnV0ZRAD",
+          "EggKBE1vdmUQBBIOCgpDb250cm9sbGVyEAUqOAoOQ29udHJvbGxlclR5cGUS",
+          "FAoQUGxheWVyQ29udHJvbGxlchAAEhAKDEFJQ29udHJvbGxlchABQhlaF0lO",
+          "U2VydmVyL3NyYy9wcm90by9kYXRhYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::MathReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ComponentType), }, new pbr::GeneratedClrTypeInfo[] {
+        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ComponentType), typeof(global::ControllerType), }, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::TransformComponent), global::TransformComponent.Parser, new[]{ "Position", "Rotation" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::PhysicsComponent), global::PhysicsComponent.Parser, new[]{ "Mass", "RawSpeed", "PassiveSpeed" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::AttributeComponent), global::AttributeComponent.Parser, new[]{ "Speed", "HP" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::Component), global::Component.Parser, new[]{ "Type", "Transform", "Physics", "Attribute" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::MoveComponent), global::MoveComponent.Parser, new[]{ "Destination" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ControllerComponent), global::ControllerComponent.Parser, new[]{ "ControllerType" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Component), global::Component.Parser, new[]{ "Type", "Transform", "Physics", "Attribute", "Move", "Controller" }, null, null, null)
         }));
   }
   #endregion
 
 }
 #region Enums
-/// <summary>
-/// 注意 新加的ComponentType加在Max之前
-/// </summary>
 public enum ComponentType {
   [pbr::OriginalName("Invalid")] Invalid = 0,
   [pbr::OriginalName("Transofrm")] Transofrm = 1,
   [pbr::OriginalName("Physics")] Physics = 2,
   [pbr::OriginalName("Attribute")] Attribute = 3,
+  [pbr::OriginalName("Move")] Move = 4,
+  [pbr::OriginalName("Controller")] Controller = 5,
+}
+
+public enum ControllerType {
+  [pbr::OriginalName("PlayerController")] PlayerController = 0,
+  [pbr::OriginalName("AIController")] Aicontroller = 1,
 }
 
 #endregion
@@ -589,6 +601,270 @@ public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent
 
 }
 
+public sealed partial class MoveComponent : pb::IMessage<MoveComponent> {
+  private static readonly pb::MessageParser<MoveComponent> _parser = new pb::MessageParser<MoveComponent>(() => new MoveComponent());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<MoveComponent> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DataComponentReflection.Descriptor.MessageTypes[3]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public MoveComponent() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public MoveComponent(MoveComponent other) : this() {
+    destination_ = other.destination_ != null ? other.destination_.Clone() : null;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public MoveComponent Clone() {
+    return new MoveComponent(this);
+  }
+
+  /// <summary>Field number for the "Destination" field.</summary>
+  public const int DestinationFieldNumber = 1;
+  private global::Vector3 destination_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Vector3 Destination {
+    get { return destination_; }
+    set {
+      destination_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as MoveComponent);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(MoveComponent other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (!object.Equals(Destination, other.Destination)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (destination_ != null) hash ^= Destination.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (destination_ != null) {
+      output.WriteRawTag(10);
+      output.WriteMessage(Destination);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (destination_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Destination);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(MoveComponent other) {
+    if (other == null) {
+      return;
+    }
+    if (other.destination_ != null) {
+      if (destination_ == null) {
+        Destination = new global::Vector3();
+      }
+      Destination.MergeFrom(other.Destination);
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          if (destination_ == null) {
+            Destination = new global::Vector3();
+          }
+          input.ReadMessage(Destination);
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class ControllerComponent : pb::IMessage<ControllerComponent> {
+  private static readonly pb::MessageParser<ControllerComponent> _parser = new pb::MessageParser<ControllerComponent>(() => new ControllerComponent());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<ControllerComponent> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DataComponentReflection.Descriptor.MessageTypes[4]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ControllerComponent() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ControllerComponent(ControllerComponent other) : this() {
+    controllerType_ = other.controllerType_;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public ControllerComponent Clone() {
+    return new ControllerComponent(this);
+  }
+
+  /// <summary>Field number for the "ControllerType" field.</summary>
+  public const int ControllerTypeFieldNumber = 1;
+  private global::ControllerType controllerType_ = global::ControllerType.PlayerController;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::ControllerType ControllerType {
+    get { return controllerType_; }
+    set {
+      controllerType_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as ControllerComponent);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(ControllerComponent other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (ControllerType != other.ControllerType) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (ControllerType != global::ControllerType.PlayerController) hash ^= ControllerType.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (ControllerType != global::ControllerType.PlayerController) {
+      output.WriteRawTag(8);
+      output.WriteEnum((int) ControllerType);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (ControllerType != global::ControllerType.PlayerController) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ControllerType);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(ControllerComponent other) {
+    if (other == null) {
+      return;
+    }
+    if (other.ControllerType != global::ControllerType.PlayerController) {
+      ControllerType = other.ControllerType;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          ControllerType = (global::ControllerType) input.ReadEnum();
+          break;
+        }
+      }
+    }
+  }
+
+}
+
 public sealed partial class Component : pb::IMessage<Component> {
   private static readonly pb::MessageParser<Component> _parser = new pb::MessageParser<Component>(() => new Component());
   private pb::UnknownFieldSet _unknownFields;
@@ -597,7 +873,7 @@ public sealed partial class Component : pb::IMessage<Component> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::DataComponentReflection.Descriptor.MessageTypes[3]; }
+    get { return global::DataComponentReflection.Descriptor.MessageTypes[5]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -618,6 +894,8 @@ public sealed partial class Component : pb::IMessage<Component> {
     transform_ = other.transform_ != null ? other.transform_.Clone() : null;
     physics_ = other.physics_ != null ? other.physics_.Clone() : null;
     attribute_ = other.attribute_ != null ? other.attribute_.Clone() : null;
+    move_ = other.move_ != null ? other.move_.Clone() : null;
+    controller_ = other.controller_ != null ? other.controller_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -670,6 +948,28 @@ public sealed partial class Component : pb::IMessage<Component> {
     }
   }
 
+  /// <summary>Field number for the "Move" field.</summary>
+  public const int MoveFieldNumber = 5;
+  private global::MoveComponent move_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::MoveComponent Move {
+    get { return move_; }
+    set {
+      move_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "Controller" field.</summary>
+  public const int ControllerFieldNumber = 6;
+  private global::ControllerComponent controller_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::ControllerComponent Controller {
+    get { return controller_; }
+    set {
+      controller_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as Component);
@@ -687,6 +987,8 @@ public sealed partial class Component : pb::IMessage<Component> {
     if (!object.Equals(Transform, other.Transform)) return false;
     if (!object.Equals(Physics, other.Physics)) return false;
     if (!object.Equals(Attribute, other.Attribute)) return false;
+    if (!object.Equals(Move, other.Move)) return false;
+    if (!object.Equals(Controller, other.Controller)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -697,6 +999,8 @@ public sealed partial class Component : pb::IMessage<Component> {
     if (transform_ != null) hash ^= Transform.GetHashCode();
     if (physics_ != null) hash ^= Physics.GetHashCode();
     if (attribute_ != null) hash ^= Attribute.GetHashCode();
+    if (move_ != null) hash ^= Move.GetHashCode();
+    if (controller_ != null) hash ^= Controller.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -726,6 +1030,14 @@ public sealed partial class Component : pb::IMessage<Component> {
       output.WriteRawTag(34);
       output.WriteMessage(Attribute);
     }
+    if (move_ != null) {
+      output.WriteRawTag(42);
+      output.WriteMessage(Move);
+    }
+    if (controller_ != null) {
+      output.WriteRawTag(50);
+      output.WriteMessage(Controller);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -745,6 +1057,12 @@ public sealed partial class Component : pb::IMessage<Component> {
     }
     if (attribute_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(Attribute);
+    }
+    if (move_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Move);
+    }
+    if (controller_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Controller);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -777,6 +1095,18 @@ public sealed partial class Component : pb::IMessage<Component> {
         Attribute = new global::AttributeComponent();
       }
       Attribute.MergeFrom(other.Attribute);
+    }
+    if (other.move_ != null) {
+      if (move_ == null) {
+        Move = new global::MoveComponent();
+      }
+      Move.MergeFrom(other.Move);
+    }
+    if (other.controller_ != null) {
+      if (controller_ == null) {
+        Controller = new global::ControllerComponent();
+      }
+      Controller.MergeFrom(other.Controller);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -812,6 +1142,20 @@ public sealed partial class Component : pb::IMessage<Component> {
             Attribute = new global::AttributeComponent();
           }
           input.ReadMessage(Attribute);
+          break;
+        }
+        case 42: {
+          if (move_ == null) {
+            Move = new global::MoveComponent();
+          }
+          input.ReadMessage(Move);
+          break;
+        }
+        case 50: {
+          if (controller_ == null) {
+            Controller = new global::ControllerComponent();
+          }
+          input.ReadMessage(Controller);
           break;
         }
       }

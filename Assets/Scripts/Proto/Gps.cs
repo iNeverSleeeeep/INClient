@@ -22,28 +22,24 @@ public static partial class GpsReflection {
   static GpsReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CglncHMucHJvdG8aEWRhdGEucGxheWVyLnByb3RvIm0KBVRoaW5nEg4KBkJ1",
-          "ZmZlchgBIAEoDBIUCgxUb1BsYXllclVVSUQYAiABKAkSEQoJVG9Xb3JsZElE",
-          "GAMgASgFEhEKCVRvTWFwVVVJRBgEIAEoBRIYChBUb1BsYXllclVVSURMaXN0",
-          "GAUgAygJIl8KFlVwZGF0ZVBsYXllckFkZHJlc3NOVEYSEgoKUGxheWVyVVVJ",
-          "RBgBIAEoCRIQCghSb2xlVVVJRBgCIAEoCRIfCgdBZGRyZXNzGAMgASgLMg4u",
-          "UGxheWVyQWRkcmVzcyIsChZSZW1vdmVQbGF5ZXJBZGRyZXNzTlRGEhIKClBs",
-          "YXllclVVSUQYASABKAkiOAoTVXBkYXRlTWFwQWRkcmVzc05URhIPCgdNYXBV",
-          "VUlEGAEgASgJEhAKCFNlcnZlcklEGAIgASgFIiYKE1JlbW92ZU1hcEFkZHJl",
-          "c3NOVEYSDwoHTWFwVVVJRBgBIAEoCSIjChBHZXRNYXBBZGRyZXNzUmVxEg8K",
-          "B01hcFVVSUQYASABKAkiJQoRR2V0TWFwQWRkcmVzc1Jlc3ASEAoIU2VydmVy",
-          "SUQYASABKAUiVAoWVXBkYXRlU3RhdGljTWFwVVVJRE5URhIOCgZab25lSUQY",
-          "ASABKAUSEwoLU3RhdGljTWFwSUQYAiABKAUSFQoNU3RhdGljTWFwVVVJRBgD",
-          "IAEoCSI6ChNHZXRTdGF0aWNNYXBVVUlEUmVxEg4KBlpvbmVJRBgBIAEoBRIT",
-          "CgtTdGF0aWNNYXBJRBgCIAEoBSItChRHZXRTdGF0aWNNYXBVVUlEUmVzcBIV",
-          "Cg1TdGF0aWNNYXBVVUlEGAEgASgJQhhaFklOU2VydmVyL3NyYy9wcm90by9t",
-          "c2diBnByb3RvMw=="));
+          "CglncHMucHJvdG8aD2RhdGEucm9sZS5wcm90byJHChRVcGRhdGVSb2xlQWRk",
+          "cmVzc05URhIQCghSb2xlVVVJRBgBIAEoCRIdCgdBZGRyZXNzGAIgASgLMgwu",
+          "Um9sZUFkZHJlc3MiKAoUUmVtb3ZlUm9sZUFkZHJlc3NOVEYSEAoIUm9sZVVV",
+          "SUQYASABKAkiOAoTVXBkYXRlTWFwQWRkcmVzc05URhIPCgdNYXBVVUlEGAEg",
+          "ASgJEhAKCFNlcnZlcklEGAIgASgFIiYKE1JlbW92ZU1hcEFkZHJlc3NOVEYS",
+          "DwoHTWFwVVVJRBgBIAEoCSIjChBHZXRNYXBBZGRyZXNzUmVxEg8KB01hcFVV",
+          "SUQYASABKAkiJQoRR2V0TWFwQWRkcmVzc1Jlc3ASEAoIU2VydmVySUQYASAB",
+          "KAUiVAoWVXBkYXRlU3RhdGljTWFwVVVJRE5URhIOCgZab25lSUQYASABKAUS",
+          "EwoLU3RhdGljTWFwSUQYAiABKAUSFQoNU3RhdGljTWFwVVVJRBgDIAEoCSI6",
+          "ChNHZXRTdGF0aWNNYXBVVUlEUmVxEg4KBlpvbmVJRBgBIAEoBRITCgtTdGF0",
+          "aWNNYXBJRBgCIAEoBSItChRHZXRTdGF0aWNNYXBVVUlEUmVzcBIVCg1TdGF0",
+          "aWNNYXBVVUlEGAEgASgJQhhaFklOU2VydmVyL3NyYy9wcm90by9tc2diBnBy",
+          "b3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::DataPlayerReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::DataRoleReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::Thing), global::Thing.Parser, new[]{ "Buffer", "ToPlayerUUID", "ToWorldID", "ToMapUUID", "ToPlayerUUIDList" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::UpdatePlayerAddressNTF), global::UpdatePlayerAddressNTF.Parser, new[]{ "PlayerUUID", "RoleUUID", "Address" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::RemovePlayerAddressNTF), global::RemovePlayerAddressNTF.Parser, new[]{ "PlayerUUID" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::UpdateRoleAddressNTF), global::UpdateRoleAddressNTF.Parser, new[]{ "RoleUUID", "Address" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RemoveRoleAddressNTF), global::RemoveRoleAddressNTF.Parser, new[]{ "RoleUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::UpdateMapAddressNTF), global::UpdateMapAddressNTF.Parser, new[]{ "MapUUID", "ServerID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RemoveMapAddressNTF), global::RemoveMapAddressNTF.Parser, new[]{ "MapUUID" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::GetMapAddressReq), global::GetMapAddressReq.Parser, new[]{ "MapUUID" }, null, null, null),
@@ -57,11 +53,11 @@ public static partial class GpsReflection {
 
 }
 #region Messages
-public sealed partial class Thing : pb::IMessage<Thing> {
-  private static readonly pb::MessageParser<Thing> _parser = new pb::MessageParser<Thing>(() => new Thing());
+public sealed partial class UpdateRoleAddressNTF : pb::IMessage<UpdateRoleAddressNTF> {
+  private static readonly pb::MessageParser<UpdateRoleAddressNTF> _parser = new pb::MessageParser<UpdateRoleAddressNTF>(() => new UpdateRoleAddressNTF());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<Thing> Parser { get { return _parser; } }
+  public static pb::MessageParser<UpdateRoleAddressNTF> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
@@ -74,271 +70,26 @@ public sealed partial class Thing : pb::IMessage<Thing> {
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public Thing() {
+  public UpdateRoleAddressNTF() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public Thing(Thing other) : this() {
-    buffer_ = other.buffer_;
-    toPlayerUUID_ = other.toPlayerUUID_;
-    toWorldID_ = other.toWorldID_;
-    toMapUUID_ = other.toMapUUID_;
-    toPlayerUUIDList_ = other.toPlayerUUIDList_.Clone();
-    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public Thing Clone() {
-    return new Thing(this);
-  }
-
-  /// <summary>Field number for the "Buffer" field.</summary>
-  public const int BufferFieldNumber = 1;
-  private pb::ByteString buffer_ = pb::ByteString.Empty;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pb::ByteString Buffer {
-    get { return buffer_; }
-    set {
-      buffer_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "ToPlayerUUID" field.</summary>
-  public const int ToPlayerUUIDFieldNumber = 2;
-  private string toPlayerUUID_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string ToPlayerUUID {
-    get { return toPlayerUUID_; }
-    set {
-      toPlayerUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
-  }
-
-  /// <summary>Field number for the "ToWorldID" field.</summary>
-  public const int ToWorldIDFieldNumber = 3;
-  private int toWorldID_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int ToWorldID {
-    get { return toWorldID_; }
-    set {
-      toWorldID_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ToMapUUID" field.</summary>
-  public const int ToMapUUIDFieldNumber = 4;
-  private int toMapUUID_;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int ToMapUUID {
-    get { return toMapUUID_; }
-    set {
-      toMapUUID_ = value;
-    }
-  }
-
-  /// <summary>Field number for the "ToPlayerUUIDList" field.</summary>
-  public const int ToPlayerUUIDListFieldNumber = 5;
-  private static readonly pb::FieldCodec<string> _repeated_toPlayerUUIDList_codec
-      = pb::FieldCodec.ForString(42);
-  private readonly pbc::RepeatedField<string> toPlayerUUIDList_ = new pbc::RepeatedField<string>();
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public pbc::RepeatedField<string> ToPlayerUUIDList {
-    get { return toPlayerUUIDList_; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override bool Equals(object other) {
-    return Equals(other as Thing);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(Thing other) {
-    if (ReferenceEquals(other, null)) {
-      return false;
-    }
-    if (ReferenceEquals(other, this)) {
-      return true;
-    }
-    if (Buffer != other.Buffer) return false;
-    if (ToPlayerUUID != other.ToPlayerUUID) return false;
-    if (ToWorldID != other.ToWorldID) return false;
-    if (ToMapUUID != other.ToMapUUID) return false;
-    if(!toPlayerUUIDList_.Equals(other.toPlayerUUIDList_)) return false;
-    return Equals(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override int GetHashCode() {
-    int hash = 1;
-    if (Buffer.Length != 0) hash ^= Buffer.GetHashCode();
-    if (ToPlayerUUID.Length != 0) hash ^= ToPlayerUUID.GetHashCode();
-    if (ToWorldID != 0) hash ^= ToWorldID.GetHashCode();
-    if (ToMapUUID != 0) hash ^= ToMapUUID.GetHashCode();
-    hash ^= toPlayerUUIDList_.GetHashCode();
-    if (_unknownFields != null) {
-      hash ^= _unknownFields.GetHashCode();
-    }
-    return hash;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public override string ToString() {
-    return pb::JsonFormatter.ToDiagnosticString(this);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void WriteTo(pb::CodedOutputStream output) {
-    if (Buffer.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteBytes(Buffer);
-    }
-    if (ToPlayerUUID.Length != 0) {
-      output.WriteRawTag(18);
-      output.WriteString(ToPlayerUUID);
-    }
-    if (ToWorldID != 0) {
-      output.WriteRawTag(24);
-      output.WriteInt32(ToWorldID);
-    }
-    if (ToMapUUID != 0) {
-      output.WriteRawTag(32);
-      output.WriteInt32(ToMapUUID);
-    }
-    toPlayerUUIDList_.WriteTo(output, _repeated_toPlayerUUIDList_codec);
-    if (_unknownFields != null) {
-      _unknownFields.WriteTo(output);
-    }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public int CalculateSize() {
-    int size = 0;
-    if (Buffer.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeBytesSize(Buffer);
-    }
-    if (ToPlayerUUID.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(ToPlayerUUID);
-    }
-    if (ToWorldID != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ToWorldID);
-    }
-    if (ToMapUUID != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeInt32Size(ToMapUUID);
-    }
-    size += toPlayerUUIDList_.CalculateSize(_repeated_toPlayerUUIDList_codec);
-    if (_unknownFields != null) {
-      size += _unknownFields.CalculateSize();
-    }
-    return size;
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(Thing other) {
-    if (other == null) {
-      return;
-    }
-    if (other.Buffer.Length != 0) {
-      Buffer = other.Buffer;
-    }
-    if (other.ToPlayerUUID.Length != 0) {
-      ToPlayerUUID = other.ToPlayerUUID;
-    }
-    if (other.ToWorldID != 0) {
-      ToWorldID = other.ToWorldID;
-    }
-    if (other.ToMapUUID != 0) {
-      ToMapUUID = other.ToMapUUID;
-    }
-    toPlayerUUIDList_.Add(other.toPlayerUUIDList_);
-    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(pb::CodedInputStream input) {
-    uint tag;
-    while ((tag = input.ReadTag()) != 0) {
-      switch(tag) {
-        default:
-          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-          break;
-        case 10: {
-          Buffer = input.ReadBytes();
-          break;
-        }
-        case 18: {
-          ToPlayerUUID = input.ReadString();
-          break;
-        }
-        case 24: {
-          ToWorldID = input.ReadInt32();
-          break;
-        }
-        case 32: {
-          ToMapUUID = input.ReadInt32();
-          break;
-        }
-        case 42: {
-          toPlayerUUIDList_.AddEntriesFrom(input, _repeated_toPlayerUUIDList_codec);
-          break;
-        }
-      }
-    }
-  }
-
-}
-
-public sealed partial class UpdatePlayerAddressNTF : pb::IMessage<UpdatePlayerAddressNTF> {
-  private static readonly pb::MessageParser<UpdatePlayerAddressNTF> _parser = new pb::MessageParser<UpdatePlayerAddressNTF>(() => new UpdatePlayerAddressNTF());
-  private pb::UnknownFieldSet _unknownFields;
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<UpdatePlayerAddressNTF> Parser { get { return _parser; } }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pbr::MessageDescriptor Descriptor {
-    get { return global::GpsReflection.Descriptor.MessageTypes[1]; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  pbr::MessageDescriptor pb::IMessage.Descriptor {
-    get { return Descriptor; }
-  }
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public UpdatePlayerAddressNTF() {
-    OnConstruction();
-  }
-
-  partial void OnConstruction();
-
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public UpdatePlayerAddressNTF(UpdatePlayerAddressNTF other) : this() {
-    playerUUID_ = other.playerUUID_;
+  public UpdateRoleAddressNTF(UpdateRoleAddressNTF other) : this() {
     roleUUID_ = other.roleUUID_;
     address_ = other.address_ != null ? other.address_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public UpdatePlayerAddressNTF Clone() {
-    return new UpdatePlayerAddressNTF(this);
-  }
-
-  /// <summary>Field number for the "PlayerUUID" field.</summary>
-  public const int PlayerUUIDFieldNumber = 1;
-  private string playerUUID_ = "";
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string PlayerUUID {
-    get { return playerUUID_; }
-    set {
-      playerUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-    }
+  public UpdateRoleAddressNTF Clone() {
+    return new UpdateRoleAddressNTF(this);
   }
 
   /// <summary>Field number for the "RoleUUID" field.</summary>
-  public const int RoleUUIDFieldNumber = 2;
+  public const int RoleUUIDFieldNumber = 1;
   private string roleUUID_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public string RoleUUID {
@@ -349,10 +100,10 @@ public sealed partial class UpdatePlayerAddressNTF : pb::IMessage<UpdatePlayerAd
   }
 
   /// <summary>Field number for the "Address" field.</summary>
-  public const int AddressFieldNumber = 3;
-  private global::PlayerAddress address_;
+  public const int AddressFieldNumber = 2;
+  private global::RoleAddress address_;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public global::PlayerAddress Address {
+  public global::RoleAddress Address {
     get { return address_; }
     set {
       address_ = value;
@@ -361,18 +112,17 @@ public sealed partial class UpdatePlayerAddressNTF : pb::IMessage<UpdatePlayerAd
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as UpdatePlayerAddressNTF);
+    return Equals(other as UpdateRoleAddressNTF);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(UpdatePlayerAddressNTF other) {
+  public bool Equals(UpdateRoleAddressNTF other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (PlayerUUID != other.PlayerUUID) return false;
     if (RoleUUID != other.RoleUUID) return false;
     if (!object.Equals(Address, other.Address)) return false;
     return Equals(_unknownFields, other._unknownFields);
@@ -381,7 +131,6 @@ public sealed partial class UpdatePlayerAddressNTF : pb::IMessage<UpdatePlayerAd
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (PlayerUUID.Length != 0) hash ^= PlayerUUID.GetHashCode();
     if (RoleUUID.Length != 0) hash ^= RoleUUID.GetHashCode();
     if (address_ != null) hash ^= Address.GetHashCode();
     if (_unknownFields != null) {
@@ -397,16 +146,12 @@ public sealed partial class UpdatePlayerAddressNTF : pb::IMessage<UpdatePlayerAd
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (PlayerUUID.Length != 0) {
-      output.WriteRawTag(10);
-      output.WriteString(PlayerUUID);
-    }
     if (RoleUUID.Length != 0) {
-      output.WriteRawTag(18);
+      output.WriteRawTag(10);
       output.WriteString(RoleUUID);
     }
     if (address_ != null) {
-      output.WriteRawTag(26);
+      output.WriteRawTag(18);
       output.WriteMessage(Address);
     }
     if (_unknownFields != null) {
@@ -417,9 +162,6 @@ public sealed partial class UpdatePlayerAddressNTF : pb::IMessage<UpdatePlayerAd
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (PlayerUUID.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerUUID);
-    }
     if (RoleUUID.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeStringSize(RoleUUID);
     }
@@ -433,19 +175,16 @@ public sealed partial class UpdatePlayerAddressNTF : pb::IMessage<UpdatePlayerAd
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(UpdatePlayerAddressNTF other) {
+  public void MergeFrom(UpdateRoleAddressNTF other) {
     if (other == null) {
       return;
-    }
-    if (other.PlayerUUID.Length != 0) {
-      PlayerUUID = other.PlayerUUID;
     }
     if (other.RoleUUID.Length != 0) {
       RoleUUID = other.RoleUUID;
     }
     if (other.address_ != null) {
       if (address_ == null) {
-        Address = new global::PlayerAddress();
+        Address = new global::RoleAddress();
       }
       Address.MergeFrom(other.Address);
     }
@@ -461,16 +200,12 @@ public sealed partial class UpdatePlayerAddressNTF : pb::IMessage<UpdatePlayerAd
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          PlayerUUID = input.ReadString();
-          break;
-        }
-        case 18: {
           RoleUUID = input.ReadString();
           break;
         }
-        case 26: {
+        case 18: {
           if (address_ == null) {
-            Address = new global::PlayerAddress();
+            Address = new global::RoleAddress();
           }
           input.ReadMessage(Address);
           break;
@@ -481,15 +216,15 @@ public sealed partial class UpdatePlayerAddressNTF : pb::IMessage<UpdatePlayerAd
 
 }
 
-public sealed partial class RemovePlayerAddressNTF : pb::IMessage<RemovePlayerAddressNTF> {
-  private static readonly pb::MessageParser<RemovePlayerAddressNTF> _parser = new pb::MessageParser<RemovePlayerAddressNTF>(() => new RemovePlayerAddressNTF());
+public sealed partial class RemoveRoleAddressNTF : pb::IMessage<RemoveRoleAddressNTF> {
+  private static readonly pb::MessageParser<RemoveRoleAddressNTF> _parser = new pb::MessageParser<RemoveRoleAddressNTF>(() => new RemoveRoleAddressNTF());
   private pb::UnknownFieldSet _unknownFields;
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public static pb::MessageParser<RemovePlayerAddressNTF> Parser { get { return _parser; } }
+  public static pb::MessageParser<RemoveRoleAddressNTF> Parser { get { return _parser; } }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::GpsReflection.Descriptor.MessageTypes[2]; }
+    get { return global::GpsReflection.Descriptor.MessageTypes[1]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -498,55 +233,55 @@ public sealed partial class RemovePlayerAddressNTF : pb::IMessage<RemovePlayerAd
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public RemovePlayerAddressNTF() {
+  public RemoveRoleAddressNTF() {
     OnConstruction();
   }
 
   partial void OnConstruction();
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public RemovePlayerAddressNTF(RemovePlayerAddressNTF other) : this() {
-    playerUUID_ = other.playerUUID_;
+  public RemoveRoleAddressNTF(RemoveRoleAddressNTF other) : this() {
+    roleUUID_ = other.roleUUID_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public RemovePlayerAddressNTF Clone() {
-    return new RemovePlayerAddressNTF(this);
+  public RemoveRoleAddressNTF Clone() {
+    return new RemoveRoleAddressNTF(this);
   }
 
-  /// <summary>Field number for the "PlayerUUID" field.</summary>
-  public const int PlayerUUIDFieldNumber = 1;
-  private string playerUUID_ = "";
+  /// <summary>Field number for the "RoleUUID" field.</summary>
+  public const int RoleUUIDFieldNumber = 1;
+  private string roleUUID_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string PlayerUUID {
-    get { return playerUUID_; }
+  public string RoleUUID {
+    get { return roleUUID_; }
     set {
-      playerUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      roleUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
-    return Equals(other as RemovePlayerAddressNTF);
+    return Equals(other as RemoveRoleAddressNTF);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public bool Equals(RemovePlayerAddressNTF other) {
+  public bool Equals(RemoveRoleAddressNTF other) {
     if (ReferenceEquals(other, null)) {
       return false;
     }
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (PlayerUUID != other.PlayerUUID) return false;
+    if (RoleUUID != other.RoleUUID) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (PlayerUUID.Length != 0) hash ^= PlayerUUID.GetHashCode();
+    if (RoleUUID.Length != 0) hash ^= RoleUUID.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -560,9 +295,9 @@ public sealed partial class RemovePlayerAddressNTF : pb::IMessage<RemovePlayerAd
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (PlayerUUID.Length != 0) {
+    if (RoleUUID.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(PlayerUUID);
+      output.WriteString(RoleUUID);
     }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
@@ -572,8 +307,8 @@ public sealed partial class RemovePlayerAddressNTF : pb::IMessage<RemovePlayerAd
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (PlayerUUID.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerUUID);
+    if (RoleUUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(RoleUUID);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -582,12 +317,12 @@ public sealed partial class RemovePlayerAddressNTF : pb::IMessage<RemovePlayerAd
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public void MergeFrom(RemovePlayerAddressNTF other) {
+  public void MergeFrom(RemoveRoleAddressNTF other) {
     if (other == null) {
       return;
     }
-    if (other.PlayerUUID.Length != 0) {
-      PlayerUUID = other.PlayerUUID;
+    if (other.RoleUUID.Length != 0) {
+      RoleUUID = other.RoleUUID;
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -601,7 +336,7 @@ public sealed partial class RemovePlayerAddressNTF : pb::IMessage<RemovePlayerAd
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          PlayerUUID = input.ReadString();
+          RoleUUID = input.ReadString();
           break;
         }
       }
@@ -618,7 +353,7 @@ public sealed partial class UpdateMapAddressNTF : pb::IMessage<UpdateMapAddressN
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::GpsReflection.Descriptor.MessageTypes[3]; }
+    get { return global::GpsReflection.Descriptor.MessageTypes[2]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -775,7 +510,7 @@ public sealed partial class RemoveMapAddressNTF : pb::IMessage<RemoveMapAddressN
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::GpsReflection.Descriptor.MessageTypes[4]; }
+    get { return global::GpsReflection.Descriptor.MessageTypes[3]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -904,7 +639,7 @@ public sealed partial class GetMapAddressReq : pb::IMessage<GetMapAddressReq> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::GpsReflection.Descriptor.MessageTypes[5]; }
+    get { return global::GpsReflection.Descriptor.MessageTypes[4]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1033,7 +768,7 @@ public sealed partial class GetMapAddressResp : pb::IMessage<GetMapAddressResp> 
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::GpsReflection.Descriptor.MessageTypes[6]; }
+    get { return global::GpsReflection.Descriptor.MessageTypes[5]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1162,7 +897,7 @@ public sealed partial class UpdateStaticMapUUIDNTF : pb::IMessage<UpdateStaticMa
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::GpsReflection.Descriptor.MessageTypes[7]; }
+    get { return global::GpsReflection.Descriptor.MessageTypes[6]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1347,7 +1082,7 @@ public sealed partial class GetStaticMapUUIDReq : pb::IMessage<GetStaticMapUUIDR
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::GpsReflection.Descriptor.MessageTypes[8]; }
+    get { return global::GpsReflection.Descriptor.MessageTypes[7]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1504,7 +1239,7 @@ public sealed partial class GetStaticMapUUIDResp : pb::IMessage<GetStaticMapUUID
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::GpsReflection.Descriptor.MessageTypes[9]; }
+    get { return global::GpsReflection.Descriptor.MessageTypes[8]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
