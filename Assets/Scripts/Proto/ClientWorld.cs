@@ -24,17 +24,19 @@ public static partial class ClientWorldReflection {
         string.Concat(
           "ChJjbGllbnQtd29ybGQucHJvdG8aCm1hdGgucHJvdG8aEWRhdGEuZW50aXR5",
           "LnByb3RvIjsKB01vdmVJTkYSGgoIUG9zaXRpb24YASABKAsyCC5WZWN0b3Iz",
-          "EhQKAlRvGAIgASgLMgguVmVjdG9yMyIzCgdNb3ZlTlRGEhIKCkVudGl0eVVV",
-          "SUQYASABKAkSFAoCVG8YAiABKAsyCC5WZWN0b3IzIjwKCk5lYXJFbnRpdHkS",
-          "EgoKRW50aXR5VVVJRBgBIAEoCRIaCghQb3NpdGlvbhgCIAEoCzIILlZlY3Rv",
-          "cjMiMAoPTmVhckVudGl0aWVzTlRGEh0KCEVudGl0aWVzGAEgAygLMgsuTmVh",
-          "ckVudGl0eSIkCg1FbnRpdHlEYXRhUmVxEhMKC0VudGl0eVVVSURzGAEgAygJ",
-          "Ii4KDUVudGl0eURhdGFSZXMSHQoIRW50aXRpZXMYASADKAsyCy5FbnRpdHlE",
-          "YXRhQhhaFklOU2VydmVyL3NyYy9wcm90by9tc2diBnByb3RvMw=="));
+          "EhQKAlRvGAIgASgLMgguVmVjdG9yMyIpCgtTdG9wTW92ZUlORhIaCghQb3Np",
+          "dGlvbhgBIAEoCzIILlZlY3RvcjMiMwoHTW92ZU5URhISCgpFbnRpdHlVVUlE",
+          "GAEgASgJEhQKAlRvGAIgASgLMgguVmVjdG9yMyI8CgpOZWFyRW50aXR5EhIK",
+          "CkVudGl0eVVVSUQYASABKAkSGgoIUG9zaXRpb24YAiABKAsyCC5WZWN0b3Iz",
+          "IjAKD05lYXJFbnRpdGllc05URhIdCghFbnRpdGllcxgBIAMoCzILLk5lYXJF",
+          "bnRpdHkiJAoNRW50aXR5RGF0YVJlcRITCgtFbnRpdHlVVUlEcxgBIAMoCSIu",
+          "Cg1FbnRpdHlEYXRhUmVzEh0KCEVudGl0aWVzGAEgAygLMgsuRW50aXR5RGF0",
+          "YUIYWhZJTlNlcnZlci9zcmMvcHJvdG8vbXNnYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::MathReflection.Descriptor, global::DataEntityReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::MoveINF), global::MoveINF.Parser, new[]{ "Position", "To" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::StopMoveINF), global::StopMoveINF.Parser, new[]{ "Position" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::MoveNTF), global::MoveNTF.Parser, new[]{ "EntityUUID", "To" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::NearEntity), global::NearEntity.Parser, new[]{ "EntityUUID", "Position" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::NearEntitiesNTF), global::NearEntitiesNTF.Parser, new[]{ "Entities" }, null, null, null),
@@ -215,6 +217,141 @@ public sealed partial class MoveINF : pb::IMessage<MoveINF> {
 
 }
 
+public sealed partial class StopMoveINF : pb::IMessage<StopMoveINF> {
+  private static readonly pb::MessageParser<StopMoveINF> _parser = new pb::MessageParser<StopMoveINF>(() => new StopMoveINF());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<StopMoveINF> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::ClientWorldReflection.Descriptor.MessageTypes[1]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public StopMoveINF() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public StopMoveINF(StopMoveINF other) : this() {
+    position_ = other.position_ != null ? other.position_.Clone() : null;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public StopMoveINF Clone() {
+    return new StopMoveINF(this);
+  }
+
+  /// <summary>Field number for the "Position" field.</summary>
+  public const int PositionFieldNumber = 1;
+  private global::Vector3 position_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Vector3 Position {
+    get { return position_; }
+    set {
+      position_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as StopMoveINF);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(StopMoveINF other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (!object.Equals(Position, other.Position)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (position_ != null) hash ^= Position.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (position_ != null) {
+      output.WriteRawTag(10);
+      output.WriteMessage(Position);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (position_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(StopMoveINF other) {
+    if (other == null) {
+      return;
+    }
+    if (other.position_ != null) {
+      if (position_ == null) {
+        Position = new global::Vector3();
+      }
+      Position.MergeFrom(other.Position);
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          if (position_ == null) {
+            Position = new global::Vector3();
+          }
+          input.ReadMessage(Position);
+          break;
+        }
+      }
+    }
+  }
+
+}
+
 public sealed partial class MoveNTF : pb::IMessage<MoveNTF> {
   private static readonly pb::MessageParser<MoveNTF> _parser = new pb::MessageParser<MoveNTF>(() => new MoveNTF());
   private pb::UnknownFieldSet _unknownFields;
@@ -223,7 +360,7 @@ public sealed partial class MoveNTF : pb::IMessage<MoveNTF> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientWorldReflection.Descriptor.MessageTypes[1]; }
+    get { return global::ClientWorldReflection.Descriptor.MessageTypes[2]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -386,7 +523,7 @@ public sealed partial class NearEntity : pb::IMessage<NearEntity> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientWorldReflection.Descriptor.MessageTypes[2]; }
+    get { return global::ClientWorldReflection.Descriptor.MessageTypes[3]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -549,7 +686,7 @@ public sealed partial class NearEntitiesNTF : pb::IMessage<NearEntitiesNTF> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientWorldReflection.Descriptor.MessageTypes[3]; }
+    get { return global::ClientWorldReflection.Descriptor.MessageTypes[4]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -670,7 +807,7 @@ public sealed partial class EntityDataReq : pb::IMessage<EntityDataReq> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientWorldReflection.Descriptor.MessageTypes[4]; }
+    get { return global::ClientWorldReflection.Descriptor.MessageTypes[5]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -791,7 +928,7 @@ public sealed partial class EntityDataRes : pb::IMessage<EntityDataRes> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::ClientWorldReflection.Descriptor.MessageTypes[5]; }
+    get { return global::ClientWorldReflection.Descriptor.MessageTypes[6]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

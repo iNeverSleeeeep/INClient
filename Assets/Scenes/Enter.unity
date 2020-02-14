@@ -641,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1b1a7c161be499ab43df1b9dd89afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weburl: http://47.108.192.203:10700/zones
+  weburl: http://127.0.0.1:10700/zones
   Zones: {fileID: 1512240709}
   Roles: {fileID: 136117419}
   RoleName: {fileID: 1529734315}

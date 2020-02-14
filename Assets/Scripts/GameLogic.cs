@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Google.Protobuf;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -92,6 +93,9 @@ public class GameLogic : MonoBehaviour
     {
         var physicsComponent = Role.OnlineData.EntityData.Components[(int)ComponentType.Physics].Physics;
         physicsComponent.RawSpeed = UnityEngine.Vector3.zero;
+        var stop = new StopMoveINF();
+        stop.Position = m_RoleObject.transform.position;
+        NetworkMgr.Instance.Notify(CMD.StopMoveInf, stop.ToByteString());
     }
 
     private void SendMove()
@@ -99,5 +103,9 @@ public class GameLogic : MonoBehaviour
         var physicsComponent = Role.OnlineData.EntityData.Components[(int)ComponentType.Physics].Physics;
         var attributeComponent = Role.OnlineData.EntityData.Components[(int)ComponentType.Attribute].Attribute;
         physicsComponent.RawSpeed = m_MoveTargetDirection.normalized * attributeComponent.Speed;
+        var move = new MoveINF();
+        move.Position = m_RoleObject.transform.position;
+        move.To = m_MoveTargetPosition;
+        NetworkMgr.Instance.Notify(CMD.MoveInf, move.ToByteString());
     }
 }

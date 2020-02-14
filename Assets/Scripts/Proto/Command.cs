@@ -22,27 +22,26 @@ public static partial class CommandReflection {
   static CommandReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg1jb21tYW5kLnByb3RvKuwGCgNDTUQSDgoKS0VFUF9BTElWRRAAEggKBFJF",
-          "U1AQARIICgRHQVRFEAISEAoMU0VSVkVSX1NUQVRFEAMSFwoTU0VSVkVSX0xJ",
-          "U1RfQ0hBTkdFRBAEEhAKDFNFUlZFUl9SRVNFVBAFEhQKEENPTk5FQ1RfR0FU",
-          "RV9SRVEQBhIUChBTRVNTSU9OX0NFUlRfTlRGEAcSDgoKQ0NIQVRfQ0hBVBAI",
-          "EgwKCERJU1BBVENIEAkSGAoUTERfQ1JFQVRFX1BMQVlFUl9SRVEQChIWChJH",
-          "RF9MT0FEX1BMQVlFUl9SRVEQCxIZChVHRF9SRUxFQVNFX1BMQVlFUl9OVEYQ",
-          "DBIWChJHRF9DUkVBVEVfUk9MRV9SRVEQDRIUChBHRF9MT0FEX1JPTEVfUkVR",
-          "EA4SEgoOUkVMT0FEX0VUQ19SRVEQDxISCg5VUERBVEVfRVRDX05URhAQEgwK",
-          "CE1PVkVfTlRGEBESFQoRTkVBUl9FTlRJVElFU19OVEYQEhITCg9FTlRJVFlf",
-          "REFUQV9SRVEQExIOCgpST0xFX0VOVEVSEBQSGwoXVVBEQVRFX1JPTEVfQURE",
-          "UkVTU19OVEYQFRIbChdSRU1PVkVfUk9MRV9BRERSRVNTX05URhAWEhoKFlVQ",
-          "REFURV9NQVBfQUREUkVTU19OVEYQFxIaChZSRU1PVkVfTUFQX0FERFJFU1Nf",
-          "TlRGEBgSFwoTR0VUX01BUF9BRERSRVNTX1JFURAZEhcKE0xPQURfU1RBVElD",
-          "X01BUF9SRVEQGhIYChRMT0FEX0RZTkFNSUNfTUFQX1JFURAbEh4KGlVQREFU",
-          "RV9TVEFUSUNfTUFQX1VVSURfTlRGEBwSGwoXR0VUX1NUQVRJQ19NQVBfVVVJ",
-          "RF9SRVEQHRIXChNTQVZFX1NUQVRJQ19NQVBfUkVREB4SGAoUU0FWRV9EWU5B",
-          "TUlDX01BUF9SRVEQHxINCglTQVZFX1JPTEUQIBIOCgpHRVRfTUFQX0lEECES",
-          "DAoITU9WRV9JTkYQIhIaChZGT1JXQVJEX1BMQVlFUl9NRVNTQUdFECMSEwoO",
-          "Tk9ERV9TVEFSVF9OVEYQ6AcSEQoMRVRDX1NZTkNfTlRGEOkHEhMKDk5PREVT",
-          "X0lORk9fTlRGEOoHEhkKFFJFU0VUX0NPTk5FQ1RJT05fTlRGEOsHQhhaFklO",
-          "U2VydmVyL3NyYy9wcm90by9tc2diBnByb3RvMw=="));
+          "Cg1jb21tYW5kLnByb3RvKscGCgNDTUQSDgoKS0VFUF9BTElWRRAAEggKBFJF",
+          "U1AQARIICgRHQVRFEAISFAoQQ09OTkVDVF9HQVRFX1JFURAGEhQKEFNFU1NJ",
+          "T05fQ0VSVF9OVEYQBxIOCgpDQ0hBVF9DSEFUEAgSDAoIRElTUEFUQ0gQCRIY",
+          "ChRMRF9DUkVBVEVfUExBWUVSX1JFURAKEhYKEkdEX0xPQURfUExBWUVSX1JF",
+          "URALEhkKFUdEX1JFTEVBU0VfUExBWUVSX05URhAMEhYKEkdEX0NSRUFURV9S",
+          "T0xFX1JFURANEhQKEEdEX0xPQURfUk9MRV9SRVEQDhISCg5SRUxPQURfRVRD",
+          "X1JFURAPEgwKCE1PVkVfTlRGEBESFQoRTkVBUl9FTlRJVElFU19OVEYQEhIT",
+          "Cg9FTlRJVFlfREFUQV9SRVEQExIOCgpST0xFX0VOVEVSEBQSGwoXVVBEQVRF",
+          "X1JPTEVfQUREUkVTU19OVEYQFRIbChdSRU1PVkVfUk9MRV9BRERSRVNTX05U",
+          "RhAWEhoKFlVQREFURV9NQVBfQUREUkVTU19OVEYQFxIaChZSRU1PVkVfTUFQ",
+          "X0FERFJFU1NfTlRGEBgSFwoTR0VUX01BUF9BRERSRVNTX1JFURAZEhcKE0xP",
+          "QURfU1RBVElDX01BUF9SRVEQGhIYChRMT0FEX0RZTkFNSUNfTUFQX1JFURAb",
+          "Eh4KGlVQREFURV9TVEFUSUNfTUFQX1VVSURfTlRGEBwSGwoXR0VUX1NUQVRJ",
+          "Q19NQVBfVVVJRF9SRVEQHRIXChNTQVZFX1NUQVRJQ19NQVBfUkVREB4SGAoU",
+          "U0FWRV9EWU5BTUlDX01BUF9SRVEQHxIRCg1TQVZFX1JPTEVfUkVRECASDgoK",
+          "R0VUX01BUF9JRBAhEgwKCE1PVkVfSU5GECISGgoWRk9SV0FSRF9QTEFZRVJf",
+          "TUVTU0FHRRAjEhEKDVNUT1BfTU9WRV9JTkYQJBITCg5OT0RFX1NUQVJUX05U",
+          "RhDoBxIRCgxFVENfU1lOQ19OVEYQ6QcSEwoOTk9ERVNfSU5GT19OVEYQ6gcS",
+          "GQoUUkVTRVRfQ09OTkVDVElPTl9OVEYQ6wcSEwoOUk9MRV9MRUFWRV9SRVEQ",
+          "7AdCGFoWSU5TZXJ2ZXIvc3JjL3Byb3RvL21zZ2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(new[] {typeof(global::CMD), }, null));
@@ -61,18 +60,6 @@ public enum CMD {
   /// client -> gate -> any
   /// </summary>
   [pbr::OriginalName("GATE")] Gate = 2,
-  /// <summary>
-  /// any -> center
-  /// </summary>
-  [pbr::OriginalName("SERVER_STATE")] ServerState = 3,
-  /// <summary>
-  /// center -> any
-  /// </summary>
-  [pbr::OriginalName("SERVER_LIST_CHANGED")] ServerListChanged = 4,
-  /// <summary>
-  /// center -> any
-  /// </summary>
-  [pbr::OriginalName("SERVER_RESET")] ServerReset = 5,
   /// <summary>
   /// client -> gate
   /// </summary>
@@ -113,10 +100,6 @@ public enum CMD {
   /// web -> center
   /// </summary>
   [pbr::OriginalName("RELOAD_ETC_REQ")] ReloadEtcReq = 15,
-  /// <summary>
-  /// center -> any
-  /// </summary>
-  [pbr::OriginalName("UPDATE_ETC_NTF")] UpdateEtcNtf = 16,
   /// <summary>
   /// world -> client
   /// </summary>
@@ -180,7 +163,7 @@ public enum CMD {
   /// <summary>
   /// any -> database
   /// </summary>
-  [pbr::OriginalName("SAVE_ROLE")] SaveRole = 32,
+  [pbr::OriginalName("SAVE_ROLE_REQ")] SaveRoleReq = 32,
   /// <summary>
   /// gate -> world
   /// </summary>
@@ -193,6 +176,10 @@ public enum CMD {
   /// any -> gate -> client
   /// </summary>
   [pbr::OriginalName("FORWARD_PLAYER_MESSAGE")] ForwardPlayerMessage = 35,
+  /// <summary>
+  /// client -> world
+  /// </summary>
+  [pbr::OriginalName("STOP_MOVE_INF")] StopMoveInf = 36,
   /// <summary>
   /// any -> center
   /// </summary>
@@ -209,6 +196,10 @@ public enum CMD {
   /// center -> any
   /// </summary>
   [pbr::OriginalName("RESET_CONNECTION_NTF")] ResetConnectionNtf = 1003,
+  /// <summary>
+  /// gate -> any
+  /// </summary>
+  [pbr::OriginalName("ROLE_LEAVE_REQ")] RoleLeaveReq = 1004,
 }
 
 #endregion

@@ -23,12 +23,15 @@ public static partial class GateReflection {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
           "CgpnYXRlLnByb3RvIjoKFEZvcndhcmRQbGF5ZXJNZXNzYWdlEhIKClBsYXll",
-          "clVVSUQYASABKAkSDgoGQnVmZmVyGAIgASgMQhhaFklOU2VydmVyL3NyYy9w",
-          "cm90by9tc2diBnByb3RvMw=="));
+          "clVVSUQYASABKAkSDgoGQnVmZmVyGAIgASgMIh0KDFJvbGVMZWF2ZVJlcRIN",
+          "CgVSb2xlcxgBIAMoCSIPCg1Sb2xlTGVhdmVSZXNwQhhaFklOU2VydmVyL3Ny",
+          "Yy9wcm90by9tc2diBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ForwardPlayerMessage), global::ForwardPlayerMessage.Parser, new[]{ "PlayerUUID", "Buffer" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::ForwardPlayerMessage), global::ForwardPlayerMessage.Parser, new[]{ "PlayerUUID", "Buffer" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RoleLeaveReq), global::RoleLeaveReq.Parser, new[]{ "Roles" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RoleLeaveResp), global::RoleLeaveResp.Parser, null, null, null, null)
         }));
   }
   #endregion
@@ -186,6 +189,228 @@ public sealed partial class ForwardPlayerMessage : pb::IMessage<ForwardPlayerMes
           Buffer = input.ReadBytes();
           break;
         }
+      }
+    }
+  }
+
+}
+
+public sealed partial class RoleLeaveReq : pb::IMessage<RoleLeaveReq> {
+  private static readonly pb::MessageParser<RoleLeaveReq> _parser = new pb::MessageParser<RoleLeaveReq>(() => new RoleLeaveReq());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<RoleLeaveReq> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::GateReflection.Descriptor.MessageTypes[1]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RoleLeaveReq() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RoleLeaveReq(RoleLeaveReq other) : this() {
+    roles_ = other.roles_.Clone();
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RoleLeaveReq Clone() {
+    return new RoleLeaveReq(this);
+  }
+
+  /// <summary>Field number for the "Roles" field.</summary>
+  public const int RolesFieldNumber = 1;
+  private static readonly pb::FieldCodec<string> _repeated_roles_codec
+      = pb::FieldCodec.ForString(10);
+  private readonly pbc::RepeatedField<string> roles_ = new pbc::RepeatedField<string>();
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public pbc::RepeatedField<string> Roles {
+    get { return roles_; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as RoleLeaveReq);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(RoleLeaveReq other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if(!roles_.Equals(other.roles_)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    hash ^= roles_.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    roles_.WriteTo(output, _repeated_roles_codec);
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    size += roles_.CalculateSize(_repeated_roles_codec);
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(RoleLeaveReq other) {
+    if (other == null) {
+      return;
+    }
+    roles_.Add(other.roles_);
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 10: {
+          roles_.AddEntriesFrom(input, _repeated_roles_codec);
+          break;
+        }
+      }
+    }
+  }
+
+}
+
+public sealed partial class RoleLeaveResp : pb::IMessage<RoleLeaveResp> {
+  private static readonly pb::MessageParser<RoleLeaveResp> _parser = new pb::MessageParser<RoleLeaveResp>(() => new RoleLeaveResp());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<RoleLeaveResp> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::GateReflection.Descriptor.MessageTypes[2]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RoleLeaveResp() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RoleLeaveResp(RoleLeaveResp other) : this() {
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RoleLeaveResp Clone() {
+    return new RoleLeaveResp(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as RoleLeaveResp);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(RoleLeaveResp other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(RoleLeaveResp other) {
+    if (other == null) {
+      return;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
       }
     }
   }
