@@ -22,6 +22,7 @@ public class GameLogic : MonoBehaviour
         var transformComponent = Role.OnlineData.EntityData.Components[(int)ComponentType.Transofrm].Transform;
         var obj = Instantiate(Resources.Load("Prefabs/Boy"), transformComponent.Position, transformComponent.Rotation);
         m_RoleObject = obj as GameObject;
+        obj.name = Role.SummaryData.Name;
         VirtualCamera.Follow = m_RoleObject.transform;
         VirtualCamera.LookAt = m_RoleObject.transform;
 
@@ -163,6 +164,7 @@ public class GameLogic : MonoBehaviour
                 {
                     var transformComponent = entityData.Components[(int)(ComponentType.Transofrm)].Transform;
                     var go = Instantiate(Resources.Load("Prefabs/Boy"), transformComponent.Position, transformComponent.Rotation) as GameObject;
+                    go.name = entityData.EntityUUID;
                     Entities[entityData.EntityUUID] = go;
                 }
             }

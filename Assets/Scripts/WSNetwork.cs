@@ -70,7 +70,7 @@ public class WSNetwork : INetwork
 
     public void RecvThread()
     {
-        byte[] ser_msg = new byte[1024];
+        byte[] ser_msg = new byte[10240];
         int current = 0;
         ws.OnMessage += (sender, args) =>
         {
