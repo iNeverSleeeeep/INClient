@@ -27,19 +27,22 @@ public static partial class EtcServersReflection {
           "ASgDEg8KB0FkZHJlc3MYAyABKAkSDwoHV2ViUG9ydBgEIAEoBSJJCgtMb2dp",
           "bkNvbmZpZxIMCgRQb3J0GAEgASgFEhsKCERhdGFiYXNlGAIgASgLMgkuRGF0",
           "YWJhc2USDwoHV2ViUG9ydBgDIAEoBSIMCgpDaGF0Q29uZmlnIi0KDkRhdGFi",
-          "YXNlQ29uZmlnEhsKCERhdGFiYXNlGAEgASgLMgkuRGF0YWJhc2UiGQoJV2Vi",
-          "Q29uZmlnEgwKBFBvcnQYASABKAUiLwoJWm9uZVdvcmxkEg4KBlpvbmVJRBgB",
-          "IAEoBRISCgpTdGF0aWNNYXBzGAIgAygFIigKC1dvcmxkQ29uZmlnEhkKBVpv",
-          "bmVzGAEgAygLMgouWm9uZVdvcmxkIt4BCgxTZXJ2ZXJDb25maWcSHwoKR2F0",
-          "ZUNvbmZpZxgBIAEoCzILLkdhdGVDb25maWcSIQoLTG9naW5Db25maWcYAiAB",
-          "KAsyDC5Mb2dpbkNvbmZpZxIfCgpDaGF0Q29uZmlnGAMgASgLMgsuQ2hhdENv",
-          "bmZpZxInCg5EYXRhYmFzZUNvbmZpZxgEIAEoCzIPLkRhdGFiYXNlQ29uZmln",
-          "Eh0KCVdlYkNvbmZpZxgFIAEoCzIKLldlYkNvbmZpZxIhCgtXb3JsZENvbmZp",
-          "ZxgGIAEoCzIMLldvcmxkQ29uZmlnImUKBlNlcnZlchIQCghTZXJ2ZXJJRBgB",
-          "IAEoBRISCgpTZXJ2ZXJUeXBlGAIgASgJEiMKDFNlcnZlckNvbmZpZxgDIAEo",
-          "CzINLlNlcnZlckNvbmZpZxIQCghEZXNjcmliZRgEIAEoCSImCgpTZXJ2ZXJM",
-          "aXN0EhgKB1NlcnZlcnMYASADKAsyBy5TZXJ2ZXJCGFoWSU5TZXJ2ZXIvc3Jj",
-          "L3Byb3RvL2V0Y2IGcHJvdG8z"));
+          "YXNlQ29uZmlnEhsKCERhdGFiYXNlGAEgASgLMgkuRGF0YWJhc2UiPAoJV2Vi",
+          "Q29uZmlnEgwKBFBvcnQYASABKAUSDwoHQWNjb3VudBgCIAEoCRIQCghQYXNz",
+          "d29yZBgDIAEoCSIvCglab25lV29ybGQSDgoGWm9uZUlEGAEgASgFEhIKClN0",
+          "YXRpY01hcHMYAiADKAUiKAoLV29ybGRDb25maWcSGQoFWm9uZXMYASADKAsy",
+          "Ci5ab25lV29ybGQiCgoIQUlDb25maWciDQoLUm9ib3RDb25maWcingIKDFNl",
+          "cnZlckNvbmZpZxIfCgpHYXRlQ29uZmlnGAEgASgLMgsuR2F0ZUNvbmZpZxIh",
+          "CgtMb2dpbkNvbmZpZxgCIAEoCzIMLkxvZ2luQ29uZmlnEh8KCkNoYXRDb25m",
+          "aWcYAyABKAsyCy5DaGF0Q29uZmlnEicKDkRhdGFiYXNlQ29uZmlnGAQgASgL",
+          "Mg8uRGF0YWJhc2VDb25maWcSHQoJV2ViQ29uZmlnGAUgASgLMgouV2ViQ29u",
+          "ZmlnEiEKC1dvcmxkQ29uZmlnGAYgASgLMgwuV29ybGRDb25maWcSGwoIQUlD",
+          "b25maWcYByABKAsyCS5BSUNvbmZpZxIhCgtSb2JvdENvbmZpZxgIIAEoCzIM",
+          "LlJvYm90Q29uZmlnImUKBlNlcnZlchIQCghTZXJ2ZXJJRBgBIAEoBRISCgpT",
+          "ZXJ2ZXJUeXBlGAIgASgJEiMKDFNlcnZlckNvbmZpZxgDIAEoCzINLlNlcnZl",
+          "ckNvbmZpZxIQCghEZXNjcmliZRgEIAEoCSImCgpTZXJ2ZXJMaXN0EhgKB1Nl",
+          "cnZlcnMYASADKAsyBy5TZXJ2ZXJCGFoWSU5TZXJ2ZXIvc3JjL3Byb3RvL2V0",
+          "Y2IGcHJvdG8z"));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::EtcDatabaseReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -47,10 +50,12 @@ public static partial class EtcServersReflection {
           new pbr::GeneratedClrTypeInfo(typeof(global::LoginConfig), global::LoginConfig.Parser, new[]{ "Port", "Database", "WebPort" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ChatConfig), global::ChatConfig.Parser, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::DatabaseConfig), global::DatabaseConfig.Parser, new[]{ "Database" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::WebConfig), global::WebConfig.Parser, new[]{ "Port" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::WebConfig), global::WebConfig.Parser, new[]{ "Port", "Account", "Password" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ZoneWorld), global::ZoneWorld.Parser, new[]{ "ZoneID", "StaticMaps" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::WorldConfig), global::WorldConfig.Parser, new[]{ "Zones" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::ServerConfig), global::ServerConfig.Parser, new[]{ "GateConfig", "LoginConfig", "ChatConfig", "DatabaseConfig", "WebConfig", "WorldConfig" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::AIConfig), global::AIConfig.Parser, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::RobotConfig), global::RobotConfig.Parser, null, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ServerConfig), global::ServerConfig.Parser, new[]{ "GateConfig", "LoginConfig", "ChatConfig", "DatabaseConfig", "WebConfig", "WorldConfig", "AIConfig", "RobotConfig" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::Server), global::Server.Parser, new[]{ "ServerID", "ServerType", "ServerConfig", "Describe" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ServerList), global::ServerList.Parser, new[]{ "Servers" }, null, null, null)
         }));
@@ -746,6 +751,8 @@ public sealed partial class WebConfig : pb::IMessage<WebConfig> {
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public WebConfig(WebConfig other) : this() {
     port_ = other.port_;
+    account_ = other.account_;
+    password_ = other.password_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -768,6 +775,34 @@ public sealed partial class WebConfig : pb::IMessage<WebConfig> {
     }
   }
 
+  /// <summary>Field number for the "Account" field.</summary>
+  public const int AccountFieldNumber = 2;
+  private string account_ = "";
+  /// <summary>
+  /// 账号
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string Account {
+    get { return account_; }
+    set {
+      account_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
+  /// <summary>Field number for the "Password" field.</summary>
+  public const int PasswordFieldNumber = 3;
+  private string password_ = "";
+  /// <summary>
+  /// 密码
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public string Password {
+    get { return password_; }
+    set {
+      password_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as WebConfig);
@@ -782,6 +817,8 @@ public sealed partial class WebConfig : pb::IMessage<WebConfig> {
       return true;
     }
     if (Port != other.Port) return false;
+    if (Account != other.Account) return false;
+    if (Password != other.Password) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -789,6 +826,8 @@ public sealed partial class WebConfig : pb::IMessage<WebConfig> {
   public override int GetHashCode() {
     int hash = 1;
     if (Port != 0) hash ^= Port.GetHashCode();
+    if (Account.Length != 0) hash ^= Account.GetHashCode();
+    if (Password.Length != 0) hash ^= Password.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -806,6 +845,14 @@ public sealed partial class WebConfig : pb::IMessage<WebConfig> {
       output.WriteRawTag(8);
       output.WriteInt32(Port);
     }
+    if (Account.Length != 0) {
+      output.WriteRawTag(18);
+      output.WriteString(Account);
+    }
+    if (Password.Length != 0) {
+      output.WriteRawTag(26);
+      output.WriteString(Password);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -816,6 +863,12 @@ public sealed partial class WebConfig : pb::IMessage<WebConfig> {
     int size = 0;
     if (Port != 0) {
       size += 1 + pb::CodedOutputStream.ComputeInt32Size(Port);
+    }
+    if (Account.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Account);
+    }
+    if (Password.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(Password);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -831,6 +884,12 @@ public sealed partial class WebConfig : pb::IMessage<WebConfig> {
     if (other.Port != 0) {
       Port = other.Port;
     }
+    if (other.Account.Length != 0) {
+      Account = other.Account;
+    }
+    if (other.Password.Length != 0) {
+      Password = other.Password;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -844,6 +903,14 @@ public sealed partial class WebConfig : pb::IMessage<WebConfig> {
           break;
         case 8: {
           Port = input.ReadInt32();
+          break;
+        }
+        case 18: {
+          Account = input.ReadString();
+          break;
+        }
+        case 26: {
+          Password = input.ReadString();
           break;
         }
       }
@@ -1132,6 +1199,208 @@ public sealed partial class WorldConfig : pb::IMessage<WorldConfig> {
 
 }
 
+public sealed partial class AIConfig : pb::IMessage<AIConfig> {
+  private static readonly pb::MessageParser<AIConfig> _parser = new pb::MessageParser<AIConfig>(() => new AIConfig());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<AIConfig> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::EtcServersReflection.Descriptor.MessageTypes[7]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public AIConfig() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public AIConfig(AIConfig other) : this() {
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public AIConfig Clone() {
+    return new AIConfig(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as AIConfig);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(AIConfig other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(AIConfig other) {
+    if (other == null) {
+      return;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+      }
+    }
+  }
+
+}
+
+public sealed partial class RobotConfig : pb::IMessage<RobotConfig> {
+  private static readonly pb::MessageParser<RobotConfig> _parser = new pb::MessageParser<RobotConfig>(() => new RobotConfig());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<RobotConfig> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::EtcServersReflection.Descriptor.MessageTypes[8]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RobotConfig() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RobotConfig(RobotConfig other) : this() {
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RobotConfig Clone() {
+    return new RobotConfig(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as RobotConfig);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(RobotConfig other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(RobotConfig other) {
+    if (other == null) {
+      return;
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+      }
+    }
+  }
+
+}
+
 public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
   private static readonly pb::MessageParser<ServerConfig> _parser = new pb::MessageParser<ServerConfig>(() => new ServerConfig());
   private pb::UnknownFieldSet _unknownFields;
@@ -1140,7 +1409,7 @@ public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::EtcServersReflection.Descriptor.MessageTypes[7]; }
+    get { return global::EtcServersReflection.Descriptor.MessageTypes[9]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1163,6 +1432,8 @@ public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
     databaseConfig_ = other.databaseConfig_ != null ? other.databaseConfig_.Clone() : null;
     webConfig_ = other.webConfig_ != null ? other.webConfig_.Clone() : null;
     worldConfig_ = other.worldConfig_ != null ? other.worldConfig_.Clone() : null;
+    aIConfig_ = other.aIConfig_ != null ? other.aIConfig_.Clone() : null;
+    robotConfig_ = other.robotConfig_ != null ? other.robotConfig_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -1255,6 +1526,34 @@ public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
     }
   }
 
+  /// <summary>Field number for the "AIConfig" field.</summary>
+  public const int AIConfigFieldNumber = 7;
+  private global::AIConfig aIConfig_;
+  /// <summary>
+  /// AI服务器
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::AIConfig AIConfig {
+    get { return aIConfig_; }
+    set {
+      aIConfig_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "RobotConfig" field.</summary>
+  public const int RobotConfigFieldNumber = 8;
+  private global::RobotConfig robotConfig_;
+  /// <summary>
+  /// 机器人服务器
+  /// </summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::RobotConfig RobotConfig {
+    get { return robotConfig_; }
+    set {
+      robotConfig_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as ServerConfig);
@@ -1274,6 +1573,8 @@ public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
     if (!object.Equals(DatabaseConfig, other.DatabaseConfig)) return false;
     if (!object.Equals(WebConfig, other.WebConfig)) return false;
     if (!object.Equals(WorldConfig, other.WorldConfig)) return false;
+    if (!object.Equals(AIConfig, other.AIConfig)) return false;
+    if (!object.Equals(RobotConfig, other.RobotConfig)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -1286,6 +1587,8 @@ public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
     if (databaseConfig_ != null) hash ^= DatabaseConfig.GetHashCode();
     if (webConfig_ != null) hash ^= WebConfig.GetHashCode();
     if (worldConfig_ != null) hash ^= WorldConfig.GetHashCode();
+    if (aIConfig_ != null) hash ^= AIConfig.GetHashCode();
+    if (robotConfig_ != null) hash ^= RobotConfig.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -1323,6 +1626,14 @@ public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
       output.WriteRawTag(50);
       output.WriteMessage(WorldConfig);
     }
+    if (aIConfig_ != null) {
+      output.WriteRawTag(58);
+      output.WriteMessage(AIConfig);
+    }
+    if (robotConfig_ != null) {
+      output.WriteRawTag(66);
+      output.WriteMessage(RobotConfig);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -1348,6 +1659,12 @@ public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
     }
     if (worldConfig_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(WorldConfig);
+    }
+    if (aIConfig_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(AIConfig);
+    }
+    if (robotConfig_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(RobotConfig);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -1395,6 +1712,18 @@ public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
         WorldConfig = new global::WorldConfig();
       }
       WorldConfig.MergeFrom(other.WorldConfig);
+    }
+    if (other.aIConfig_ != null) {
+      if (aIConfig_ == null) {
+        AIConfig = new global::AIConfig();
+      }
+      AIConfig.MergeFrom(other.AIConfig);
+    }
+    if (other.robotConfig_ != null) {
+      if (robotConfig_ == null) {
+        RobotConfig = new global::RobotConfig();
+      }
+      RobotConfig.MergeFrom(other.RobotConfig);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -1449,6 +1778,20 @@ public sealed partial class ServerConfig : pb::IMessage<ServerConfig> {
           input.ReadMessage(WorldConfig);
           break;
         }
+        case 58: {
+          if (aIConfig_ == null) {
+            AIConfig = new global::AIConfig();
+          }
+          input.ReadMessage(AIConfig);
+          break;
+        }
+        case 66: {
+          if (robotConfig_ == null) {
+            RobotConfig = new global::RobotConfig();
+          }
+          input.ReadMessage(RobotConfig);
+          break;
+        }
       }
     }
   }
@@ -1463,7 +1806,7 @@ public sealed partial class Server : pb::IMessage<Server> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::EtcServersReflection.Descriptor.MessageTypes[8]; }
+    get { return global::EtcServersReflection.Descriptor.MessageTypes[10]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1682,7 +2025,7 @@ public sealed partial class ServerList : pb::IMessage<ServerList> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::EtcServersReflection.Descriptor.MessageTypes[9]; }
+    get { return global::EtcServersReflection.Descriptor.MessageTypes[11]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

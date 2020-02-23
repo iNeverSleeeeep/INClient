@@ -37,7 +37,7 @@ public static partial class CommandReflection {
           "Eh4KGlVQREFURV9TVEFUSUNfTUFQX1VVSURfTlRGEBwSGwoXR0VUX1NUQVRJ",
           "Q19NQVBfVVVJRF9SRVEQHRIXChNTQVZFX1NUQVRJQ19NQVBfUkVREB4SGAoU",
           "U0FWRV9EWU5BTUlDX01BUF9SRVEQHxIRCg1TQVZFX1JPTEVfUkVRECASDgoK",
-          "R0VUX01BUF9JRBAhEgwKCE1PVkVfSU5GECISGgoWRk9SV0FSRF9QTEFZRVJf",
+          "R0VUX01BUF9JRBAhEgwKCE1PVkVfSU5GECISGgoWRk9SV0FSRF9DTElFTlRf",
           "TUVTU0FHRRAjEhEKDVNUT1BfTU9WRV9JTkYQJBITCg5OT0RFX1NUQVJUX05U",
           "RhDoBxIRCgxFVENfU1lOQ19OVEYQ6QcSEwoOTk9ERVNfSU5GT19OVEYQ6gcS",
           "GQoUUkVTRVRfQ09OTkVDVElPTl9OVEYQ6wcSEwoOUk9MRV9MRUFWRV9SRVEQ",
@@ -175,7 +175,7 @@ public enum CMD {
   /// <summary>
   /// any -> gate -> client
   /// </summary>
-  [pbr::OriginalName("FORWARD_PLAYER_MESSAGE")] ForwardPlayerMessage = 35,
+  [pbr::OriginalName("FORWARD_CLIENT_MESSAGE")] ForwardClientMessage = 35,
   /// <summary>
   /// client -> world
   /// </summary>

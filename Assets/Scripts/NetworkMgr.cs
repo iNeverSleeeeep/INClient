@@ -55,7 +55,6 @@ public class NetworkMgr : MonoBehaviour
             var buffer = Login.Recv();
             if (buffer != null)
             {
-                Debug.Log("Login 收到了消息");
                 var message = Message.Parser.ParseFrom(buffer);
 
                 var loginResult = LoginToClient.Parser.ParseFrom(message.Buffer);
@@ -68,7 +67,6 @@ public class NetworkMgr : MonoBehaviour
             var buffer = Game.Recv();
             if (buffer != null)
             {
-                Debug.Log("Game 收到了消息");
                 var message = GateToClient.Parser.ParseFrom(buffer);
                 if (message.Sequence == 0)
                 {

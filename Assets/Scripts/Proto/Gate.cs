@@ -22,14 +22,14 @@ public static partial class GateReflection {
   static GateReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "CgpnYXRlLnByb3RvIjoKFEZvcndhcmRQbGF5ZXJNZXNzYWdlEhIKClBsYXll",
-          "clVVSUQYASABKAkSDgoGQnVmZmVyGAIgASgMIh0KDFJvbGVMZWF2ZVJlcRIN",
-          "CgVSb2xlcxgBIAMoCSIPCg1Sb2xlTGVhdmVSZXNwQhhaFklOU2VydmVyL3Ny",
-          "Yy9wcm90by9tc2diBnByb3RvMw=="));
+          "CgpnYXRlLnByb3RvIjQKFEZvcndhcmRQbGF5ZXJNZXNzYWdlEgwKBFVVSUQY",
+          "ASABKAkSDgoGQnVmZmVyGAIgASgMIh0KDFJvbGVMZWF2ZVJlcRINCgVSb2xl",
+          "cxgBIAMoCSIPCg1Sb2xlTGVhdmVSZXNwQhhaFklOU2VydmVyL3NyYy9wcm90",
+          "by9tc2diBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { },
         new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-          new pbr::GeneratedClrTypeInfo(typeof(global::ForwardPlayerMessage), global::ForwardPlayerMessage.Parser, new[]{ "PlayerUUID", "Buffer" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::ForwardPlayerMessage), global::ForwardPlayerMessage.Parser, new[]{ "UUID", "Buffer" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleLeaveReq), global::RoleLeaveReq.Parser, new[]{ "Roles" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::RoleLeaveResp), global::RoleLeaveResp.Parser, null, null, null, null)
         }));
@@ -63,7 +63,7 @@ public sealed partial class ForwardPlayerMessage : pb::IMessage<ForwardPlayerMes
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public ForwardPlayerMessage(ForwardPlayerMessage other) : this() {
-    playerUUID_ = other.playerUUID_;
+    uUID_ = other.uUID_;
     buffer_ = other.buffer_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
@@ -73,14 +73,14 @@ public sealed partial class ForwardPlayerMessage : pb::IMessage<ForwardPlayerMes
     return new ForwardPlayerMessage(this);
   }
 
-  /// <summary>Field number for the "PlayerUUID" field.</summary>
-  public const int PlayerUUIDFieldNumber = 1;
-  private string playerUUID_ = "";
+  /// <summary>Field number for the "UUID" field.</summary>
+  public const int UUIDFieldNumber = 1;
+  private string uUID_ = "";
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-  public string PlayerUUID {
-    get { return playerUUID_; }
+  public string UUID {
+    get { return uUID_; }
     set {
-      playerUUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      uUID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
     }
   }
 
@@ -108,7 +108,7 @@ public sealed partial class ForwardPlayerMessage : pb::IMessage<ForwardPlayerMes
     if (ReferenceEquals(other, this)) {
       return true;
     }
-    if (PlayerUUID != other.PlayerUUID) return false;
+    if (UUID != other.UUID) return false;
     if (Buffer != other.Buffer) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
@@ -116,7 +116,7 @@ public sealed partial class ForwardPlayerMessage : pb::IMessage<ForwardPlayerMes
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override int GetHashCode() {
     int hash = 1;
-    if (PlayerUUID.Length != 0) hash ^= PlayerUUID.GetHashCode();
+    if (UUID.Length != 0) hash ^= UUID.GetHashCode();
     if (Buffer.Length != 0) hash ^= Buffer.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
@@ -131,9 +131,9 @@ public sealed partial class ForwardPlayerMessage : pb::IMessage<ForwardPlayerMes
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public void WriteTo(pb::CodedOutputStream output) {
-    if (PlayerUUID.Length != 0) {
+    if (UUID.Length != 0) {
       output.WriteRawTag(10);
-      output.WriteString(PlayerUUID);
+      output.WriteString(UUID);
     }
     if (Buffer.Length != 0) {
       output.WriteRawTag(18);
@@ -147,8 +147,8 @@ public sealed partial class ForwardPlayerMessage : pb::IMessage<ForwardPlayerMes
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public int CalculateSize() {
     int size = 0;
-    if (PlayerUUID.Length != 0) {
-      size += 1 + pb::CodedOutputStream.ComputeStringSize(PlayerUUID);
+    if (UUID.Length != 0) {
+      size += 1 + pb::CodedOutputStream.ComputeStringSize(UUID);
     }
     if (Buffer.Length != 0) {
       size += 1 + pb::CodedOutputStream.ComputeBytesSize(Buffer);
@@ -164,8 +164,8 @@ public sealed partial class ForwardPlayerMessage : pb::IMessage<ForwardPlayerMes
     if (other == null) {
       return;
     }
-    if (other.PlayerUUID.Length != 0) {
-      PlayerUUID = other.PlayerUUID;
+    if (other.UUID.Length != 0) {
+      UUID = other.UUID;
     }
     if (other.Buffer.Length != 0) {
       Buffer = other.Buffer;
@@ -182,7 +182,7 @@ public sealed partial class ForwardPlayerMessage : pb::IMessage<ForwardPlayerMes
           _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
           break;
         case 10: {
-          PlayerUUID = input.ReadString();
+          UUID = input.ReadString();
           break;
         }
         case 18: {

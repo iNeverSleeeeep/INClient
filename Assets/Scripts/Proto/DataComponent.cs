@@ -26,29 +26,35 @@ public static partial class DataComponentReflection {
           "cm1Db21wb25lbnQSGgoIUG9zaXRpb24YASABKAsyCC5WZWN0b3IzEh0KCHJv",
           "dGF0aW9uGAIgASgLMgsuUXVhdGVybmlvbiJcChBQaHlzaWNzQ29tcG9uZW50",
           "EgwKBE1hc3MYASABKAESGgoIUmF3U3BlZWQYAiABKAsyCC5WZWN0b3IzEh4K",
-          "DFBhc3NpdmVTcGVlZBgDIAEoCzIILlZlY3RvcjMiLwoSQXR0cmlidXRlQ29t",
-          "cG9uZW50Eg0KBVNwZWVkGAEgASgCEgoKAkhQGAIgASgCIi4KDU1vdmVDb21w",
-          "b25lbnQSHQoLRGVzdGluYXRpb24YASABKAsyCC5WZWN0b3IzIj4KE0NvbnRy",
-          "b2xsZXJDb21wb25lbnQSJwoOQ29udHJvbGxlclR5cGUYASABKA4yDy5Db250",
-          "cm9sbGVyVHlwZSLlAQoJQ29tcG9uZW50EhwKBFR5cGUYASABKA4yDi5Db21w",
-          "b25lbnRUeXBlEiYKCVRyYW5zZm9ybRgCIAEoCzITLlRyYW5zZm9ybUNvbXBv",
-          "bmVudBIiCgdQaHlzaWNzGAMgASgLMhEuUGh5c2ljc0NvbXBvbmVudBImCglB",
-          "dHRyaWJ1dGUYBCABKAsyEy5BdHRyaWJ1dGVDb21wb25lbnQSHAoETW92ZRgF",
-          "IAEoCzIOLk1vdmVDb21wb25lbnQSKAoKQ29udHJvbGxlchgGIAEoCzIULkNv",
-          "bnRyb2xsZXJDb21wb25lbnQqYQoNQ29tcG9uZW50VHlwZRILCgdJbnZhbGlk",
-          "EAASDQoJVHJhbnNvZnJtEAESCwoHUGh5c2ljcxACEg0KCUF0dHJpYnV0ZRAD",
-          "EggKBE1vdmUQBBIOCgpDb250cm9sbGVyEAUqOAoOQ29udHJvbGxlclR5cGUS",
-          "FAoQUGxheWVyQ29udHJvbGxlchAAEhAKDEFJQ29udHJvbGxlchABQhlaF0lO",
-          "U2VydmVyL3NyYy9wcm90by9kYXRhYgZwcm90bzM="));
+          "DFBhc3NpdmVTcGVlZBgDIAEoCzIILlZlY3RvcjMiPgoSQXR0cmlidXRlQ29t",
+          "cG9uZW50Eg0KBVNwZWVkGAEgASgCEgoKAkhQGAIgASgCEg0KBU1heEhQGAMg",
+          "ASgCIi4KDU1vdmVDb21wb25lbnQSHQoLRGVzdGluYXRpb24YASABKAsyCC5W",
+          "ZWN0b3IzIj4KE0NvbnRyb2xsZXJDb21wb25lbnQSJwoOQ29udHJvbGxlclR5",
+          "cGUYASABKA4yDy5Db250cm9sbGVyVHlwZSJiCg9SZWJvcm5Db21wb25lbnQS",
+          "EgoKUmVib3JuVGltZRgBIAEoAxIfCgpSZWJvcm5UeXBlGAIgASgOMgsuUmVi",
+          "b3JuVHlwZRIaCghQb3NpdGlvbhgDIAEoCzIILlZlY3RvcjMihwIKCUNvbXBv",
+          "bmVudBIcCgRUeXBlGAEgASgOMg4uQ29tcG9uZW50VHlwZRImCglUcmFuc2Zv",
+          "cm0YAiABKAsyEy5UcmFuc2Zvcm1Db21wb25lbnQSIgoHUGh5c2ljcxgDIAEo",
+          "CzIRLlBoeXNpY3NDb21wb25lbnQSJgoJQXR0cmlidXRlGAQgASgLMhMuQXR0",
+          "cmlidXRlQ29tcG9uZW50EhwKBE1vdmUYBSABKAsyDi5Nb3ZlQ29tcG9uZW50",
+          "EigKCkNvbnRyb2xsZXIYBiABKAsyFC5Db250cm9sbGVyQ29tcG9uZW50EiAK",
+          "BlJlYm9ybhgHIAEoCzIQLlJlYm9ybkNvbXBvbmVudCptCg1Db21wb25lbnRU",
+          "eXBlEgsKB0ludmFsaWQQABINCglUcmFuc29mcm0QARILCgdQaHlzaWNzEAIS",
+          "DQoJQXR0cmlidXRlEAMSCAoETW92ZRAEEg4KCkNvbnRyb2xsZXIQBRIKCgZS",
+          "ZWJvcm4QBio4Cg5Db250cm9sbGVyVHlwZRIUChBQbGF5ZXJDb250cm9sbGVy",
+          "EAASEAoMQUlDb250cm9sbGVyEAEqLAoKUmVib3JuVHlwZRIICgROb25lEAAS",
+          "CAoEQXV0bxABEgoKBk1hbnVhbBACQhlaF0lOU2VydmVyL3NyYy9wcm90by9k",
+          "YXRhYgZwcm90bzM="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
         new pbr::FileDescriptor[] { global::MathReflection.Descriptor, },
-        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ComponentType), typeof(global::ControllerType), }, new pbr::GeneratedClrTypeInfo[] {
+        new pbr::GeneratedClrTypeInfo(new[] {typeof(global::ComponentType), typeof(global::ControllerType), typeof(global::RebornType), }, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::TransformComponent), global::TransformComponent.Parser, new[]{ "Position", "Rotation" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::PhysicsComponent), global::PhysicsComponent.Parser, new[]{ "Mass", "RawSpeed", "PassiveSpeed" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::AttributeComponent), global::AttributeComponent.Parser, new[]{ "Speed", "HP" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::AttributeComponent), global::AttributeComponent.Parser, new[]{ "Speed", "HP", "MaxHP" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::MoveComponent), global::MoveComponent.Parser, new[]{ "Destination" }, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::ControllerComponent), global::ControllerComponent.Parser, new[]{ "ControllerType" }, null, null, null),
-          new pbr::GeneratedClrTypeInfo(typeof(global::Component), global::Component.Parser, new[]{ "Type", "Transform", "Physics", "Attribute", "Move", "Controller" }, null, null, null)
+          new pbr::GeneratedClrTypeInfo(typeof(global::RebornComponent), global::RebornComponent.Parser, new[]{ "RebornTime", "RebornType", "Position" }, null, null, null),
+          new pbr::GeneratedClrTypeInfo(typeof(global::Component), global::Component.Parser, new[]{ "Type", "Transform", "Physics", "Attribute", "Move", "Controller", "Reborn" }, null, null, null)
         }));
   }
   #endregion
@@ -62,11 +68,18 @@ public enum ComponentType {
   [pbr::OriginalName("Attribute")] Attribute = 3,
   [pbr::OriginalName("Move")] Move = 4,
   [pbr::OriginalName("Controller")] Controller = 5,
+  [pbr::OriginalName("Reborn")] Reborn = 6,
 }
 
 public enum ControllerType {
   [pbr::OriginalName("PlayerController")] PlayerController = 0,
   [pbr::OriginalName("AIController")] Aicontroller = 1,
+}
+
+public enum RebornType {
+  [pbr::OriginalName("None")] None = 0,
+  [pbr::OriginalName("Auto")] Auto = 1,
+  [pbr::OriginalName("Manual")] Manual = 2,
 }
 
 #endregion
@@ -471,6 +484,7 @@ public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent
   public AttributeComponent(AttributeComponent other) : this() {
     speed_ = other.speed_;
     hP_ = other.hP_;
+    maxHP_ = other.maxHP_;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -501,6 +515,17 @@ public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent
     }
   }
 
+  /// <summary>Field number for the "MaxHP" field.</summary>
+  public const int MaxHPFieldNumber = 3;
+  private float maxHP_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public float MaxHP {
+    get { return maxHP_; }
+    set {
+      maxHP_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as AttributeComponent);
@@ -516,6 +541,7 @@ public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent
     }
     if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Speed, other.Speed)) return false;
     if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(HP, other.HP)) return false;
+    if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(MaxHP, other.MaxHP)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -524,6 +550,7 @@ public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent
     int hash = 1;
     if (Speed != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Speed);
     if (HP != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(HP);
+    if (MaxHP != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(MaxHP);
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -545,6 +572,10 @@ public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent
       output.WriteRawTag(21);
       output.WriteFloat(HP);
     }
+    if (MaxHP != 0F) {
+      output.WriteRawTag(29);
+      output.WriteFloat(MaxHP);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -557,6 +588,9 @@ public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent
       size += 1 + 4;
     }
     if (HP != 0F) {
+      size += 1 + 4;
+    }
+    if (MaxHP != 0F) {
       size += 1 + 4;
     }
     if (_unknownFields != null) {
@@ -576,6 +610,9 @@ public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent
     if (other.HP != 0F) {
       HP = other.HP;
     }
+    if (other.MaxHP != 0F) {
+      MaxHP = other.MaxHP;
+    }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
 
@@ -593,6 +630,10 @@ public sealed partial class AttributeComponent : pb::IMessage<AttributeComponent
         }
         case 21: {
           HP = input.ReadFloat();
+          break;
+        }
+        case 29: {
+          MaxHP = input.ReadFloat();
           break;
         }
       }
@@ -865,6 +906,197 @@ public sealed partial class ControllerComponent : pb::IMessage<ControllerCompone
 
 }
 
+public sealed partial class RebornComponent : pb::IMessage<RebornComponent> {
+  private static readonly pb::MessageParser<RebornComponent> _parser = new pb::MessageParser<RebornComponent>(() => new RebornComponent());
+  private pb::UnknownFieldSet _unknownFields;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pb::MessageParser<RebornComponent> Parser { get { return _parser; } }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public static pbr::MessageDescriptor Descriptor {
+    get { return global::DataComponentReflection.Descriptor.MessageTypes[5]; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  pbr::MessageDescriptor pb::IMessage.Descriptor {
+    get { return Descriptor; }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RebornComponent() {
+    OnConstruction();
+  }
+
+  partial void OnConstruction();
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RebornComponent(RebornComponent other) : this() {
+    rebornTime_ = other.rebornTime_;
+    rebornType_ = other.rebornType_;
+    position_ = other.position_ != null ? other.position_.Clone() : null;
+    _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public RebornComponent Clone() {
+    return new RebornComponent(this);
+  }
+
+  /// <summary>Field number for the "RebornTime" field.</summary>
+  public const int RebornTimeFieldNumber = 1;
+  private long rebornTime_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public long RebornTime {
+    get { return rebornTime_; }
+    set {
+      rebornTime_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "RebornType" field.</summary>
+  public const int RebornTypeFieldNumber = 2;
+  private global::RebornType rebornType_ = global::RebornType.None;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::RebornType RebornType {
+    get { return rebornType_; }
+    set {
+      rebornType_ = value;
+    }
+  }
+
+  /// <summary>Field number for the "Position" field.</summary>
+  public const int PositionFieldNumber = 3;
+  private global::Vector3 position_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::Vector3 Position {
+    get { return position_; }
+    set {
+      position_ = value;
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override bool Equals(object other) {
+    return Equals(other as RebornComponent);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public bool Equals(RebornComponent other) {
+    if (ReferenceEquals(other, null)) {
+      return false;
+    }
+    if (ReferenceEquals(other, this)) {
+      return true;
+    }
+    if (RebornTime != other.RebornTime) return false;
+    if (RebornType != other.RebornType) return false;
+    if (!object.Equals(Position, other.Position)) return false;
+    return Equals(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override int GetHashCode() {
+    int hash = 1;
+    if (RebornTime != 0L) hash ^= RebornTime.GetHashCode();
+    if (RebornType != global::RebornType.None) hash ^= RebornType.GetHashCode();
+    if (position_ != null) hash ^= Position.GetHashCode();
+    if (_unknownFields != null) {
+      hash ^= _unknownFields.GetHashCode();
+    }
+    return hash;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public override string ToString() {
+    return pb::JsonFormatter.ToDiagnosticString(this);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void WriteTo(pb::CodedOutputStream output) {
+    if (RebornTime != 0L) {
+      output.WriteRawTag(8);
+      output.WriteInt64(RebornTime);
+    }
+    if (RebornType != global::RebornType.None) {
+      output.WriteRawTag(16);
+      output.WriteEnum((int) RebornType);
+    }
+    if (position_ != null) {
+      output.WriteRawTag(26);
+      output.WriteMessage(Position);
+    }
+    if (_unknownFields != null) {
+      _unknownFields.WriteTo(output);
+    }
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public int CalculateSize() {
+    int size = 0;
+    if (RebornTime != 0L) {
+      size += 1 + pb::CodedOutputStream.ComputeInt64Size(RebornTime);
+    }
+    if (RebornType != global::RebornType.None) {
+      size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RebornType);
+    }
+    if (position_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Position);
+    }
+    if (_unknownFields != null) {
+      size += _unknownFields.CalculateSize();
+    }
+    return size;
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(RebornComponent other) {
+    if (other == null) {
+      return;
+    }
+    if (other.RebornTime != 0L) {
+      RebornTime = other.RebornTime;
+    }
+    if (other.RebornType != global::RebornType.None) {
+      RebornType = other.RebornType;
+    }
+    if (other.position_ != null) {
+      if (position_ == null) {
+        Position = new global::Vector3();
+      }
+      Position.MergeFrom(other.Position);
+    }
+    _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public void MergeFrom(pb::CodedInputStream input) {
+    uint tag;
+    while ((tag = input.ReadTag()) != 0) {
+      switch(tag) {
+        default:
+          _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+          break;
+        case 8: {
+          RebornTime = input.ReadInt64();
+          break;
+        }
+        case 16: {
+          RebornType = (global::RebornType) input.ReadEnum();
+          break;
+        }
+        case 26: {
+          if (position_ == null) {
+            Position = new global::Vector3();
+          }
+          input.ReadMessage(Position);
+          break;
+        }
+      }
+    }
+  }
+
+}
+
 public sealed partial class Component : pb::IMessage<Component> {
   private static readonly pb::MessageParser<Component> _parser = new pb::MessageParser<Component>(() => new Component());
   private pb::UnknownFieldSet _unknownFields;
@@ -873,7 +1105,7 @@ public sealed partial class Component : pb::IMessage<Component> {
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public static pbr::MessageDescriptor Descriptor {
-    get { return global::DataComponentReflection.Descriptor.MessageTypes[5]; }
+    get { return global::DataComponentReflection.Descriptor.MessageTypes[6]; }
   }
 
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -896,6 +1128,7 @@ public sealed partial class Component : pb::IMessage<Component> {
     attribute_ = other.attribute_ != null ? other.attribute_.Clone() : null;
     move_ = other.move_ != null ? other.move_.Clone() : null;
     controller_ = other.controller_ != null ? other.controller_.Clone() : null;
+    reborn_ = other.reborn_ != null ? other.reborn_.Clone() : null;
     _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
   }
 
@@ -970,6 +1203,17 @@ public sealed partial class Component : pb::IMessage<Component> {
     }
   }
 
+  /// <summary>Field number for the "Reborn" field.</summary>
+  public const int RebornFieldNumber = 7;
+  private global::RebornComponent reborn_;
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+  public global::RebornComponent Reborn {
+    get { return reborn_; }
+    set {
+      reborn_ = value;
+    }
+  }
+
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
   public override bool Equals(object other) {
     return Equals(other as Component);
@@ -989,6 +1233,7 @@ public sealed partial class Component : pb::IMessage<Component> {
     if (!object.Equals(Attribute, other.Attribute)) return false;
     if (!object.Equals(Move, other.Move)) return false;
     if (!object.Equals(Controller, other.Controller)) return false;
+    if (!object.Equals(Reborn, other.Reborn)) return false;
     return Equals(_unknownFields, other._unknownFields);
   }
 
@@ -1001,6 +1246,7 @@ public sealed partial class Component : pb::IMessage<Component> {
     if (attribute_ != null) hash ^= Attribute.GetHashCode();
     if (move_ != null) hash ^= Move.GetHashCode();
     if (controller_ != null) hash ^= Controller.GetHashCode();
+    if (reborn_ != null) hash ^= Reborn.GetHashCode();
     if (_unknownFields != null) {
       hash ^= _unknownFields.GetHashCode();
     }
@@ -1038,6 +1284,10 @@ public sealed partial class Component : pb::IMessage<Component> {
       output.WriteRawTag(50);
       output.WriteMessage(Controller);
     }
+    if (reborn_ != null) {
+      output.WriteRawTag(58);
+      output.WriteMessage(Reborn);
+    }
     if (_unknownFields != null) {
       _unknownFields.WriteTo(output);
     }
@@ -1063,6 +1313,9 @@ public sealed partial class Component : pb::IMessage<Component> {
     }
     if (controller_ != null) {
       size += 1 + pb::CodedOutputStream.ComputeMessageSize(Controller);
+    }
+    if (reborn_ != null) {
+      size += 1 + pb::CodedOutputStream.ComputeMessageSize(Reborn);
     }
     if (_unknownFields != null) {
       size += _unknownFields.CalculateSize();
@@ -1107,6 +1360,12 @@ public sealed partial class Component : pb::IMessage<Component> {
         Controller = new global::ControllerComponent();
       }
       Controller.MergeFrom(other.Controller);
+    }
+    if (other.reborn_ != null) {
+      if (reborn_ == null) {
+        Reborn = new global::RebornComponent();
+      }
+      Reborn.MergeFrom(other.Reborn);
     }
     _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
   }
@@ -1156,6 +1415,13 @@ public sealed partial class Component : pb::IMessage<Component> {
             Controller = new global::ControllerComponent();
           }
           input.ReadMessage(Controller);
+          break;
+        }
+        case 58: {
+          if (reborn_ == null) {
+            Reborn = new global::RebornComponent();
+          }
+          input.ReadMessage(Reborn);
           break;
         }
       }

@@ -7,6 +7,8 @@ using Cinemachine;
 public class GameLogic : MonoBehaviour
 {
     public static Role Role;
+    public static Dictionary<string, EntityData> EntitiesData = new Dictionary<string, EntityData>();
+    public static Dictionary<string, GameObject> Entities = new Dictionary<string, GameObject>();
 
     public CinemachineVirtualCamera VirtualCamera;
 
@@ -22,6 +24,8 @@ public class GameLogic : MonoBehaviour
         m_RoleObject = obj as GameObject;
         VirtualCamera.Follow = m_RoleObject.transform;
         VirtualCamera.LookAt = m_RoleObject.transform;
+
+        NetworkMgr.Instance.Listen(CMD.NearEntitiesNtf, NearEntitiesNtf);
     }
 
     private void Update()
@@ -107,5 +111,61 @@ public class GameLogic : MonoBehaviour
         move.Position = m_RoleObject.transform.position;
         move.To = m_MoveTargetPosition;
         NetworkMgr.Instance.Notify(CMD.MoveInf, move.ToByteString());
+    }
+
+    private void NearEntitiesNtf(ByteString bytes)
+    {
+        var ntf = NearEntitiesNTF.Parser.ParseFrom(bytes);
+        if (ntf != null)
+        {
+            var req = new EntityDataReq();
+            foreach (var entity in ntf.Entities)
+            {
+                if (EntitiesData.ContainsKey(entity.EntityUUID) == false && entity.EntityUUID != Role.SummaryData.RoleUUID)
+                {
+                    req.EntityUUIDs.Add(entity.EntityUUID);
+                }
+            }
+            var del = new List<string>();
+            foreach (var uuid in EntitiesData.Keys)
+            {
+                var contains = false;
+                foreach (var entity in ntf.Entities)
+                {
+                    if (entity.EntityUUID == uuid)
+                    {
+                        contains = true;
+                        break;
+                    }
+                }
+                if (contains == false)
+                    del.Add(uuid);
+            }
+            foreach (var uuid in del)
+            {
+                EntitiesData.Remove(uuid);
+                Destroy(Entities[uuid]);
+                Entities.Remove(uuid);
+            }
+            NetworkMgr.Instance.Request(CMD.EntityDataReq, req.ToByteString(), OnEntityDataResp);
+        }
+    }
+
+    private void OnEntityDataResp(ByteString bytes)
+    {
+        var resp = EntityDataRes.Parser.ParseFrom(bytes);
+        if (resp != null)
+        {
+            foreach (var entityData in resp.Entities)
+            {
+                EntitiesData[entityData.EntityUUID] = entityData;
+                if (Entities.ContainsKey(entityData.EntityUUID) == false)
+                {
+                    var transformComponent = entityData.Components[(int)(ComponentType.Transofrm)].Transform;
+                    var go = Instantiate(Resources.Load("Prefabs/Boy"), transformComponent.Position, transformComponent.Rotation) as GameObject;
+                    Entities[entityData.EntityUUID] = go;
+                }
+            }
+        }
     }
 }

@@ -21,6 +21,7 @@ public class Login : MonoBehaviour
     {
         NetworkMgr.Instance.ConnectLogin(LoginIP, LoginPort, LoginWebPort);
         NetworkMgr.Instance.OnLoginServerMessage = OnLoginServerMessage;
+        Name.text = PlayerPrefs.GetString("Account", string.Empty);
     }
 
     private void OnDisable()
@@ -49,6 +50,7 @@ public class Login : MonoBehaviour
         msg.Login.Name = Name.text;
         msg.Login.PasswordHash = GetHashString(Name.text + Password.text);
         NetworkMgr.Instance.Login.Send(msg.ToByteArray());
+        PlayerPrefs.SetString("Account", Name.text);
     }
 
     private void OnLoginServerMessage(LoginToClient message)
